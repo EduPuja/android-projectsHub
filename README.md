@@ -1,2 +1,5 @@
 # android-projectsHub
-Folder that can save my personal andorid projects
+This repository is used to save my personal projects from Andorid Studio.
+
+@author Eduard Pujadas
+I'm studding Development Apps with Andorid Studio 
