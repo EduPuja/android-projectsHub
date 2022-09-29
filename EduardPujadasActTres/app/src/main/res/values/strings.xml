@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EduardPujadasActTres</string>
+    <string name="login">Login</string>
+    <string name="textWeek">What is the current Week number?</string>
+    <string name="btn_check">CHECK</string>
+    <string name="again">Try Again</string>
+</resources>
