@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EduardPujadas_PrimeraAPP</string>
+    <string name="btn_name">Button Eduard</string>
+    <string name="btn_cognom">Button Pujadas</string>
+    <string name="btn_segon_cognom">Button Farràs</string>
+    <string name="carrere_live">Massos de Pals</string>
+    <string name="text_image">Aquesta és la meva primera App :D</string>
+</resources>
