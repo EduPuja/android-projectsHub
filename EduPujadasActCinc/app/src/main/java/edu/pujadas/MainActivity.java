@@ -44,7 +44,15 @@ public class MainActivity extends AppCompatActivity
 
         if(isUserOrAdmin())
         {
-            // activity User / admin  change snapbar?
+           // validate the password
+            if (isPasswoord())
+            {
+                createToast("Password correct!");
+            }
+            else
+            {
+                createToast("Incorrect password");
+            }
 
 
         }
