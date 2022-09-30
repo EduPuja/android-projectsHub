@@ -40,6 +40,19 @@ public class MainActivity extends AppCompatActivity
      */
     public void cheackUser(View vista)
     {
+        // prrimer comprovar que hi hagui un usuari o un admin
+
+        if(isUserOrAdmin())
+        {
+            // activity User / admin  change snapbar?
+
+
+        }
+        else
+        {
+            // try again
+            createToast("No ets ni usuari ni admin");
+        }
 
     }
 
@@ -83,8 +96,32 @@ public class MainActivity extends AppCompatActivity
             createToast("Passowrd incorecte");
             return false;
         }
+    }
 
-
+    /**
+     * This method checks if there is a entry in the edit text equals to user that is ok
+     * and if in the edit text there is a entry with name admin that returs true as well
+     *
+     * @return
+     */
+    protected boolean isUserOrAdmin()
+    {
+       String infoEditText = userName.getText().toString();
+       if(infoEditText.equals("user"))
+       {
+           // activityUser
+           return true;
+       }
+       else if (infoEditText.equals("admin"))
+       {
+           // activity admin
+           return true;
+       }
+       else
+       {
+           // return false
+           return false;
+       }
     }
 
 
