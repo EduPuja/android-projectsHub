@@ -2,9 +2,11 @@ package edu.pujadas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 /**
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity
 
     EditText userName;
     EditText paswordInfo;
+    Toast toastCorrect;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -37,6 +40,50 @@ public class MainActivity extends AppCompatActivity
      */
     public void cheackUser(View vista)
     {
+
+    }
+
+
+    /**
+     * Method that makes a toast / alert whatever you want a call it
+     * @param texte
+     */
+    protected void createToast(String texte)
+    {
+       //take the context app need for doing a toast
+        Context context = getApplicationContext();
+
+        // duaration of a toast
+        int duration = Toast.LENGTH_SHORT;
+        // crido el tosat i creo un text
+        toastCorrect=Toast.makeText(context,texte,duration);
+        // showing the toast
+        toastCorrect.show();
+
+    }
+
+    /**
+     * Method thats checks if the password is correct if isn't they return false and a toast
+     * that says "Password incorrect"
+     * @return
+     */
+    protected boolean isPasswoord()
+    {
+        //obtinc el nom del edit text i el converteixo amb string
+       String  passIntroduced = paswordInfo.getText().toString();
+       
+        if(passIntroduced.equals("1234"))
+        {
+            //correcte
+            createToast("PASSWORD CORRECTE :D");
+            return true;
+        }
+        else
+        {
+            createToast("Passowrd incorecte");
+            return false;
+        }
+
 
     }
 
