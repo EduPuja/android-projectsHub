@@ -3,6 +3,7 @@ package edu.pujadas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity
            // validate the password
             if (isPasswoord())
             {
-                createToast("Password correct!");
+                //createToast("");
+                openSecondActivity(vista);
             }
             else
             {
@@ -96,12 +98,12 @@ public class MainActivity extends AppCompatActivity
         if(passIntroduced.equals("1234"))
         {
             //correcte
-            createToast("PASSWORD CORRECTE :D");
+            //createToast("PASSWORD CORRECTE :D");
             return true;
         }
         else
         {
-            createToast("Passowrd incorecte");
+            //createToast("Passowrd incorecte");
             return false;
         }
     }
@@ -132,6 +134,15 @@ public class MainActivity extends AppCompatActivity
        }
     }
 
+    /**
+     * method to change of activity
+     * @param vista
+     */
+    protected void openSecondActivity(View vista)
+    {
+        Intent intent = new Intent(this,SecondActivity.class);
+        startActivity(intent);
+    }
 
 
 }
