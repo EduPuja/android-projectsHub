@@ -112,7 +112,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == buttonOpenImage)
         {
             // TODO: launch an intent to get an image from camera app
-            
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            try
+            {
+              //  startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            }
+            catch (ActivityNotFoundException e) {
+                // display error state to the user
+            }
         }
     }
 
