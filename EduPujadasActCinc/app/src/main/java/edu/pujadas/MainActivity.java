@@ -41,27 +41,13 @@ public class MainActivity extends AppCompatActivity
      */
     public void cheackUser(View vista)
     {
-        // prrimer comprovar que hi hagui un usuari o un admin
-
         if(isUserOrAdmin())
         {
-           // validate the password
-            if (isPasswoord())
-            {
-                //createToast("");
-                openSecondActivity(vista);
-            }
-            else
-            {
-                createToast("Incorrect password");
-            }
-
-
+            openSecondActivity();
         }
         else
         {
-            // try again
-            createToast("No ets ni usuari ni admin");
+            createToast("No ets ni usuari ni admin!");
         }
 
     }
@@ -90,11 +76,11 @@ public class MainActivity extends AppCompatActivity
      * that says "Password incorrect"
      * @return
      */
-    protected boolean isPasswoord()
+    /*protected boolean isPasswoord()
     {
         //obtinc el nom del edit text i el converteixo amb string
        String  passIntroduced = paswordInfo.getText().toString();
-       
+
         if(passIntroduced.equals("1234"))
         {
             //correcte
@@ -106,27 +92,29 @@ public class MainActivity extends AppCompatActivity
             //createToast("Passowrd incorecte");
             return false;
         }
-    }
+    }*/
 
     /**
-     * This method checks if there is a entry in the edit text equals to user that is ok
-     * and if in the edit text there is a entry with name admin that returs true as well
-     *
+     * metode que el que comprova si ets el user o admin amb la contrassenya correcte
+     * sino et retoran false
      * @return
      */
     protected boolean isUserOrAdmin()
     {
+        // info camp user
        String infoEditText = userName.getText().toString();
-       if(infoEditText.equals("user"))
+       //info camp password
+        String  passIntroduced = paswordInfo.getText().toString();
+
+       if(infoEditText.equals("user") || infoEditText.equals("admin") && passIntroduced.equals("1234"))
        {
-           // activityUser
-           return true;
+          return  true;
        }
-       else if (infoEditText.equals("admin"))
+       /*else if (infoEditText.equals("admin") && passIntroduced.equals("1234"))
        {
            // activity admin
            return true;
-       }
+       }*/
        else
        {
            // return false
@@ -136,9 +124,8 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * method to change of activity
-     * @param vista
      */
-    protected void openSecondActivity(View vista)
+    protected void openSecondActivity()
     {
         Intent intent = new Intent(this,SecondActivity.class);
         startActivity(intent);
