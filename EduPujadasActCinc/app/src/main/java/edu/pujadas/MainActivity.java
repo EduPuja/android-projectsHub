@@ -73,10 +73,7 @@ public class MainActivity extends AppCompatActivity
      */
     protected void createToast(String texte)
     {
-
         Context context = getApplicationContext();        //take the context app need for doing a toast
-
-
         int duration = Toast.LENGTH_SHORT;                 // duaration of a toast
         toastCorrect=Toast.makeText(context,texte,duration);    // crido el tosat i creo un text
         toastCorrect.show();                                    // showing the toast
