@@ -41,9 +41,10 @@ public class MainActivity extends AppCompatActivity
      */
     public void cheackUser(View vista)
     {
+        
         if(isUserOrAdmin())
         {
-            openSecondActivity();
+            openSecondActivity(vista);
         }
         else
         {
@@ -124,8 +125,9 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * method to change of activity
+     * @param vista
      */
-    protected void openSecondActivity()
+    protected void openSecondActivity(View vista)
     {
         Intent intent = new Intent(this,SecondActivity.class);
         startActivity(intent);
