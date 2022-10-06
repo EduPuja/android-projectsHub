@@ -18,4 +18,10 @@ public class SecondActivity extends AppCompatActivity
         Snackbar mySnackbar = Snackbar.make(findViewById(R.id.layout), "Benvingut Admin", 1000);
         mySnackbar.show();
     }
+
+    public void showSnackbar()
+    {
+        Snackbar adminSnackbar =  Snackbar.make(findViewById(R.id.layout), "Benvingut Admin", 1000);
+        adminSnackbar.show();
+    }
 }
