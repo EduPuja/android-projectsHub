@@ -86,7 +86,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void onSaveMenuTap() {
+    private void onSaveMenuTap()
+    {
         // check permissions
         if (hasPermissionsToWrite())
         {
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == buttonOpenImage)
         {
             // TODO: launch an intent to get an image from camera app
+            
         }
     }
 
