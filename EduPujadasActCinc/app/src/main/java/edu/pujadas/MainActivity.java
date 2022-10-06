@@ -41,18 +41,42 @@ public class MainActivity extends AppCompatActivity
      */
     public void cheackUser(View vista)
     {
-        
-        if(isUserOrAdmin())
+
+        if(validateUserAdmin())
         {
+            //good
             openSecondActivity(vista);
         }
         else
         {
-            createToast("No ets ni usuari ni admin!");
+            // mal
+            createToast("No ets user ni admin! ");
         }
+
+
 
     }
 
+    protected boolean validateUserAdmin()
+    {
+        String userInfo = userName.getText().toString();
+        String passInfo = paswordInfo.getText().toString();
+
+        if(userInfo.equals("user") && passInfo.equals("1234"))
+        {
+            return true;
+        }
+        else if (userInfo.equals("admin") && passInfo.equals("1234"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+
+    }
 
     /**
      * Method that makes a toast / alert whatever you want a call it
@@ -72,56 +96,9 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    /**
-     * Method thats checks if the password is correct if isn't they return false and a toast
-     * that says "Password incorrect"
-     * @return
-     */
-    /*protected boolean isPasswoord()
-    {
-        //obtinc el nom del edit text i el converteixo amb string
-       String  passIntroduced = paswordInfo.getText().toString();
 
-        if(passIntroduced.equals("1234"))
-        {
-            //correcte
-            //createToast("PASSWORD CORRECTE :D");
-            return true;
-        }
-        else
-        {
-            //createToast("Passowrd incorecte");
-            return false;
-        }
-    }*/
 
-    /**
-     * metode que el que comprova si ets el user o admin amb la contrassenya correcte
-     * sino et retoran false
-     * @return
-     */
-    protected boolean isUserOrAdmin()
-    {
-        // info camp user
-       String infoEditText = userName.getText().toString();
-       //info camp password
-        String  passIntroduced = paswordInfo.getText().toString();
 
-       if(infoEditText.equals("user") || infoEditText.equals("admin") && passIntroduced.equals("1234"))
-       {
-          return  true;
-       }
-       /*else if (infoEditText.equals("admin") && passIntroduced.equals("1234"))
-       {
-           // activity admin
-           return true;
-       }*/
-       else
-       {
-           // return false
-           return false;
-       }
-    }
 
     /**
      * method to change of activity
@@ -130,6 +107,10 @@ public class MainActivity extends AppCompatActivity
     protected void openSecondActivity(View vista)
     {
         Intent intent = new Intent(this,SecondActivity.class);
+        // agafo el valor de usuar
+        intent.putExtra("valorUser",0);
+        //agafo el valor de admin
+        intent.putExtra("valorAdmin",1);
         startActivity(intent);
     }
 
