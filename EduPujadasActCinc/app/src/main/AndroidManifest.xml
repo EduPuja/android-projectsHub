@@ -15,6 +15,7 @@
         <activity
             android:name=".SecondActivity"
             android:exported="false">
+            <!--android:label="Admin"-->
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
