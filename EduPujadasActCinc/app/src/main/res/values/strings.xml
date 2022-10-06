@@ -3,4 +3,5 @@
     <string name="login">Login</string>
     <string name="btn_check">CHECK</string>
     <string name="again">Try Again</string>
+    <string name="execute">Exectue</string>
 </resources>
