@@ -41,42 +41,31 @@ public class MainActivity extends AppCompatActivity
      */
     public void cheackUser(View vista)
     {
-
-        if(validateUserAdmin())
-        {
-            //good
-            openSecondActivity(vista);
-        }
-        else
-        {
-            // mal
-            createToast("No ets user ni admin! ");
-        }
-
-
-
-    }
-
-    protected boolean validateUserAdmin()
-    {
-        String userInfo = userName.getText().toString();
-        String passInfo = paswordInfo.getText().toString();
+        String userInfo = userName.getText().toString();        // recullo el info del editText de username
+        String passInfo = paswordInfo.getText().toString();     // recullo les dades del editext de password
+        Intent intent = new Intent(this,SecondActivity.class);
 
         if(userInfo.equals("user") && passInfo.equals("1234"))
         {
-            return true;
+            intent.putExtra("user",0);              // envio el valor del usuari
+            startActivity(intent);
         }
         else if (userInfo.equals("admin") && passInfo.equals("1234"))
         {
-            return true;
+            intent.putExtra("admin",1);         //envio el valor del admin
+            startActivity(intent);
         }
         else
         {
-            return false;
+            createToast("No ets user ni admin!");         // informo al usuari / admin que no ha entrat correctament
         }
 
 
+
+
+
     }
+
 
     /**
      * Method that makes a toast / alert whatever you want a call it
@@ -84,15 +73,13 @@ public class MainActivity extends AppCompatActivity
      */
     protected void createToast(String texte)
     {
-       //take the context app need for doing a toast
-        Context context = getApplicationContext();
 
-        // duaration of a toast
-        int duration = Toast.LENGTH_SHORT;
-        // crido el tosat i creo un text
-        toastCorrect=Toast.makeText(context,texte,duration);
-        // showing the toast
-        toastCorrect.show();
+        Context context = getApplicationContext();        //take the context app need for doing a toast
+
+
+        int duration = Toast.LENGTH_SHORT;                 // duaration of a toast
+        toastCorrect=Toast.makeText(context,texte,duration);    // crido el tosat i creo un text
+        toastCorrect.show();                                    // showing the toast
 
     }
 
@@ -100,19 +87,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-    /**
-     * method to change of activity
-     * @param vista
-     */
-    protected void openSecondActivity(View vista)
-    {
-        Intent intent = new Intent(this,SecondActivity.class);
-        // agafo el valor de usuar
-        intent.putExtra("valorUser",0);
-        //agafo el valor de admin
-        intent.putExtra("valorAdmin",1);
-        startActivity(intent);
-    }
+
 
 
 }
