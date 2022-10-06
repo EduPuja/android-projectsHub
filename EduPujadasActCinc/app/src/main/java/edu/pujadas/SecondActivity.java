@@ -15,11 +15,11 @@ public class SecondActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        Snackbar mySnackbar = Snackbar.make(findViewById(R.id.layout), "Benvingut Admin", 1000);
-        mySnackbar.show();
+        /*Snackbar mySnackbar = Snackbar.make(findViewById(R.id.layout), "Benvingut Admin", 1000);
+        mySnackbar.show();*/
     }
 
-    public void showSnackbar()
+    public void showSnackbar(View vista)
     {
         Snackbar adminSnackbar =  Snackbar.make(findViewById(R.id.layout), "Benvingut Admin", 1000);
         adminSnackbar.show();
