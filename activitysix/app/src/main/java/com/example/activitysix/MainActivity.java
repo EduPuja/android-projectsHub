@@ -10,6 +10,7 @@ import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
@@ -99,6 +100,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else
         {
             // TODO: save the image if image is displayed
+
+
+
+
         }
     }
 
@@ -164,4 +169,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
+    @Override
+   protected void onActivityResult(int requestCode,int result, Intent data)
+   {
+
+   }
 }
