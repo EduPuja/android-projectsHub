@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Request code
     private final int REQUEST_PERMISSION_STORAGE_SAVE = 101;
     private final int REQUEST_PERMISSION_STORAGE_DELETE = 102;
+    static final int REQUEST_VIDEO_CAPTURE = 1;
     // Views
     private Button buttonOpenImage;
     @SuppressWarnings("FieldCanBeLocal")
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             try
             {
-              //  startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+              startActivityForResult(takePictureIntent, REQUEST_VIDEO_CAPTURE);
             }
             catch (ActivityNotFoundException e) {
                 // display error state to the user
