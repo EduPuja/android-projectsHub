@@ -12,13 +12,18 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.File;
+import java.io.FileOutputStream;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
@@ -100,8 +105,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else
         {
             // TODO: save the image if image is displayed
+            imageView.setDrawingCacheEnabled(true);
+            Bitmap bitmap = imageView.getDrawingCache();
+            File root = Environment.getExternalStorageDirectory();
+            File carpeta = new File(root.getAbsolutePath()+"ActSixImageApp");
+            try
+            {
+                Log.i("info","hola");
 
+                carpeta.mkdirs();
+                File foto = new File(carpeta,"foto.jpg");
 
+                FileOutputStream ostream = new FileOutputStream(foto);
+                bitmap.compress(Bitmap.CompressFormat.JPEG,100,ostream);
+                ostream.close();
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
 
 
         }
@@ -112,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED;
     }
 
-    @Override
+    @Override   
     public void onClick(View v)
     {
         if (v == buttonOpenImage)
@@ -186,4 +208,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             tvMessage.setVisibility(View.GONE);
         }
     }
+
+
+
+
 }
