@@ -169,9 +169,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
-    @Override
-   protected void onActivityResult(int requestCode,int result, Intent data)
-   {
 
-   }
+    @Override
+    /**
+     * Metode que el que fa es guardar la imatge devant de la app
+     */
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1 && resultCode == RESULT_OK)
+        {
+            Bundle extra = data.getExtras();
+            Bitmap bitmap = (Bitmap) extra.get("data");
+            imageView.setImageBitmap(bitmap);
+            //tvMessage.setText(""); // per borrar el texte de devant
+            tvMessage.setVisibility(View.GONE);
+        }
+    }
 }
