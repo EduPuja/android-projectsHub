@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflem el menú. Aquesta acció afegeix els items a la barra de acció
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -68,10 +68,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         if (item.getItemId() == R.id.action_delete)
         {
+            // execusio del meteode onDeleteMenuTap()
             onDeleteMenuTap();
             return true;
-        } else if (item.getItemId() == R.id.action_save)
+        }
+        else if (item.getItemId() == R.id.action_save)
         {
+            // Executem el mètode onSaveMenuTap()
             onSaveMenuTap();
             return true;
         }
@@ -90,13 +93,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else
         {
             // TODO: show dialog if image file exists
+            imageExistsDialog();
         }
     }
 
     private void onSaveMenuTap()
     {
         // check permissions
-        if (hasPermissionsToWrite())
+        if (!hasPermissionsToWrite())
         {
             // request permissions
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
@@ -105,25 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else
         {
             // TODO: save the image if image is displayed
-            imageView.setDrawingCacheEnabled(true);
-            Bitmap bitmap = imageView.getDrawingCache();
-            File root = Environment.getExternalStorageDirectory();
-            File carpeta = new File(root.getAbsolutePath()+"ActSixImageApp");
-            try
-            {
-                Log.i("info","hola");
 
-                carpeta.mkdirs();
-                File foto = new File(carpeta,"foto.jpg");
-
-                FileOutputStream ostream = new FileOutputStream(foto);
-                bitmap.compress(Bitmap.CompressFormat.JPEG,100,ostream);
-                ostream.close();
-            }
-            catch(Exception e)
-            {
-                e.printStackTrace();
-            }
 
 
         }
@@ -209,6 +195,70 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    private void imageExistsDialog()
+    {
+        // TODO: Crear un diàleg en que l'usuari en clicar YES esborri la imatge present
+        // en el directori i mostri el TextView
+        // TODO: In clicar NO deixi l'aplicació sense modificar-la
+
+    }
+
+    /**
+     * Metode per guradar la imatge
+     */
+    private void saveImageToExternalStorage()
+    {
+        if(getFileStored().exists())
+        {
+           // getFileStored().delete(); // si exgisteix elimino
+        }
+        else
+        {
+            tvMessage.setVisibility(View.VISIBLE);
+        }
+
+    }
+
+    /**
+     * metode que et retorna el fitxer d'imatge
+     * @return
+     */
+    private File getFileStored()
+    {
+
+        File root = Environment.getExternalStorageDirectory();
+        File fitxer = new File(root.getAbsolutePath()+"ActSixImageApp"+File.pathSeparator+"foto.jpg");
+
+        // Return file
+        return fitxer;
+    }
+
+
+
+
+
+    private void imatgeEdu()
+    {
+        imageView.setDrawingCacheEnabled(true);
+        Bitmap bitmap = imageView.getDrawingCache();
+        File root = Environment.getExternalStorageDirectory();
+        File carpeta = new File(root.getAbsolutePath()+"ActSixImageApp");
+        try
+        {
+            // Log.i("info","hola");
+
+            carpeta.mkdirs();
+            File foto = new File(carpeta,"foto.jpg");
+
+            FileOutputStream ostream = new FileOutputStream(foto);
+            bitmap.compress(Bitmap.CompressFormat.JPEG,100,ostream);
+            ostream.close();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 
 
 
