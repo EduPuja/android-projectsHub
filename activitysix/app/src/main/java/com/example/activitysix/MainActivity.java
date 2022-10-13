@@ -121,8 +121,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 public void onClick(DialogInterface dialog, int id)
                 {
-                    // save
-                    //createToast("Imatge guardada");
+                   // deleted
+                    createToast("Imatge eliminada :D");
                 }
             });
             builder.setNegativeButton(R.string.action_no, new DialogInterface.OnClickListener()
@@ -130,7 +130,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 public void onClick(DialogInterface dialog, int id)
                 {
                     // canecelar
-                    // createToast("Imatge no guardada");
+
+                    createToast("Imatge NO eliminada");
                 }
             });
 
@@ -168,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // save
                     createToast("Imatge guardada");
                     // aqui dins hi ha un toast de imatge guardada com que no la guarda doncs no el fa
-                    saveImageToExternalStorage();
+                   // saveImageToExternalStorage();
                 }
             });
             builder.setNegativeButton(R.string.action_no, new DialogInterface.OnClickListener()
