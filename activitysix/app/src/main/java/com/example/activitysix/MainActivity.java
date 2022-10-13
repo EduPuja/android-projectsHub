@@ -32,6 +32,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.security.cert.CRLException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
@@ -105,17 +106,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             // TODO: show dialog if image file exists
             //
-            // Use the Builder class for convenient dialog construction
-            AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
-            builder.setMessage("VOLS GUARDAR O ELIMINAR LA IMATGE")
-                    .setNegativeButton(R.string.action_detele, new DialogInterface.OnClickListener()
-                    {
-                        public void onClick(DialogInterface dialog, int id)
-                        {
-                            //delete
-                            createToast("Delete");
-                        }
-                    });
+
+          createToast("BOTO ELMINAR AQUI");
         }
     }
 
@@ -130,20 +122,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else
         {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
-            builder.setMessage("VOLS GUARDAR O ELIMINAR LA IMATGE")
-                    .setPositiveButton(R.string.action_save, new DialogInterface.OnClickListener()
-                    {
-                        public void onClick(DialogInterface dialog, int id)
-                        {
-                            //save image
-                            //saveImageToExternalStorage();
-                            createToast("Save");
-                        }
-                    });
 
-
-
+            createToast("Boto Save aqui");
         }
     }
 
