@@ -166,8 +166,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 public void onClick(DialogInterface dialog, int id)
                 {
                     // save
-                    //createToast("Imatge guardada");
-
+                    createToast("Imatge guardada");
+                    // aqui dins hi ha un toast de imatge guardada com que no la guarda doncs no el fa
                     saveImageToExternalStorage();
                 }
             });
@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 public void onClick(DialogInterface dialog, int id)
                 {
                     // canecelar
-                    // createToast("Imatge no guardada");
+                     createToast("Imatge no guardada");
                 }
             });
 
@@ -284,12 +284,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void saveImageToExternalStorage()
     {
 
-        File directori = new File(getExternalCacheDir(),"ActivitySix");
+        File sdCard = Environment.getExternalStorageDirectory();
+        File directori = new File(sdCard.getAbsolutePath()+"/ActivitySixEdu");
         if(!directori.exists())
         {
-            directori.mkdir();
+            directori.mkdirs();
         }
 
+        imageView.getDrawingCache(true);
         BitmapDrawable draw = (BitmapDrawable)  imageView.getDrawable();
         Bitmap  bitmap = draw.getBitmap();
 
