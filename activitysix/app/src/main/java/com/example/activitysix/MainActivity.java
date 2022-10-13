@@ -15,6 +15,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -28,6 +30,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
@@ -101,7 +104,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else
         {
             // TODO: show dialog if image file exists
-            imageExistsDialog();
+            //
+            // Use the Builder class for convenient dialog construction
+            AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+            builder.setMessage("VOLS GUARDAR O ELIMINAR LA IMATGE")
+                    .setNegativeButton(R.string.action_detele, new DialogInterface.OnClickListener()
+                    {
+                        public void onClick(DialogInterface dialog, int id)
+                        {
+                            //delete
+                            createToast("Delete");
+                        }
+                    });
         }
     }
 
@@ -116,7 +130,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else
         {
-            // TODO: save the image if image is displayed
+            AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+            builder.setMessage("VOLS GUARDAR O ELIMINAR LA IMATGE")
+                    .setPositiveButton(R.string.action_save, new DialogInterface.OnClickListener()
+                    {
+                        public void onClick(DialogInterface dialog, int id)
+                        {
+                            //save image
+                            //saveImageToExternalStorage();
+                            createToast("Save");
+                        }
+                    });
 
 
 
@@ -139,8 +163,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
               startActivityForResult(takePictureIntent, REQUEST_VIDEO_CAPTURE);
             }
-            catch (ActivityNotFoundException e) {
+            catch (ActivityNotFoundException e)
+            {
                 // display error state to the user
+                e.printStackTrace();
             }
         }
     }
@@ -158,12 +184,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     // show dialog if image file exists
                     // TODO: show dialog if image file exists
+                    createToast("Imatge exgisteix!!");
                 }
                 else
                 {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                     // TODO: show message
+                    createToast("No tenis Permisos");
                 }
             }
             case REQUEST_PERMISSION_STORAGE_SAVE:
@@ -173,12 +201,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     // save the image file
                     // TODO: save the image
+                    //saveImageToExternalStorage();
                 }
                 else
                 {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                     // TODO: show message
+                    createToast("CACA");
                 }
             }
         }
@@ -211,49 +241,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void saveImageToExternalStorage()
     {
-        if(getFileStored().exists())
+
+        File directori = new File(getExternalCacheDir(),"ActivitySix");
+        if(!directori.exists())
         {
-           getFileStored().delete(); // si exgisteix elimino
-
-            try
-            {
-
-                imageView.setDrawingCacheEnabled(true);
-                Bitmap bitmap = imageView.getDrawingCache();
-
-                File foto = new File(getFileStored(),"foto.jpg");
-
-                FileOutputStream ostream = new FileOutputStream(foto);
-                bitmap.compress(Bitmap.CompressFormat.JPEG,100,ostream);
-                ostream.close();
-
-                createToast("HOla");
-            }
-            catch(Exception e)
-            {
-                e.printStackTrace();
-            }
+            directori.mkdir();
         }
-        else
+
+        BitmapDrawable draw = (BitmapDrawable)  imageView.getDrawable();
+        Bitmap  bitmap = draw.getBitmap();
+
+        File fitxer = new File(directori,"jpg");
+
+        try
         {
-            tvMessage.setVisibility(View.VISIBLE);
+           FileOutputStream outputStream = new FileOutputStream(fitxer);
+            bitmap.compress(Bitmap.CompressFormat.JPEG,100,outputStream);
+            createToast("Imatge guardada !");
+            outputStream.close();
         }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
+
 
     }
 
-    /**
-     * metode que et retorna el fitxer d'imatge
-     * @return
-     */
-    private File getFileStored()
-    {
-
-        File root = Environment.getExternalStorageDirectory();
-        File fitxer = new File(root.getAbsolutePath()+"ActSixImageApp"+File.pathSeparator+"foto.jpg");
-
-        // Return file
-        return fitxer;
-    }
 
 
 
@@ -273,30 +289,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toastCorrect.show();                                    // showing the toast
 
     }
-    private void imageExistsDialog()
-    {
-        // TODO: Crear un diàleg en que l'usuari en clicar YES esborri la imatge present
-        // en el directori i mostri el TextView
-        // TODO: In clicar NO deixi l'aplicació sense modificar-la
 
-        // Use the Builder class for convenient dialog construction
-        AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
-        builder.setMessage(R.string.dialag)
-                .setPositiveButton(R.string.action_save, new DialogInterface.OnClickListener()
-                {
-                    public void onClick(DialogInterface dialog, int id)
-                    {
-                       //save image
-                    }
-                })
-                .setNegativeButton(R.string.action_detele, new DialogInterface.OnClickListener()
-                {
-                    public void onClick(DialogInterface dialog, int id)
-                    {
-                        //delete image
-                    }
-                });
-    }
 
 
 
