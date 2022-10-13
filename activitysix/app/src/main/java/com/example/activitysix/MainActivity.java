@@ -94,6 +94,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * metode que utiliza el boto de la paperera
+     */
+
     private void onDeleteMenuTap()
     {
         // check permissions
@@ -108,9 +112,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // TODO: show dialog if image file exists
             //
 
-          createDialog("Vols eliminar la imatge?","Delete Image");
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setMessage("Vols eliminar la imatge?");
+            builder.setTitle("Delete Image");
+
+            builder.setPositiveButton(R.string.action_yes, new DialogInterface.OnClickListener()
+            {
+
+                public void onClick(DialogInterface dialog, int id)
+                {
+                    // save
+                    //createToast("Imatge guardada");
+                }
+            });
+            builder.setNegativeButton(R.string.action_no, new DialogInterface.OnClickListener()
+            {
+                public void onClick(DialogInterface dialog, int id)
+                {
+                    // canecelar
+                    // createToast("Imatge no guardada");
+                }
+            });
+
+
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
         }
     }
+
+    /**
+     * metode que guarda la camara
+     */
 
     private void onSaveMenuTap()
     {
@@ -123,7 +156,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else
         {
-                createDialog("Vols guardar la Img","Save Img?");
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setMessage("Vols guardar la Imatge?");
+            builder.setTitle("Save Image");
+
+            builder.setPositiveButton(R.string.action_yes, new DialogInterface.OnClickListener()
+            {
+
+                public void onClick(DialogInterface dialog, int id)
+                {
+                    // save
+                    //createToast("Imatge guardada");
+
+                    saveImageToExternalStorage();
+                }
+            });
+            builder.setNegativeButton(R.string.action_no, new DialogInterface.OnClickListener()
+            {
+                public void onClick(DialogInterface dialog, int id)
+                {
+                    // canecelar
+                    // createToast("Imatge no guardada");
+                }
+            });
+
+
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
 
         }
 
@@ -166,14 +226,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     // show dialog if image file exists
                     // TODO: show dialog if image file exists
-                    createToast("Pots ELIMINAR");
+                    //createToast("Pots ELIMINAR");
                 }
                 else
                 {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                     // TODO: show message
-                    createToast("No tenis Permisos");
+                    createToast("Permision Denied");
                 }
             }
             case REQUEST_PERMISSION_STORAGE_SAVE:
@@ -183,14 +243,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     // save the image file
                     // TODO: save the image
-                   createToast("Pots guardar!!");
+                   //createToast("!!");
                 }
                 else
                 {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                     // TODO: show message
-                    createToast("CACA");
+                    createToast("Permision Denied");
                 }
             }
         }
@@ -272,40 +332,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    /**
-     * metode per crear un dialeg
-     * @param msg
-     * @param title
-     */
-    protected void createDialog(String msg,String title)
-    {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setMessage(msg);
-        builder.setTitle(title);
 
-        builder.setPositiveButton(R.string.action_yes, new DialogInterface.OnClickListener()
-        {
-
-            public void onClick(DialogInterface dialog, int id)
-            {
-                // save
-                //createToast("Imatge guardada");
-            }
-        });
-        builder.setNegativeButton(R.string.action_no, new DialogInterface.OnClickListener()
-        {
-            public void onClick(DialogInterface dialog, int id)
-            {
-                // canecelar
-               // createToast("Imatge no guardada");
-            }
-        });
-
-
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
 
 
 
