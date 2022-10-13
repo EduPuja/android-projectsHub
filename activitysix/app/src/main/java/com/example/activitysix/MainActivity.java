@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     // show dialog if image file exists
                     // TODO: show dialog if image file exists
-                    createToast("Imatge exgisteix!!");
+                    createToast("Pots ELIMINAR");
                 }
                 else
                 {
@@ -201,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     // save the image file
                     // TODO: save the image
-                    //saveImageToExternalStorage();
+                   createToast("Pots guardar!!");
                 }
                 else
                 {
