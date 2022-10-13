@@ -10,4 +10,5 @@
     <!-- Menu -->
     <string name="action_detele">Delete</string>
     <string name="action_save">Save</string>
+    <string name="dialag">Vols guardar o eliminar imatge</string>
 </resources>
