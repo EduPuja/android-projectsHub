@@ -8,7 +8,8 @@
     <string name="button_open_new_image">CAPTURE NEW IMAGE</string>
 
     <!-- Menu -->
-    <string name="action_detele">Delete</string>
-    <string name="action_save">Save</string>
-    <string name="dialag">Vols guardar o eliminar imatge</string>
+
+    <string name="action_yes">Yes</string>
+    <string name="action_no">No</string>
+    
 </resources>

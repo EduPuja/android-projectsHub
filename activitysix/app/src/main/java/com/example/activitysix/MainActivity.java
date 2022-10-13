@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // TODO: show dialog if image file exists
             //
 
-          createToast("BOTO ELMINAR AQUI");
+          createDialog("Vols eliminar la imatge?","Delete Image");
         }
     }
 
@@ -122,9 +123,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else
         {
+                createDialog("Vols guardar la Img","Save Img?");
 
-            createToast("Boto Save aqui");
         }
+
     }
 
     private boolean hasPermissionsToWrite()
@@ -268,6 +270,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toastCorrect=Toast.makeText(context,texte,duration);    // crido el tosat i creo un text
         toastCorrect.show();                                    // showing the toast
 
+    }
+
+    /**
+     * metode per crear un dialeg
+     * @param msg
+     * @param title
+     */
+    protected void createDialog(String msg,String title)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage(msg);
+        builder.setTitle(title);
+
+        builder.setPositiveButton(R.string.action_yes, new DialogInterface.OnClickListener()
+        {
+
+            public void onClick(DialogInterface dialog, int id)
+            {
+                // save
+                //createToast("Imatge guardada");
+            }
+        });
+        builder.setNegativeButton(R.string.action_no, new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int id)
+            {
+                // canecelar
+               // createToast("Imatge no guardada");
+            }
+        });
+
+
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 
