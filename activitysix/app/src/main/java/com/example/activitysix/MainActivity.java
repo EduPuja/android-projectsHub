@@ -10,6 +10,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -192,24 +193,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         super.onActivityResult(requestCode, resultCode, data);
-        imageView.setImageBitmap(BitmapFactory.decodeFile(rutaImg));
-       /* if(requestCode == 1 && resultCode == RESULT_OK)
+        //imageView.setImageBitmap(BitmapFactory.decodeFile(rutaImg));
+        if(requestCode == 1 && resultCode == RESULT_OK)
         {
             Bundle extra = data.getExtras();
             Bitmap bitmap = (Bitmap) extra.get("data");
             imageView.setImageBitmap(bitmap);
             //tvMessage.setText(""); // per borrar el texte de devant
             tvMessage.setVisibility(View.GONE);
-        }*/
+        }
     }
 
-    private void imageExistsDialog()
-    {
-        // TODO: Crear un diàleg en que l'usuari en clicar YES esborri la imatge present
-        // en el directori i mostri el TextView
-        // TODO: In clicar NO deixi l'aplicació sense modificar-la
 
-    }
 
     /**
      * Metode per guradar la imatge
@@ -278,32 +273,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toastCorrect.show();                                    // showing the toast
 
     }
-
-    // Mètode per comprovar si la image existeix
-    private void checkIfImageExists()
+    private void imageExistsDialog()
     {
-        // TODO: Mirem si la imatge existeix
+        // TODO: Crear un diàleg en que l'usuari en clicar YES esborri la imatge present
+        // en el directori i mostri el TextView
+        // TODO: In clicar NO deixi l'aplicació sense modificar-la
 
-        // Si la imatge existeix
-        if (getFileStored().exists())
-        {
-            // TODO: Codi per si la imatge existeix
-            imageView.showContextMenu();
-
-        }
-        // Si el directori que ha de contenir la imatge és buit
-        else
-        {
-            // Mostrem el missatge: No image selected
-            tvMessage.setVisibility(View.VISIBLE);
-        }
+        // Use the Builder class for convenient dialog construction
+        AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+        builder.setMessage(R.string.dialag)
+                .setPositiveButton(R.string.action_save, new DialogInterface.OnClickListener()
+                {
+                    public void onClick(DialogInterface dialog, int id)
+                    {
+                       //save image
+                    }
+                })
+                .setNegativeButton(R.string.action_detele, new DialogInterface.OnClickListener()
+                {
+                    public void onClick(DialogInterface dialog, int id)
+                    {
+                        //delete image
+                    }
+                });
     }
 
-    public void createDialog(String msg)
-    {
-        AlertDialog.Builder builderDialag = new AlertDialog.Builder(getApplicationContext());
-        //builderDialag.setMessage(msg);
 
-    }
+
+
 
 }
