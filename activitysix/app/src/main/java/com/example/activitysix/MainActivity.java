@@ -1,6 +1,7 @@
 package com.example.activitysix;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -8,9 +9,11 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -21,6 +24,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -39,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @SuppressWarnings("FieldCanBeLocal")
     private TextView tvMessage;
 
+    private Toast toastCorrect;
+    // ruta img
+    String rutaImg;
     @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -185,14 +192,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 1 && resultCode == RESULT_OK)
+        imageView.setImageBitmap(BitmapFactory.decodeFile(rutaImg));
+       /* if(requestCode == 1 && resultCode == RESULT_OK)
         {
             Bundle extra = data.getExtras();
             Bitmap bitmap = (Bitmap) extra.get("data");
             imageView.setImageBitmap(bitmap);
             //tvMessage.setText(""); // per borrar el texte de devant
             tvMessage.setVisibility(View.GONE);
-        }
+        }*/
     }
 
     private void imageExistsDialog()
@@ -210,7 +218,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         if(getFileStored().exists())
         {
-           // getFileStored().delete(); // si exgisteix elimino
+           getFileStored().delete(); // si exgisteix elimino
+
+            try
+            {
+
+                imageView.setDrawingCacheEnabled(true);
+                Bitmap bitmap = imageView.getDrawingCache();
+
+                File foto = new File(getFileStored(),"foto.jpg");
+
+                FileOutputStream ostream = new FileOutputStream(foto);
+                bitmap.compress(Bitmap.CompressFormat.JPEG,100,ostream);
+                ostream.close();
+
+                createToast("HOla");
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
         }
         else
         {
@@ -237,29 +264,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    private void imatgeEdu()
+
+
+    /**
+     * Method that makes a toast / alert whatever you want a call it
+     * @param texte
+     */
+    protected void createToast(String texte)
     {
-        imageView.setDrawingCacheEnabled(true);
-        Bitmap bitmap = imageView.getDrawingCache();
-        File root = Environment.getExternalStorageDirectory();
-        File carpeta = new File(root.getAbsolutePath()+"ActSixImageApp");
-        try
+        Context context = getApplicationContext();        //take the context app need for doing a toast
+        int duration = Toast.LENGTH_SHORT;                 // duaration of a toast
+        toastCorrect=Toast.makeText(context,texte,duration);    // crido el tosat i creo un text
+        toastCorrect.show();                                    // showing the toast
+
+    }
+
+    // Mètode per comprovar si la image existeix
+    private void checkIfImageExists()
+    {
+        // TODO: Mirem si la imatge existeix
+
+        // Si la imatge existeix
+        if (getFileStored().exists())
         {
-            // Log.i("info","hola");
+            // TODO: Codi per si la imatge existeix
+            imageView.showContextMenu();
 
-            carpeta.mkdirs();
-            File foto = new File(carpeta,"foto.jpg");
-
-            FileOutputStream ostream = new FileOutputStream(foto);
-            bitmap.compress(Bitmap.CompressFormat.JPEG,100,ostream);
-            ostream.close();
         }
-        catch(Exception e)
+        // Si el directori que ha de contenir la imatge és buit
+        else
         {
-            e.printStackTrace();
+            // Mostrem el missatge: No image selected
+            tvMessage.setVisibility(View.VISIBLE);
         }
     }
 
+    public void createDialog(String msg)
+    {
+        AlertDialog.Builder builderDialag = new AlertDialog.Builder(getApplicationContext());
+        //builderDialag.setMessage(msg);
 
+    }
 
 }
