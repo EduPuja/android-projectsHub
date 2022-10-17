@@ -1,11 +1,11 @@
-package com;
+package com.example.activityseven;
 
-public class Studient
+public class Student
 {
     private final long id;
     private String name;
 
-    public Studient(long id, String name)
+    public Student(long id, String name)
     {
          this.id=id;
          this.name=name;

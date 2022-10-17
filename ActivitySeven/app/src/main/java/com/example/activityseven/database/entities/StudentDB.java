@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
+import com.example.activityseven.Student;
+
 
 import com.example.activityseven.database.helper.StudentElementHelper;
 
