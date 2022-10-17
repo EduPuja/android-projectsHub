@@ -74,9 +74,20 @@ public class StudientAdapter extends ArrayAdapter<Student>
                  {
                      return super.toString();
                  }
-             });
+             }
              vista = LayoutInflater.from(context).inflate(R.layout.studient_list_item,parent,false);
+             viewHolder.studientsName = vista.findViewById(R.id.info_studient);
+             viewHolder.button = vista.findViewById(R.id.buto_alumne);
+             // per ficar el muncipi aqui
+             vista.setTag(viewHolder);
 
+
+         }
+         else // sino hi ha viewholder
+         {
+
+             viewHolder = (RecyclerView.ViewHolder) convertView.getTag();
+             viewHolder.studentName.setText(listStudents.get(posicio).getName());
 
          }
      }
