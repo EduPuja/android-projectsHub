@@ -52,7 +52,7 @@ public class StudentAdapter extends ArrayAdapter<Student>
         {
             viewHolder =  new ViewHolder();
             view = LayoutInflater.from(context).inflate(R.layout.studient_list_item, parent, false);
-            viewHolder.studentName = view.findViewById(R.id.info_alumne);
+            viewHolder.studentName = view.findViewById(R.id.nom_alumne);
 
             viewHolder.button = view.findViewById(R.id.buto_alumne);
             view.setTag(viewHolder);

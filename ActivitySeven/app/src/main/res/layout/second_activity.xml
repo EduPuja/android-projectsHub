@@ -20,16 +20,37 @@
         app:srcCompat="@drawable/person" />
 
     <TextView
-        android:id="@+id/info_alumne"
+        android:id="@+id/nom_alumne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="150dp"
         android:layout_marginBottom="405dp"
-        android:text="TextView"
+        android:hint="NOM COGNOMS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/telefon"
+        android:layout_width="116dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="350dp"
+        android:hint="Telefon"
+        android:inputType="phone"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nom_alumne"
+        app:layout_constraintVertical_bias="0.769" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
