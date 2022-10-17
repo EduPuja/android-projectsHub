@@ -1,4 +1,4 @@
-package com.example.activityseven;
+package com.example.activityseven.database.model;
 
 public class Student
 {

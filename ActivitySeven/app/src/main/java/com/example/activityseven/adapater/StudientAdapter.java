@@ -1,10 +1,15 @@
 package com.example.activityseven.adapater;
 
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.activityseven.R;
-import com.example.activityseven.Student;
+import com.example.activityseven.database.model.Student;
 
 import java.util.ArrayList;
 
@@ -37,5 +42,42 @@ public class StudientAdapter extends ArrayAdapter<Student>
      public Student getItem(int posicio)
      {
         return this.listStudents.get(posicio);
+     }
+
+    /**
+     * et retorna el id del estudiant
+     * @param positio
+     * @return
+     */
+     public long getStudientsId(int positio)
+     {
+
+         return listStudents.get(positio).getId();
+     }
+
+
+     /**
+      * retornem una vista
+      */
+     @Override
+    public View getView(int posicio, View convertView, ViewGroup parent)
+     {
+         View vista;
+         final RecyclerView.ViewHolder viewHolder;
+         if(convertView == null || convertView.getTag() == null)
+         {
+             // el cream
+             viewHolder = new RecyclerView.ViewHolder()
+             {
+                 @Override
+                 public String toString()
+                 {
+                     return super.toString();
+                 }
+             });
+             vista = LayoutInflater.from(context).inflate(R.layout.studient_list_item,parent,false);
+
+
+         }
      }
 }
