@@ -9,5 +9,7 @@ import com.example.activityseven.database.entities.StudentDB;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
+    
 }
