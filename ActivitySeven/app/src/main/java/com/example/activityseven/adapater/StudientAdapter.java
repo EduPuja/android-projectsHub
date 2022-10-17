@@ -68,13 +68,7 @@ public class StudientAdapter extends ArrayAdapter<Student>
          {
              // el cream
              viewHolder = new RecyclerView.ViewHolder()
-             {
-                 @Override
-                 public String toString()
-                 {
-                     return super.toString();
-                 }
-             }
+          
              vista = LayoutInflater.from(context).inflate(R.layout.studient_list_item,parent,false);
              viewHolder.studientsName = vista.findViewById(R.id.info_studient);
              viewHolder.button = vista.findViewById(R.id.buto_alumne);
