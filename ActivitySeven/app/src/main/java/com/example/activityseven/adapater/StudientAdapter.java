@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -68,10 +70,10 @@ public class StudientAdapter extends ArrayAdapter<Student>
          {
              // el cream
              viewHolder = new RecyclerView.ViewHolder()
-          
+
              vista = LayoutInflater.from(context).inflate(R.layout.studient_list_item,parent,false);
-             viewHolder.studientsName = vista.findViewById(R.id.info_studient);
-             viewHolder.button = vista.findViewById(R.id.buto_alumne);
+             viewHolder.info_studient = vista.findViewById(R.id.info_studient);
+             viewHolder.buto_alumne = vista.findViewById(R.id.buto_alumne);
              // per ficar el muncipi aqui
              vista.setTag(viewHolder);
 
@@ -81,8 +83,17 @@ public class StudientAdapter extends ArrayAdapter<Student>
          {
 
              viewHolder = (RecyclerView.ViewHolder) convertView.getTag();
-             viewHolder.studentName.setText(listStudents.get(posicio).getName());
-
+             viewHolder.info_studient.setText(listStudents.get(posicio).getName());
+                return vista;
          }
+
+     }
+
+     static class ViewHolder
+     {
+         TextView infoEstudiant;
+         Button buttonEstudiant;
+
+
      }
 }
