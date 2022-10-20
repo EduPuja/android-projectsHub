@@ -126,9 +126,9 @@ public class MainActivity extends AppCompatActivity
      */
     private void onIncludeAll()
     {
-        for(int i =0;i<listStudients.size();i++)
+        for(int i =0;i<15;i++)
         {
-            studentDB.insertElement(listStudients.get(i).getName());
+         studentDB.insertElement("Alumne "+i+"");
         }
     }
     /**
