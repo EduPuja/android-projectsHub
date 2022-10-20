@@ -20,13 +20,11 @@ public class StudientProfileActivity extends AppCompatActivity
     }
 
 
-    /**
-     * metode que utliza el boto tornar enrrere
-     * @param vista
-     */
-    public void turnBack(View vista)
+    public void onTrunBack(View vista)
     {
-        Intent goList = new Intent(this,MainActivity.class);
-        startActivity(goList);
+        Intent intent = new Intent(this,MainActivity.class);
+
+        startActivity(intent);
     }
+
 }

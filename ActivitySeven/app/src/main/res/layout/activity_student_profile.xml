@@ -85,6 +85,7 @@
         android:layout_marginTop="63dp"
         android:layout_marginEnd="150dp"
         android:layout_marginBottom="181dp"
+        android:onClick="onTrunBack"
         android:text="@string/tornar_enrere"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
