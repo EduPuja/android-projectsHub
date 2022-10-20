@@ -24,8 +24,23 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // buscem el list view
         ListView listView = findViewById(R.id.list_view);
         studentDB=new StudentDB(this);
-        studentDB.clearAllItems(); // natejem tots els items
+        // natejem tots els items
+        studentDB.clearAllItems();
+
+        // metode per innsetrtar
+        insertsStudents();
+        listStudens.addAll(studentDB.getAllItems());
+
+        studentAdapter= new StudentAdapter(this, listStudens);
+    }
+
+    private void insertsStudents()
+    {
+        studentDB.insertElement("Eduard Pujadas");
+        studentDB.insertElement("Josep Pla");
+        studentDB.insertElement("Daniel Escobar");
     }
 }
