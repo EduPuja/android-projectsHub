@@ -7,4 +7,8 @@
     <string name="clear_last">ClearLast</string>
     <string name="clear_all">ClearAll</string>
     <string name="update_one">UpdateOne</string>
+    <string name="email">Email:</string>
+    <string name="telefon">Telèfon:</string>
+    <string name="dni">DNI:</string>
+    <string name="repe">Repetidor:</string>
 </resources>
