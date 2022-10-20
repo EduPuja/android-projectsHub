@@ -60,6 +60,7 @@ public class StudentAdapter extends ArrayAdapter<Student>
         else
         {
             viewHolder = (ViewHolder) convertView.getTag();
+            view = convertView;
         }
 
         viewHolder.studentName.setText(students.get(position).getName());
