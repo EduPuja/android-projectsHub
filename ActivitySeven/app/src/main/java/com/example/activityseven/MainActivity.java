@@ -107,24 +107,57 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    private void onUpdateOne()
-    {
-    }
 
-    private void onClearAll()
-    {
-    }
-
-    private void onClearLast()
-    {
-    }
-
-    private void onIncludeAll()
-    {
-    }
-
+    /**
+     * Metode que utliza el item del menu per afegir un estudant a la llista
+     * inclou 1 nou alumne a la llista
+     */
     private void onIncludeOne()
     {
+
     }
+
+    /**
+     * Metode que el que fa es entrar 15 studnats
+     *  inclou 15 nous alumnes a la llista
+     */
+    private void onIncludeAll()
+    {
+
+    }
+    /**
+     * Metode que esborra l'ultim alumne
+     * esborra l’últim alumne de la llista
+     */
+    private void onClearLast()
+    {
+
+    }
+
+    /**
+     * Metode que esborra tots els alumnes de la llista
+     * esborra tots els alumnes de la llista
+     */
+    private void onClearAll()
+    {
+
+    }
+
+
+
+
+    /**
+     * Funcio que utliza el item del menu
+     * canvi el nom del primer alumnes de la llista
+     */
+    private void onUpdateOne()
+    {
+
+    }
+
+
+
+
+
 
 }
