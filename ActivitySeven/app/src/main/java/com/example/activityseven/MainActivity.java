@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity
         {
             // metode include one
             onIncludeOne();
+            //studentDB.insertElement("Alumne");
             return true;
         }
         else if (item.getItemId() == R.id.include_all)
@@ -159,7 +160,7 @@ public class MainActivity extends AppCompatActivity
      */
     private void onUpdateOne()
     {
-
+        studentDB.updateItem(listStudients.get(0));
     }
 
 
