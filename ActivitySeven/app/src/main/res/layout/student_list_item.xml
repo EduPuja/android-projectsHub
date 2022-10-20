@@ -30,4 +30,6 @@
         android:paddingRight="20dp"
         android:text="@string/student_file"
         android:textStyle="bold" />
+
+
 </LinearLayout>
