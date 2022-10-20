@@ -11,7 +11,8 @@ import com.example.activityseven.database.model.Student;
 
 import java.util.ArrayList;
 
-public class StudentDB {
+public class StudentDB
+{
 
     private static final String TEXT_TYPE = " TEXT";
     private static final String COMMA_SEP = ",";
@@ -20,13 +21,15 @@ public class StudentDB {
 
     // To prevent someone from accidentally instantiating the contract class,
     // give it an empty constructor.
-    public StudentDB(Context context) {
+    public StudentDB(Context context)
+    {
         // Create new helper
         dbHelper = new StudentElementHelper(context);
     }
 
     /* Inner class that defines the table contents */
-    public static abstract class StudentElementEntry implements BaseColumns {
+    public static abstract class StudentElementEntry implements BaseColumns
+    {
         public static final String TABLE_NAME = "entry";
         public static final String COLUMN_NAME_TITLE = "title";
 
@@ -43,7 +46,8 @@ public class StudentDB {
      * Method to create new element in the database
      *
      */
-    public void insertElement(String studentName) {
+    public void insertElement(String studentName)
+    {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         // New values
         ContentValues values = new ContentValues();
@@ -57,14 +61,16 @@ public class StudentDB {
      *
      * @return ShoppingItem array
      */
-    public ArrayList<Student> getAllItems() {
+    public ArrayList<Student> getAllItems()
+    {
         ArrayList<Student> shoppingItems = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         // Do the query to the database
         Cursor cursor = db.query (StudentElementEntry.TABLE_NAME, null, null,
                 null, null, null, null);
         // Get all the rows of database
-        while(cursor.moveToNext()) {
+        while(cursor.moveToNext())
+        {
             // Get item id
             long itemId = cursor.getLong(cursor.getColumnIndexOrThrow(StudentElementEntry._ID));
             // Get item name
@@ -79,7 +85,8 @@ public class StudentDB {
     /**
      * Method to clear all the elements
      */
-    public void clearAllItems() {
+    public void clearAllItems()
+    {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         // Delete all data of the database table
         db.delete(StudentElementEntry.TABLE_NAME,null,null);
@@ -89,7 +96,8 @@ public class StudentDB {
      * Method to update a database item
      *
      */
-    public void updateItem(Student studentItem) {
+    public void updateItem(Student studentItem)
+    {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         // New values
         ContentValues values = new ContentValues();
@@ -104,7 +112,8 @@ public class StudentDB {
      * Method to delete one item
      *
      */
-    public void deleteItem(Student studentItem) {
+    public void deleteItem(Student studentItem)
+    {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         // Get item id
         long id = studentItem.getId();

@@ -13,38 +13,45 @@ import com.example.activityseven.database.model.Student;
 
 import java.util.ArrayList;
 
-public class StudentAdapter extends ArrayAdapter<Student> {
+public class StudentAdapter extends ArrayAdapter<Student>
+{
 
     private final Context context;
     private final ArrayList<Student> students;
 
-    public StudentAdapter(Context context, ArrayList<Student> students) {
+    public StudentAdapter(Context context, ArrayList<Student> students)
+    {
         super(context, R.layout.student_list_item);
         this.context = context;
         this.students = students;
     }
 
     @Override
-    public int getCount() {
+    public int getCount()
+    {
         return students.size();
     }
 
     @Override
-    public Student getItem(int position) {
+    public Student getItem(int position)
+    {
         return students.get(position);
     }
 
     @Override
-    public long getItemId(int position) {
+    public long getItemId(int position)
+    {
         return students.get(position).getId();
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent)
+    {
         View view;
         final ViewHolder viewHolder;
 
-        if (convertView == null || convertView.getTag() == null) {
+        if (convertView == null || convertView.getTag() == null)
+        {
             viewHolder = new ViewHolder();
             view = LayoutInflater.from(context).inflate(R.layout.student_list_item, parent, false);
             viewHolder.studentName = view.findViewById(R.id.studentName);
@@ -52,7 +59,9 @@ public class StudentAdapter extends ArrayAdapter<Student> {
 
             view.setTag(viewHolder);
 
-        } else {
+        }
+        else
+        {
             viewHolder = (ViewHolder) convertView.getTag();
             view = convertView;
         }
@@ -62,7 +71,8 @@ public class StudentAdapter extends ArrayAdapter<Student> {
         return view;
     }
 
-    static class ViewHolder {
+    static class ViewHolder
+    {
         TextView studentName;
         Button button;
     }
