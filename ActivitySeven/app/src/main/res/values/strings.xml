@@ -2,4 +2,9 @@
     <string name="app_name">Activity Seven</string>
     <string name="student_file">FITXA ALUMNE</string>
     <string name="updatelist">updateList</string>
+    <string name="include_one">IncludeOne</string>
+    <string name="include_all">IncluideAll</string>
+    <string name="clear_last">ClearLast</string>
+    <string name="clear_all">ClearAll</string>
+    <string name="update_one">UpdateOne</string>
 </resources>
