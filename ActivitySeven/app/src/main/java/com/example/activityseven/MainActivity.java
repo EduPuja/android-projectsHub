@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity
     private StudentDB studentDB;
     private StudentAdapter studentAdapter;
     private final ArrayList<Student> listStudients = new ArrayList<>();
+    private  ListView listView;
 
 
     @Override
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity
 
         setContentView(R.layout.activity_main);
 
-        ListView listView = findViewById(R.id.students_list_view);
+        listView = findViewById(R.id.students_list_view);
 
         // init database shopping list
         studentDB = new StudentDB(this);
@@ -119,6 +120,11 @@ public class MainActivity extends AppCompatActivity
     private void onIncludeOne()
     {
         studentDB.insertElement("Alumne");
+
+        studentAdapter.notifyDataSetChanged();
+        listStudients.addAll(studentDB.getAllItems());
+        studentAdapter = new StudentAdapter(this, listStudients);
+        listView.setAdapter(studentAdapter);
     }
 
     /**
@@ -131,6 +137,10 @@ public class MainActivity extends AppCompatActivity
         {
          studentDB.insertElement("Alumne "+i+"");
         }
+        studentAdapter.notifyDataSetChanged();
+        listStudients.addAll(studentDB.getAllItems());
+        studentAdapter = new StudentAdapter(this, listStudients);
+        listView.setAdapter(studentAdapter);
     }
     /**
      * Metode que esborra l'ultim alumne
@@ -140,6 +150,11 @@ public class MainActivity extends AppCompatActivity
     {
 
         studentDB.deleteItem(listStudients.get(listStudients.size()));
+
+        studentAdapter.notifyDataSetChanged();
+        listStudients.addAll(studentDB.getAllItems());
+        studentAdapter = new StudentAdapter(this, listStudients);
+        listView.setAdapter(studentAdapter);
     }
 
     /**
@@ -149,6 +164,11 @@ public class MainActivity extends AppCompatActivity
     private void onClearAll()
     {
         studentDB.clearAllItems();
+
+        studentAdapter.notifyDataSetChanged();
+        listStudients.addAll(studentDB.getAllItems());
+        studentAdapter = new StudentAdapter(this, listStudients);
+        listView.setAdapter(studentAdapter);
     }
 
 
@@ -161,6 +181,11 @@ public class MainActivity extends AppCompatActivity
     private void onUpdateOne()
     {
         studentDB.updateItem(listStudients.get(0));
+
+        studentAdapter.notifyDataSetChanged();
+        listStudients.addAll(studentDB.getAllItems());
+        studentAdapter = new StudentAdapter(this, listStudients);
+        listView.setAdapter(studentAdapter);
     }
 
 
