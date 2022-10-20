@@ -19,8 +19,9 @@ public class MainActivity extends AppCompatActivity
 {
 
     private StudentDB studentDB;
-    private StudentAdapter studentAdapter;
+
     private final ArrayList<Student> listStudients = new ArrayList<>();
+    private StudentAdapter studentAdapter;
     private  ListView listView;
 
 
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity
         // insert items
        // insertStudents();
 
-       // listStudients.addAll(studentDB.getAllItems());
+       //listStudients.addAll(studentDB.getAllItems());
 
         //studentAdapter = new StudentAdapter(this, listStudients);
         //listView.setAdapter(studentAdapter);
@@ -122,8 +123,11 @@ public class MainActivity extends AppCompatActivity
     private void onIncludeOne()
     {
         studentDB.insertElement("Alumne");
-
-
+        listStudients.clear();
+        //studentAdapter.notifyDataSetChanged();
+        listStudients.addAll(studentDB.getAllItems());
+        studentAdapter = new StudentAdapter(this, listStudients);
+        listView.setAdapter(studentAdapter);
 
     }
 
