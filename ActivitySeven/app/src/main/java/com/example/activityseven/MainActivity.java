@@ -138,7 +138,10 @@ public class MainActivity extends AppCompatActivity
     private void onIncludeAll()
     {
 
-
+        for(int i =0;i<15;i++)
+        {
+            studentDB.insertElement("Alumne" +i);
+        }
     }
     /**
      * Metode que esborra l'ultim alumne
