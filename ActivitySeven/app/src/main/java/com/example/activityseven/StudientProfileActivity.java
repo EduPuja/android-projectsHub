@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class StudientProfile extends AppCompatActivity
+public class StudientProfileActivity extends AppCompatActivity
 {
 
     @Override
