@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/include_one" />
-    <item android:title="@string/include_all" />
-    <item android:title="@string/clear_last" />
-    <item android:title="@string/clear_all" />
-    <item android:title="@string/update_one" />
+    <item android:id="@+id/include_one" android:title="@string/include_one" />
+    <item android:id="@+id/include_all" android:title="@string/include_all" />
+    <item android:id="@+id/clear_last" android:title="@string/clear_last" />
+    <item android:id="@+id/clear_all"  android:title="@string/clear_all" />
+    <item android:id="@+id/update_one" android:title="@string/update_one" />
 </menu>
