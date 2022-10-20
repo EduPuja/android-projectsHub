@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    /**
+     * Funcio que crea 2 studiants
+     */
     private void insertStudents()
     {
         studentDB.insertElement("Eduard Pujadas");
@@ -114,7 +117,7 @@ public class MainActivity extends AppCompatActivity
      */
     private void onIncludeOne()
     {
-
+        studentDB.insertElement("Alumne");
     }
 
     /**
@@ -123,7 +126,10 @@ public class MainActivity extends AppCompatActivity
      */
     private void onIncludeAll()
     {
-
+        for(int i =0;i<listStudients.size();i++)
+        {
+            studentDB.insertElement(listStudients.get(i).getName());
+        }
     }
     /**
      * Metode que esborra l'ultim alumne
@@ -132,6 +138,7 @@ public class MainActivity extends AppCompatActivity
     private void onClearLast()
     {
 
+        studentDB.deleteItem(listStudients.get(listStudients.size()));
     }
 
     /**
@@ -140,7 +147,7 @@ public class MainActivity extends AppCompatActivity
      */
     private void onClearAll()
     {
-
+        studentDB.clearAllItems();
     }
 
 
