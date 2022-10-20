@@ -2,6 +2,7 @@ package com.example.activityseven;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -189,9 +190,15 @@ public class MainActivity extends AppCompatActivity
         listView.setAdapter(studentAdapter);
     }
 
-    public void onStudientProfileActivity(View vista)
+    /**
+     * Metode per el buto fitxa ALumne
+     * et crea una activity amb la fitxa del alumne
+     */
+    public void onStudientProfileActivity()
     {
+        Intent intent = new Intent(this,StudientProfileActivity.class);
 
+        startActivity(intent);
     }
 
 
