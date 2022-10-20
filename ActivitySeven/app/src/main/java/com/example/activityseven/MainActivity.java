@@ -193,8 +193,9 @@ public class MainActivity extends AppCompatActivity
     /**
      * Metode per el buto fitxa ALumne
      * et crea una activity amb la fitxa del alumne
+     * @param vista  necessari per poder linkejar 
      */
-    public void onStudientProfileActivity()
+    public void onStudientProfileActivity(View vista)
     {
         Intent intent = new Intent(this,StudientProfileActivity.class);
 
