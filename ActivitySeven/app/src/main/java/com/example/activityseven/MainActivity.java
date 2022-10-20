@@ -152,11 +152,10 @@ public class MainActivity extends AppCompatActivity
     {
 
         studentDB.deleteItem(listStudients.get(listStudients.size()));
-
-        studentAdapter.notifyDataSetChanged();
         listStudients.addAll(studentDB.getAllItems());
         studentAdapter = new StudentAdapter(this, listStudients);
         listView.setAdapter(studentAdapter);
+        studentAdapter.notifyDataSetChanged();
     }
 
     /**
@@ -166,11 +165,10 @@ public class MainActivity extends AppCompatActivity
     private void onClearAll()
     {
         studentDB.clearAllItems();
-
-        studentAdapter.notifyDataSetChanged();
         listStudients.addAll(studentDB.getAllItems());
         studentAdapter = new StudentAdapter(this, listStudients);
         listView.setAdapter(studentAdapter);
+        studentAdapter.notifyDataSetChanged();
     }
 
 

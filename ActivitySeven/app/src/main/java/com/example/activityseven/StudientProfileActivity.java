@@ -12,5 +12,8 @@ public class StudientProfileActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_profile);
+
+        // posar un title amb el nom del alumne i buscar per id cada text view
+        // per finalizar fer un set text amb totes les dades
     }
 }
