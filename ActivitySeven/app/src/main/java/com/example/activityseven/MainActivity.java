@@ -40,12 +40,12 @@ public class MainActivity extends AppCompatActivity
         studentDB.clearAllItems();
 
         // insert items
-        insertStudents();
+       // insertStudents();
 
-        listStudients.addAll(studentDB.getAllItems());
+       // listStudients.addAll(studentDB.getAllItems());
 
-        studentAdapter = new StudentAdapter(this, listStudients);
-        listView.setAdapter(studentAdapter);
+        //studentAdapter = new StudentAdapter(this, listStudients);
+        //listView.setAdapter(studentAdapter);
 
 
     }
@@ -123,10 +123,8 @@ public class MainActivity extends AppCompatActivity
     {
         studentDB.insertElement("Alumne");
 
-        studentAdapter.notifyDataSetChanged();
-        listStudients.addAll(studentDB.getAllItems());
-        studentAdapter = new StudentAdapter(this, listStudients);
-        listView.setAdapter(studentAdapter);
+
+
     }
 
     /**
@@ -135,14 +133,8 @@ public class MainActivity extends AppCompatActivity
      */
     private void onIncludeAll()
     {
-        for(int i =0;i<15;i++)
-        {
-         studentDB.insertElement("Alumne "+i+"");
-        }
-        studentAdapter.notifyDataSetChanged();
-        listStudients.addAll(studentDB.getAllItems());
-        studentAdapter = new StudentAdapter(this, listStudients);
-        listView.setAdapter(studentAdapter);
+
+
     }
     /**
      * Metode que esborra l'ultim alumne
