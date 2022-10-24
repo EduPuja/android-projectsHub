@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflem el menú. Aquesta acció afegeix els items a la barra de acció
-        getMenuInflater().inflate(R.menu.menu_action, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
     @Override
