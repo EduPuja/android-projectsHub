@@ -142,9 +142,12 @@ public class MainActivity extends AppCompatActivity
     private void onClearLast()
     {
 
-
-
-
+        listStudients.clear();
+        studentDB.deleteItem(listStudients.get(listStudients.size()-1));
+        //studentAdapter.notifyDataSetChanged();
+        listStudients.addAll(studentDB.getAllItems());
+        studentAdapter = new StudentAdapter(this, listStudients);
+        listView.setAdapter(studentAdapter);
 
 
     }
