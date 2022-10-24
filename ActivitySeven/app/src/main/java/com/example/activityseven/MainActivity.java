@@ -40,25 +40,13 @@ public class MainActivity extends AppCompatActivity
         // start with an empty database
         studentDB.clearAllItems();
 
-        // insert items
-       // insertStudents();
+        // creo el adaptador
+        studentAdapter = new StudentAdapter(this, listStudients);
 
-       //listStudients.addAll(studentDB.getAllItems());
-
-        //studentAdapter = new StudentAdapter(this, listStudients);
-        //listView.setAdapter(studentAdapter);
 
 
     }
 
-    /**
-     * Funcio que crea 2 studiants
-     */
-    private void insertStudents()
-    {
-        studentDB.insertElement("Eduard Pujadas");
-        studentDB.insertElement("Daniel Escobar");
-    }
 
     /**
      * Funcio per cridar el menu
@@ -122,11 +110,12 @@ public class MainActivity extends AppCompatActivity
      */
     private void onIncludeOne()
     {
-        studentDB.insertElement("Alumne");
         listStudients.clear();
+        studentDB.insertElement("Alumne");
+
         //studentAdapter.notifyDataSetChanged();
         listStudients.addAll(studentDB.getAllItems());
-        studentAdapter = new StudentAdapter(this, listStudients);
+        //studentAdapter = new StudentAdapter(this, listStudients);
         listView.setAdapter(studentAdapter);
 
     }
@@ -140,7 +129,10 @@ public class MainActivity extends AppCompatActivity
 
         for(int i =0;i<15;i++)
         {
+            listStudients.clear();
             studentDB.insertElement("Alumne" +i);
+            listStudients.addAll(studentDB.getAllItems());
+            listView.setAdapter(studentAdapter);
         }
     }
     /**
@@ -149,12 +141,16 @@ public class MainActivity extends AppCompatActivity
      */
     private void onClearLast()
     {
+        listStudients.clear();      // natejo el arrylist
 
-        studentDB.deleteItem(listStudients.get(listStudients.size()));
-        listStudients.addAll(studentDB.getAllItems());
-        studentAdapter = new StudentAdapter(this, listStudients);
-        listView.setAdapter(studentAdapter);
-        studentAdapter.notifyDataSetChanged();
+        
+        studentDB.deleteItem(listStudients.get(listStudients.size()-1)); // elimino el ultim element de l'array list -1
+        listStudients.addAll(studentDB.getAllItems()); // torno afegir tots els elements del arraylist
+        listView.setAdapter(studentAdapter);        // i afegiexo el nou adaptador
+
+
+
+
     }
 
     /**
@@ -163,11 +159,12 @@ public class MainActivity extends AppCompatActivity
      */
     private void onClearAll()
     {
+        listStudients.clear();
         studentDB.clearAllItems();
         listStudients.addAll(studentDB.getAllItems());
-        studentAdapter = new StudentAdapter(this, listStudients);
+
         listView.setAdapter(studentAdapter);
-        studentAdapter.notifyDataSetChanged();
+
     }
 
 
@@ -179,12 +176,18 @@ public class MainActivity extends AppCompatActivity
      */
     private void onUpdateOne()
     {
-        studentDB.updateItem(listStudients.get(0));
-
-        studentAdapter.notifyDataSetChanged();
+        listStudients.clear();
         listStudients.addAll(studentDB.getAllItems());
-        studentAdapter = new StudentAdapter(this, listStudients);
-        listView.setAdapter(studentAdapter);
+        if(listStudients.size()>=1)
+        {
+            //studentDB.updateItem(st);
+            listStudients.get(0).setName("Alumne Moded");
+
+            listStudients.addAll(studentDB.getAllItems());
+
+            listView.setAdapter(studentAdapter);
+
+        }
     }
 
     /**
