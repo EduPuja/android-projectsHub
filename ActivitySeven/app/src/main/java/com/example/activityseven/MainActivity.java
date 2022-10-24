@@ -141,12 +141,8 @@ public class MainActivity extends AppCompatActivity
      */
     private void onClearLast()
     {
-        listStudients.clear();      // natejo el arrylist
 
-        
-        studentDB.deleteItem(listStudients.get(listStudients.size()-1)); // elimino el ultim element de l'array list -1
-        listStudients.addAll(studentDB.getAllItems()); // torno afegir tots els elements del arraylist
-        listView.setAdapter(studentAdapter);        // i afegiexo el nou adaptador
+
 
 
 
