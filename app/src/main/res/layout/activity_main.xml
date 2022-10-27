@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/img"
+        android:id="@+id/btn_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -17,19 +17,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/descrip"
+        android:id="@+id/btn_descrip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="30dp"
         android:text="@string/descrip"
-        app:layout_constraintEnd_toStartOf="@+id/val"
-        app:layout_constraintStart_toEndOf="@+id/img"
+        app:layout_constraintEnd_toStartOf="@+id/btn_val"
+        app:layout_constraintStart_toEndOf="@+id/btn_img"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/val"
+        android:id="@+id/btn_val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -49,6 +49,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_img" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
