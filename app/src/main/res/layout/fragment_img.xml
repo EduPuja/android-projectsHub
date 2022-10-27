@@ -8,9 +8,10 @@
 
     <ImageView
         android:id="@+id/car_img"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="585dp"
+        android:layout_height="225dp"
+        android:layout_marginLeft="150dp"
         android:layout_marginTop="500dp"
-        app:srcCompat="@drawable/coche_de_turismo"
-        android:contentDescription="TODO" />
+        android:contentDescription="TODO"
+        app:srcCompat="@drawable/coche_de_turismo" />
 </LinearLayout>
