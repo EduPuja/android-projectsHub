@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -14,5 +15,14 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Fitxa Producte");
+    }
+
+    /**
+     * metode que crea la imatge
+     * @param vista
+     */
+    public void onImgButton(View vista)
+    {
+
     }
 }
