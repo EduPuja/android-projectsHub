@@ -19,7 +19,7 @@ public class StudientProfileActivity extends AppCompatActivity
         // per finalizar fer un set text amb totes les dades
     }
 
-
+    
     public void onTrunBack(View vista)
     {
         Intent intent = new Intent(this,MainActivity.class);
