@@ -11,5 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="500dp"
-        app:srcCompat="@drawable/coche_de_turismo" />
+        app:srcCompat="@drawable/coche_de_turismo"
+        android:contentDescription="TODO" />
 </LinearLayout>

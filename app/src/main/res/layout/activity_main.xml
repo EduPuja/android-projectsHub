@@ -49,14 +49,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/frag_img"
-            android:name="edu.pujadas.edu_pujadas_act8.fragments.FragmentImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_img" />
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/img"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
