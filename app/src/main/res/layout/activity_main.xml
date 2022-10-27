@@ -11,11 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="618dp"
+        android:layout_marginTop="50dp"
         android:onClick="onImgButton"
         android:text="@string/img"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,11 +22,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="620dp"
         android:text="@string/descrip"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/val"
         app:layout_constraintStart_toEndOf="@+id/img"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,11 +33,9 @@
         android:id="@+id/val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="624dp"
         android:text="@string/val"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,13 +51,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_img"
-            android:name="edu.pujadas.edu_pujadas_act8.fragments.FragmentImage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/img"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
