@@ -141,12 +141,11 @@ public class MainActivity extends AppCompatActivity
      */
     private void onClearLast()
     {
-        listStudients.clear();
-        studentDB.deleteItem(listStudients.get(listStudients.size()-1));
-        //studentAdapter.notifyDataSetChanged();
+       listStudients.clear();
+       int ultim = listStudients.size()-1;
         listStudients.addAll(studentDB.getAllItems());
-
-        listView.setAdapter(studentAdapter);
+       studentDB.deleteItem(listStudients.get(ultim));
+       listView.setAdapter(studentAdapter);
 
     }
 
@@ -174,9 +173,9 @@ public class MainActivity extends AppCompatActivity
     private void onUpdateOne()
     {
         listStudients.clear();
+
         listStudients.addAll(studentDB.getAllItems());
-        studentDB.updateItem(listStudients.get(0));
-       /* if(listStudients.size()>=1)
+        if(listStudients.size()>=1)
         {
             //studentDB.updateItem(st);
 
@@ -187,7 +186,8 @@ public class MainActivity extends AppCompatActivity
 
             listView.setAdapter(studentAdapter);
 
-        }*/
+        }
+        
     }
 
     /**
