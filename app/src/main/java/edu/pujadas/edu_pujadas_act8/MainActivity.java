@@ -8,6 +8,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 
+import edu.pujadas.edu_pujadas_act8.fragments.FragmentImage;
+
 public class MainActivity extends AppCompatActivity
 {
 
@@ -17,6 +19,14 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Fitxa Producte");
+
+
+        // CREACIO DE UN FRAGEMENT
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setReorderingAllowed(true);
+        fragmentTransaction.add(R.id.container_fragment, new FragmentImage()); // afegiexo !!
+        fragmentTransaction.commit();
     }
 
     /**
@@ -25,9 +35,13 @@ public class MainActivity extends AppCompatActivity
      */
     public void onImgButton(View vista)
     {
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        // CREACIO DE UN FRAGEMENT
+       /* FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.setReorderingAllowed(true);
-        fragmentTransaction.commit();
+
+        // MODIFICIO !!
+        fragmentTransaction.replace(R.id.container_fragment, new FragmentImage());
+        fragmentTransaction.commit();*/
     }
 }
