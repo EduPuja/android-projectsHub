@@ -21,12 +21,7 @@ public class MainActivity extends AppCompatActivity
         setTitle("Fitxa Producte");
 
 
-        // CREACIO DE UN FRAGEMENT
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.setReorderingAllowed(true);
-        fragmentTransaction.add(R.id.container_fragment, new FragmentImage()); // afegiexo !!
-        fragmentTransaction.commit();
+
     }
 
     /**
@@ -43,5 +38,12 @@ public class MainActivity extends AppCompatActivity
         // MODIFICIO !!
         fragmentTransaction.replace(R.id.container_fragment, new FragmentImage());
         fragmentTransaction.commit();*/
+
+        // CREACIO DE UN FRAGEMENT
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setReorderingAllowed(true);
+        fragmentTransaction.add(R.id.container_fragment, new FragmentImage()); // afegiexo !!
+        fragmentTransaction.commit();
     }
 }
