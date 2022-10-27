@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity
     public void onStudientProfileActivity(View vista)
     {
         Intent intent = new Intent(this,StudientProfileActivity.class);
-
+        intent.putExtra("listStudents",listStudients);
         startActivity(intent);
     }
 
