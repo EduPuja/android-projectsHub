@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity
     public void onStudientProfileActivity(View vista)
     {
         Intent intent = new Intent(this,StudientProfileActivity.class);
-        intent.putExtra("listStudents",listStudients);
+        //intent.putExtra("listStudents",listStudients); intent per passar el arraylist
         startActivity(intent);
     }
 
