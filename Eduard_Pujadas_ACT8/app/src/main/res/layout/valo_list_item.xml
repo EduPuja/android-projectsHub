@@ -11,14 +11,14 @@
         android:text="Eduard Pujadas" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/descrip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Funciona Be"
         android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/punts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="10punts"
