@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import edu.pujadas.eduard_pujadas_act8.Fragments.FragmentDescripcio;
 import edu.pujadas.eduard_pujadas_act8.Fragments.FragmentImage;
 
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.setReorderingAllowed(true);
-        fragmentTransaction.replace(R.id.container_fragment, new FragmentImage()); // afegiexo !!
+        fragmentTransaction.replace(R.id.container_fragment, new FragmentImage()); // replace !!
         fragmentTransaction.commit();
 
         createToast("Image Cotxe replace");
@@ -57,6 +58,20 @@ public class MainActivity extends AppCompatActivity
 
         Toast toast = Toast.makeText(context, msg ,duration);
         toast.show();
+    }
+
+    /**
+     * Metode que utliza el boto descripcio i canvia el container fragment per un fragment descripcio
+     * @param vista
+     */
+    public void onDescripButton(View vista)
+    {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setReorderingAllowed(true);
+        fragmentTransaction.replace(R.id.container_fragment, new FragmentDescripcio()); // replace !!
+        fragmentTransaction.commit();
+
     }
 
 
