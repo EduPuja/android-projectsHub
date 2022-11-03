@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Eduard_Pujadas_Act9</string>
     <string name="marca_producte">Marca Producte</string>
+    <string name="model_producte">Model Producte</string>
+    <string name="imatge_producte">Imatge Producte</string>
+    <string name="spinner">Spinner</string>
 </resources>
