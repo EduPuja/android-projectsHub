@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Formulari Producte");
+
+
+        //TODO: mirar que el camp no estigui buit
     }
 
     /**
