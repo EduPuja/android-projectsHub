@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import edu.pujadas.eduard_pujadas_act8.Fragments.FragmentDescripcio;
 import edu.pujadas.eduard_pujadas_act8.Fragments.FragmentImage;
+import edu.pujadas.eduard_pujadas_act8.Fragments.FragmentValoracions;
 
 
 public class MainActivity extends AppCompatActivity
@@ -73,6 +74,20 @@ public class MainActivity extends AppCompatActivity
         fragmentTransaction.commit();
         createToast("Descripcion Producte");
 
+    }
+
+    /**
+     * Metode que utiliza el boto de valoracions
+     * @param vista
+     */
+    public void onValorationButton(View vista)
+    {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setReorderingAllowed(true);
+        fragmentTransaction.replace(R.id.container_fragment, new FragmentValoracions()); // replace !!
+        fragmentTransaction.commit();
+        createToast("Valorations Producte");
     }
 
 
