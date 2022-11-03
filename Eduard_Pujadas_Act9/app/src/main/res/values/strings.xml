@@ -4,4 +4,5 @@
     <string name="model_producte">Model Producte</string>
     <string name="imatge_producte">Imatge Producte</string>
     <string name="spinner">Spinner</string>
+    <string name="guardar_informacio">Guardar Informacio</string>
 </resources>
