@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import edu.pujadas.eduard_pujadas_act8.Fragments.FragmentImage;
 
@@ -22,11 +24,11 @@ public class MainActivity extends AppCompatActivity
         setTitle("Fitxa Producte");
 
         // CREACIO DE UN FRAGEMENT
-      /*  FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.setReorderingAllowed(true);
         fragmentTransaction.add(R.id.container_fragment, new FragmentImage()); // afegiexo !!
-        fragmentTransaction.commit();*/
+        fragmentTransaction.commit();
 
     }
 
@@ -41,9 +43,21 @@ public class MainActivity extends AppCompatActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.setReorderingAllowed(true);
-        fragmentTransaction.add(R.id.container_fragment, new FragmentImage()); // afegiexo !!
+        fragmentTransaction.replace(R.id.container_fragment, new FragmentImage()); // afegiexo !!
         fragmentTransaction.commit();
 
-
+        createToast("Image Cotxe replace");
     }
+
+    public void createToast(String msg)
+    {
+        Context context = getApplicationContext();
+
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, msg ,duration);
+        toast.show();
+    }
+
+
 }
