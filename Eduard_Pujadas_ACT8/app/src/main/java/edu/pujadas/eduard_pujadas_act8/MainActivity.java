@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity
         fragmentTransaction.replace(R.id.container_fragment, new FragmentImage()); // replace !!
         fragmentTransaction.commit();
 
-        createToast("Image Cotxe replace");
+        createToast("Image Producte");
     }
 
     public void createToast(String msg)
@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity
         fragmentTransaction.setReorderingAllowed(true);
         fragmentTransaction.replace(R.id.container_fragment, new FragmentDescripcio()); // replace !!
         fragmentTransaction.commit();
+        createToast("Descripcion Producte");
 
     }
 
