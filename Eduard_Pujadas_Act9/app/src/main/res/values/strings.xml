@@ -17,4 +17,8 @@
         <item>10</item>
     </string-array>-->
     <string name="guardar_informacio">Guardar Informacio</string>
+    <string name="veure_macs">Veure Macs</string>
+    <string name="veure_pantalles">Veure Pantalles</string>
+    <string name="veure_tv">Veure TVs</string>
+    <string name="veure_teclats">Veure Tecalats</string>
 </resources>
