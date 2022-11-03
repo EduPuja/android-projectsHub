@@ -15,11 +15,12 @@
         android:paddingStart="20dp"
         android:paddingLeft="20dp"
         android:paddingEnd="20dp"
-        android:paddingRight="20dp"/>
+        android:paddingRight="20dp"
+        android:text="Eduard Pujadas" />
 
     <TextView
         android:id="@+id/descrip"
-        android:layout_width="240dp"
+        android:layout_width="164dp"
         android:layout_height="53dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
@@ -27,11 +28,12 @@
         android:paddingStart="20dp"
         android:paddingLeft="20dp"
         android:paddingEnd="20dp"
-        android:paddingRight="20dp"/>
+        android:paddingRight="20dp"
+        android:text="Funciona be" />
 
     <TextView
         android:id="@+id/punts"
-        android:layout_width="56dp"
+        android:layout_width="wrap_content"
         android:layout_height="52dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
@@ -40,6 +42,7 @@
         android:paddingStart="20dp"
         android:paddingLeft="20dp"
         android:paddingEnd="20dp"
-        android:paddingRight="20dp" />
+        android:paddingRight="20dp"
+        android:text="10" />
 
 </LinearLayout>
