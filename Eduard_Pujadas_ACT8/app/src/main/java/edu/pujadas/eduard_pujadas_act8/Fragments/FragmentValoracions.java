@@ -46,6 +46,8 @@ public class FragmentValoracions extends Fragment
     {
         super.onViewCreated(view, savedInstanceState);
 
+        listView = getView().findViewById(R.id.valo_list_view);
+        valorationsAdapter= new ValorationsAdapter(getActivity(),listValoracions);
         listView.setAdapter(valorationsAdapter);
 
 
