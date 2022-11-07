@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import java.util.ArrayList;
 
@@ -39,8 +41,11 @@ public class FragmentValoracions extends Fragment
         return vista;
     }
 
-    public void onViewCreated(View vista,Bundle savedInstanceState)
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState)
     {
+        super.onViewCreated(view, savedInstanceState);
+
 
     }
     private void fakeData()
