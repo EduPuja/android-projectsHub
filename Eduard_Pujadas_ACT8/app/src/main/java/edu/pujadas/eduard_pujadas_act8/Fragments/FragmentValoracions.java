@@ -46,6 +46,8 @@ public class FragmentValoracions extends Fragment
     {
         super.onViewCreated(view, savedInstanceState);
 
+        listView.setAdapter(valorationsAdapter);
+
 
     }
     private void fakeData()
@@ -59,8 +61,6 @@ public class FragmentValoracions extends Fragment
         listValoracions.add(valoOne);
         listValoracions.add(valoTwo);
         listValoracions.add(valoTree);
-
-        listView.setAdapter(valorationsAdapter);
 
 
     }
