@@ -14,6 +14,13 @@ public class Valoracions
 
     }
 
+    public Valoracions (String nomUser,String descrip,String punts)
+    {
+        this.descrip=descrip;
+        this.nomUser=nomUser;
+        this.punts=punts;
+    }
+
 
 
     // SEETTERS
