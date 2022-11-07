@@ -45,7 +45,8 @@ public class ValorationsAdapter extends ArrayAdapter<Valoracions>
     @Override
     public long getItemId(int position)
     {
-        return listValoracions.get(position).getPunts();
+        //return listValoracions.get(position).getPunts();
+        return listValoracions.get(position).hashCode();
     }
 
     @Override
@@ -61,7 +62,7 @@ public class ValorationsAdapter extends ArrayAdapter<Valoracions>
 
 
             // afago les id de la vista gracies al view holder esta a sota
-            viewHolder.nomUser = view.findViewById(R.id.nomUser);
+            viewHolder.nomUser = view.findViewById(R.id.name);
             viewHolder.descrip= view.findViewById(R.id.descrip);
             viewHolder.punts = view.findViewById(R.id.punts);
 

@@ -7,7 +7,7 @@ public class Valoracions
 
     private String nomUser;
     private String descrip;
-    private int punts;
+    private String punts;
 
     public Valoracions ()
     {
@@ -17,7 +17,7 @@ public class Valoracions
 
 
     // SEETTERS
-    public void setAllValoration(String nomUser,String descrip,int punts)
+    public void setAllValoration(String nomUser,String descrip,String punts)
     {
         this.descrip=descrip;
         this.nomUser=nomUser;
@@ -39,7 +39,7 @@ public class Valoracions
         this.descrip = descrip;
     }
 
-    public void setPunts(int punts)
+    public void setPunts(String punts)
     {
         this.punts = punts;
     }
@@ -61,7 +61,7 @@ public class Valoracions
 
 
 
-    public int getPunts()
+    public String getPunts()
     {
         return punts;
     }
