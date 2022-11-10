@@ -2,11 +2,14 @@ package edu.pujadas.eduard_pujadas_act9;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -28,6 +31,11 @@ public class MainActivity extends AppCompatActivity
         modelProducte = findViewById(R.id.model_product);
 
 
+        //Snackbar adminSnaback= Snackbar.make(findViewById(R.id.model_product),"Benvingut Admin",1000);
+
+
+        //adminSnaback.show();
+
         //TODO: mirar que el camp no estigui buit
     }
 
@@ -38,6 +46,16 @@ public class MainActivity extends AppCompatActivity
     public void onSaveButon(View vista)
     {
         //TODO fer que guant guardi el objecte  producte el passi a l'altre pantalla
+
+        //TODO COMPROVAR que el camp no sigui buit
+
+        String infoMarca = marcaProducte.getText().toString();
+        if(infoMarca.isEmpty())
+        {
+
+        }
+        Intent intent = new Intent(this,SecondActivity.class);
+        startActivity(intent);
     }
 
     /**
