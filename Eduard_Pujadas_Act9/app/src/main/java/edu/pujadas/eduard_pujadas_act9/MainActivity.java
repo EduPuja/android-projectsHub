@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity
     private final int REQUEST_PERMISSION_STORAGE_SAVE = 101;
     private final int REQUEST_PERMISSION_STORAGE_DELETE = 102;
     private static final int REQUEST_VIDEO_CAPTURE = 1;
-    
+
     //edit text
     private EditText marcaProducte;
     private EditText modelProducte;
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity
      */
     public void onImgButon(View vista)
     {
-        //todo obrir la camara
+
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         try
         {
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity
             // display error state to the user
             e.printStackTrace();
         }
-
+        //todo agafa la foto i posarla en un iamge view per despres carregar un fragment
 
 
     }
