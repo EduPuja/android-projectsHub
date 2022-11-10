@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity
      */
     public void onSaveButon(View vista)
     {
-
+        //TODO fer que guant guardi el objecte  producte el passi a l'altre pantalla
     }
 
     /**
@@ -34,6 +34,6 @@ public class MainActivity extends AppCompatActivity
      */
     public void onImgButon(View vista)
     {
-
+        //todo obrir la camara
     }
 }
