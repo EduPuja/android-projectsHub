@@ -5,11 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import edu.pujadas.eduard_pujadas_act9.Models.Producte;
 
@@ -31,8 +30,13 @@ public class MainActivity extends AppCompatActivity
         setTitle("Formulari Producte");
         marcaProducte=findViewById(R.id.marca_product);
         modelProducte = findViewById(R.id.model_product);
+        //spinner
+        spinner  = findViewById(R.id.spinner);
+        // adaptador
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.quantitat_productes, android.R.layout.simple_spinner_item);
 
-        spinner  = findViewById(R.id.spinner);  //spinner
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
 
 
