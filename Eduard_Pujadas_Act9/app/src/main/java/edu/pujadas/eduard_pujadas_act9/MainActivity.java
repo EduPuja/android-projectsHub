@@ -1,6 +1,8 @@
 package edu.pujadas.eduard_pujadas_act9;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -14,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import edu.pujadas.eduard_pujadas_act9.Fragments.FragmentImage;
 import edu.pujadas.eduard_pujadas_act9.Models.Producte;
 
 public class MainActivity extends AppCompatActivity
@@ -99,6 +102,13 @@ public class MainActivity extends AppCompatActivity
         try
         {
             startActivityForResult(takePictureIntent, REQUEST_VIDEO_CAPTURE);
+
+            // posar el fragemnt imatge
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.setReorderingAllowed(true);
+            fragmentTransaction.replace(R.id.container_fragment, new FragmentImage()); // replace !!
+            fragmentTransaction.commit();
         }
         catch (ActivityNotFoundException e)
         {
