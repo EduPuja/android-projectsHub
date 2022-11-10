@@ -2,8 +2,12 @@ package edu.pujadas.eduard_pujadas_act9;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,6 +18,12 @@ import edu.pujadas.eduard_pujadas_act9.Models.Producte;
 
 public class MainActivity extends AppCompatActivity
 {
+
+    // permisos camera
+    private final int REQUEST_PERMISSION_STORAGE_SAVE = 101;
+    private final int REQUEST_PERMISSION_STORAGE_DELETE = 102;
+    private static final int REQUEST_VIDEO_CAPTURE = 1;
+    
     //edit text
     private EditText marcaProducte;
     private EditText modelProducte;
@@ -52,6 +62,8 @@ public class MainActivity extends AppCompatActivity
 
         String infoMarca = marcaProducte.getText().toString();
         String infoModel = modelProducte.getText().toString();
+        String infoSpin =spinner.toString(); // no se si funciona
+
 
         if(infoMarca.isEmpty())
         {
@@ -63,11 +75,12 @@ public class MainActivity extends AppCompatActivity
         }
         else
         {
-            //TODO un cop no esta buit el que se ha de fer es guardar el objecte i passarlo a la segona activity
+
             Intent intent = new Intent(this,SecondActivity.class);
             Producte producte = new Producte();
-            producte.setModelProducte(infoModel);
-            producte.setMarcaProducte(infoMarca);
+            producte.setAllProducte(infoMarca,infoModel,Integer.parseInt(infoSpin),null);   //todo falta imatge
+            intent.putExtra("producte",(Parcelable) producte);  // convertiexo el objecte producte amb parcelable per poderlo passar
+
             // quantitat
             // image ?
             startActivity(intent);
@@ -82,5 +95,20 @@ public class MainActivity extends AppCompatActivity
     public void onImgButon(View vista)
     {
         //todo obrir la camara
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        try
+        {
+            startActivityForResult(takePictureIntent, REQUEST_VIDEO_CAPTURE);
+        }
+        catch (ActivityNotFoundException e)
+        {
+            // display error state to the user
+            e.printStackTrace();
+        }
+
+
+
     }
+
+
 }
