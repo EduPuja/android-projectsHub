@@ -11,6 +11,8 @@ import android.widget.Spinner;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import edu.pujadas.eduard_pujadas_act9.Models.Producte;
+
 public class MainActivity extends AppCompatActivity
 {
     //edit text
@@ -30,13 +32,10 @@ public class MainActivity extends AppCompatActivity
         marcaProducte=findViewById(R.id.marca_product);
         modelProducte = findViewById(R.id.model_product);
 
+        spinner  = findViewById(R.id.spinner);  //spinner
 
-        //Snackbar adminSnaback= Snackbar.make(findViewById(R.id.model_product),"Benvingut Admin",1000);
 
 
-        //adminSnaback.show();
-
-        //TODO: mirar que el camp no estigui buit
     }
 
     /**
@@ -45,17 +44,31 @@ public class MainActivity extends AppCompatActivity
      */
     public void onSaveButon(View vista)
     {
-        //TODO fer que guant guardi el objecte  producte el passi a l'altre pantalla
 
-        //TODO COMPROVAR que el camp no sigui buit
 
         String infoMarca = marcaProducte.getText().toString();
+        String infoModel = modelProducte.getText().toString();
+
         if(infoMarca.isEmpty())
         {
-
+            marcaProducte.setError("Aquest camp no pot esta buit");
         }
-        Intent intent = new Intent(this,SecondActivity.class);
-        startActivity(intent);
+        else if(infoModel.isEmpty())
+        {
+            modelProducte.setError("Aquest camp no pot esta buit");
+        }
+        else
+        {
+            //TODO un cop no esta buit el que se ha de fer es guardar el objecte i passarlo a la segona activity
+            Intent intent = new Intent(this,SecondActivity.class);
+            Producte producte = new Producte();
+            producte.setModelProducte(infoModel);
+            producte.setMarcaProducte(infoMarca);
+            // quantitat
+            // image ?
+            startActivity(intent);
+        }
+
     }
 
     /**
