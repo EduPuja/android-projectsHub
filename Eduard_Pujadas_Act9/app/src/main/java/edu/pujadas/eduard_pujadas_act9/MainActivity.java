@@ -83,13 +83,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         else
         {
+            String rutaImatge = "src/main/res/drawable";
 
             // agafo el inter de
             int quantiat = Integer.parseInt(spinner.getOnItemSelectedListener().toString());
 
             Intent intent = new Intent(this,SecondActivity.class);
             Producte producte = new Producte();
-            producte.setAllProducte(marcaProducte,modelProducte,quantiat,);
+            producte.setAllProducte(infoMarca,infoModel,quantiat,rutaImatge);
 
 
             //producte.setAllProducte(infoMarca,infoModel,Integer.parseInt(infoSpin),null);   //todo falta imatge
@@ -129,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //todo agafa la foto i posarla en un iamge view per despres carregar un fragment
 
 
-        return
+
     }
 
 
