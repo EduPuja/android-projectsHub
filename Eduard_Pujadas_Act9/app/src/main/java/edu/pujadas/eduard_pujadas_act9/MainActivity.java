@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             //int quantiat = Integer.parseInt(spinner.getOnItemSelectedListener().toString());
 
             Intent intent = new Intent(this,SecondActivity.class);
+            intent.putExtra("infoMarca",infoMarca);
             //Producte producte = new Producte();
             //producte.setAllProducte(infoMarca,infoModel,quantiat,rutaImatge);
 

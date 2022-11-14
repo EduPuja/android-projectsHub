@@ -2,6 +2,7 @@ package edu.pujadas.eduard_pujadas_act9;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -24,6 +25,8 @@ public class SecondActivity extends AppCompatActivity
         quant = findViewById(R.id.quant);
         ruta = findViewById(R.id.ruta);
 
+        String infoMarca = getIntent().getStringExtra("infoMarca");
 
+        marca.setText(infoMarca);
     }
 }
