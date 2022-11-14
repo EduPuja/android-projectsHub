@@ -25,8 +25,9 @@ public class SecondActivity extends AppCompatActivity
         quant = findViewById(R.id.quant);
         ruta = findViewById(R.id.ruta);
 
-        String infoMarca = getIntent().getStringExtra("infoMarca");
+      //  String infoMarca = getIntent().get("infoMarca");
 
-        marca.setText(infoMarca);
+        //todo crear dades falses amb objectes
+        //marca.setText(infoMarca);
     }
 }
