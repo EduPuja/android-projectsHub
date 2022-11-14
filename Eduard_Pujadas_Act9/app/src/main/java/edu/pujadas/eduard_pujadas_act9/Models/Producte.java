@@ -6,7 +6,7 @@ public class Producte
 {   private String marcaProducte;
     private String modelProducte;
     private int quantitat;
-    private Image imageProducte;
+    private String rutaImatge;
 
 
     /**
@@ -17,17 +17,17 @@ public class Producte
 
     }
 
-    public void setAllProducte(String marcaProducte, String modelProducte, int quantitat, Image imageProducte)
+    public void setAllProducte(String marcaProducte, String modelProducte, int quantitat, String rutaImatge)
     {
         this.marcaProducte = marcaProducte;
         this.modelProducte = modelProducte;
         this.quantitat = quantitat;
-        this.imageProducte = imageProducte;
+        this.rutaImatge = rutaImatge;
     }
 
     public String  getInfoProduct()
     {
-        return this.marcaProducte +" "+this.modelProducte+" "+this.quantitat+" "+this.imageProducte;
+        return this.marcaProducte +" "+this.modelProducte+" "+this.quantitat+" "+this.rutaImatge;
     }
 
 
@@ -49,9 +49,9 @@ public class Producte
         this.quantitat = quantitat;
     }
 
-    public void setImageProducte(Image imageProducte)
+    public void setImageProducte(String rutaImatge)
     {
-        this.imageProducte = imageProducte;
+        this.rutaImatge = rutaImatge;
     }
 
 
@@ -74,8 +74,8 @@ public class Producte
         return quantitat;
     }
 
-    public Image getImageProducte()
+    public String getRutaImatge()
     {
-        return imageProducte;
+        return rutaImatge;
     }
 }
