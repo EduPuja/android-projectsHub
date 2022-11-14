@@ -5,21 +5,25 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import edu.pujadas.eduard_pujadas_act9.Fragments.FragmentImage;
 import edu.pujadas.eduard_pujadas_act9.Models.Producte;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
 {
 
     // permisos camera
@@ -53,6 +57,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
+
     }
 
     /**
@@ -79,10 +84,16 @@ public class MainActivity extends AppCompatActivity
         else
         {
 
+            // agafo el inter de
+            int quantiat = Integer.parseInt(spinner.getOnItemSelectedListener().toString());
+
             Intent intent = new Intent(this,SecondActivity.class);
             Producte producte = new Producte();
-            producte.setAllProducte(infoMarca,infoModel,Integer.parseInt(infoSpin),null);   //todo falta imatge
-            intent.putExtra("producte",(Parcelable) producte);  // convertiexo el objecte producte amb parcelable per poderlo passar
+            producte.setAllProducte(marcaProducte,modelProducte,quantiat,);
+
+
+            //producte.setAllProducte(infoMarca,infoModel,Integer.parseInt(infoSpin),null);   //todo falta imatge
+           // intent.putExtra("producte",(Parcelable) producte);  // convertiexo el objecte producte amb parcelable per poderlo passar
 
             // quantitat
             // image ?
@@ -118,7 +129,38 @@ public class MainActivity extends AppCompatActivity
         //todo agafa la foto i posarla en un iamge view per despres carregar un fragment
 
 
+        return
     }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+    {
+        crearToast("Stock :");
+
+
+
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent)
+    {
+        // noting happens
+    }
+
+    /**
+     * Metode per crear un tosast
+     * @param msg
+     */
+    public void crearToast(String msg)
+    {
+
+        Context context = getApplicationContext();
+
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, msg, duration);
+        toast.show();
+    }
 }
