@@ -83,16 +83,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         else
         {
-            String rutaImatge = "src/main/res/drawable";
+           // String rutaImatge = "src/main/res/drawable";
 
             // agafo valor del spinner
-            int quantiat = Integer.parseInt(spinner.getOnItemSelectedListener().toString());
+            //int quantiat = Integer.parseInt(spinner.getOnItemSelectedListener().toString());
 
             Intent intent = new Intent(this,SecondActivity.class);
-            Producte producte = new Producte();
-            producte.setAllProducte(infoMarca,infoModel,quantiat,rutaImatge);
+            //Producte producte = new Producte();
+            //producte.setAllProducte(infoMarca,infoModel,quantiat,rutaImatge);
 
-            intent.putExtra("producte",(Parcelable) producte);  // convertiexo el objecte producte amb parcelable per poderlo passar
+            //intent.putExtra("producte",(Parcelable) producte);  // convertiexo el objecte producte amb parcelable per poderlo passar
             startActivity(intent);
         }
 
