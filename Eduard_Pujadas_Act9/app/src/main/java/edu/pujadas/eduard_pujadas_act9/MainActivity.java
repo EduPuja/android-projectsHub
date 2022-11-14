@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         String infoMarca = marcaProducte.getText().toString();
         String infoModel = modelProducte.getText().toString();
-        String infoSpin =spinner.toString(); // no se si funciona
+
 
 
         if(infoMarca.isEmpty())
@@ -85,19 +85,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         {
             String rutaImatge = "src/main/res/drawable";
 
-            // agafo el inter de
+            // agafo valor del spinner
             int quantiat = Integer.parseInt(spinner.getOnItemSelectedListener().toString());
 
             Intent intent = new Intent(this,SecondActivity.class);
             Producte producte = new Producte();
             producte.setAllProducte(infoMarca,infoModel,quantiat,rutaImatge);
 
-
-            //producte.setAllProducte(infoMarca,infoModel,Integer.parseInt(infoSpin),null);   //todo falta imatge
-           // intent.putExtra("producte",(Parcelable) producte);  // convertiexo el objecte producte amb parcelable per poderlo passar
-
-            // quantitat
-            // image ?
+            intent.putExtra("producte",(Parcelable) producte);  // convertiexo el objecte producte amb parcelable per poderlo passar
             startActivity(intent);
         }
 
