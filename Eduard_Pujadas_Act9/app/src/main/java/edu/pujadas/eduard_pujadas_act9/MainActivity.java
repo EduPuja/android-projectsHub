@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             SharedPreferences sharedPreferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit(); // editor
 
-            // paso les dades en el sharedpreferences 
+            // paso les dades en el sharedpreferences
             editor.putString("marca",producte.getMarcaProducte());
             editor.putString("model",producte.getModelProducte());
             editor.putInt("quant",producte.getQuantitat());
