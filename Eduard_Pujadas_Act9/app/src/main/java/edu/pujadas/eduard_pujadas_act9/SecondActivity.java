@@ -35,7 +35,7 @@ public class SecondActivity extends AppCompatActivity
         int quantitat = preferences.getInt("quant",0);
         String rutaImgatge = preferences.getString("img","");
 
-        // afegiexo la informacio en els textes 
+        // afegiexo la informacio en els textes
         marca.setText(infoMarca);
         model.setText(infoModel);
         quant.setText(quantitat);
