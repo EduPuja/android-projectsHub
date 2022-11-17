@@ -11,7 +11,11 @@ import org.w3c.dom.Text;
 
 public class SecondActivity extends AppCompatActivity
 {
-    private TextView marca,model,quant,ruta;
+    private TextView marca;
+    private TextView model;
+    private TextView quant;
+    private TextView ruta;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
