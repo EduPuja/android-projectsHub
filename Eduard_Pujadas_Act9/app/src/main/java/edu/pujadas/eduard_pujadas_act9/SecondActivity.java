@@ -30,22 +30,13 @@ public class SecondActivity extends AppCompatActivity
         quant = findViewById(R.id.quant);
         ruta = findViewById(R.id.ruta);
 
-        /*SharedPreferences preferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
 
-
-        // recullo amb les preferencies els dades de producte
-        String infoMarca= preferences.getString("marca","");
+        SharedPreferences preferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
+        String infoMarca = preferences.getString("marca","");
         String infoModel = preferences.getString("model","");
-        int quantitat = preferences.getInt("quant",0);
-        String rutaImgatge = preferences.getString("img","");
 
-        // afegiexo la informacio en els textes
         marca.setText(infoMarca);
         model.setText(infoModel);
-        quant.setText(quantitat);
-        ruta.setText(rutaImgatge);*/
-
-
 
     }
 }
