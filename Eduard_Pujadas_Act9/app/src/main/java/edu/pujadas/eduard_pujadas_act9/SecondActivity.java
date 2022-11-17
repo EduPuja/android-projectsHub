@@ -12,6 +12,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+import edu.pujadas.eduard_pujadas_act9.Adapter.ProducteAdapter;
 import edu.pujadas.eduard_pujadas_act9.Models.Producte;
 
 public class SecondActivity extends AppCompatActivity
@@ -22,10 +23,12 @@ public class SecondActivity extends AppCompatActivity
     private TextView quant;
     private TextView ruta;
 
+
+    private final ArrayList<Producte> listProductes =new ArrayList<>();
+    private ProducteAdapter producteAdapter;
     private ListView listView;
 
-    private ArrayList<Producte> listProductes =new ArrayList<>();
-    //ADAPTADOR
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,7 +38,13 @@ public class SecondActivity extends AppCompatActivity
 
         setTitle("Inventari Aula");
 
+        // lsitView
         listView = findViewById(R.id.producte_list_view);
+
+        //adaptador
+        producteAdapter = new ProducteAdapter(this,listProductes);
+
+
         //text views que agafo
         /*marca = findViewById(R.id.marca);
         model = findViewById(R.id.model);
