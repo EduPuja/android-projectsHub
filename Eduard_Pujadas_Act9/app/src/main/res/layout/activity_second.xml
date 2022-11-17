@@ -14,6 +14,8 @@
         android:layout_marginTop="150dp"
         android:layout_marginEnd="150dp"
         android:text="infoMarca"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +28,8 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="150dp"
         android:text="ifnoModel"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/marca" />
@@ -38,6 +42,8 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="150dp"
         android:text="quant"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/model" />
@@ -51,6 +57,8 @@
         android:layout_marginEnd="150dp"
         android:layout_marginBottom="254dp"
         android:text="rutaImg"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
