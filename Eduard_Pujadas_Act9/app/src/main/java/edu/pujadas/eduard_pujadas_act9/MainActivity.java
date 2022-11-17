@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             editor.putString("img",producte.getRutaImatge());
             editor.apply(); // necessari per poder guardar
 
-            Intent intent = new Intent(this,SecondActivity.class);
+            Intent intent = new Intent(MainActivity.this,SecondActivity.class);
             startActivity(intent);
         }
 
