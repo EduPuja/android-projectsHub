@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             editor.putString("model",producte.getModelProducte());
             editor.putInt("quant",producte.getQuantitat());
             editor.putString("img",producte.getRutaImatge());
+            editor.apply(); // necessari per poder guardar
 
             Intent intent = new Intent(this,SecondActivity.class);
             startActivity(intent);
