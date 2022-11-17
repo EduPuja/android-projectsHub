@@ -35,10 +35,12 @@ public class SecondActivity extends AppCompatActivity
         String infoMarca = preferences.getString("marca","");
         String infoModel = preferences.getString("model","");
         String infoQuant = preferences.getString("quant","");
+        String infoRuta = preferences.getString("img","");
 
         marca.setText(infoMarca);
         model.setText(infoModel);
         quant.setText(infoQuant);
+        ruta.setText(infoRuta);
 
     }
 }
