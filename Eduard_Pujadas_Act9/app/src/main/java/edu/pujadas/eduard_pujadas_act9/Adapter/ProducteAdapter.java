@@ -94,15 +94,16 @@ public class ProducteAdapter extends ArrayAdapter<Producte>
 
 
 
-        SharedPreferences preferences = context.getSharedPreferences("PRODUCTE_DATA", MODE_PRIVATE);
+       /* SharedPreferences preferences = context.getSharedPreferences("PRODUCTE_DATA", MODE_PRIVATE);
         String infoMarca = preferences.getString("marca","");
         String infoModel = preferences.getString("model","");
         String infoQuant = preferences.getString("quant","");
-        String infoRuta = preferences.getString("img","");
+        String infoRuta = preferences.getString("img","");*/
 
-        viewHolder.marca.setText(infoMarca);
-        viewHolder.model.setText(infoModel);
-        viewHolder.quant.setText(infoQuant);
+        viewHolder.marca.setText(listProductes.get(position).getMarcaProducte());
+        viewHolder.model.setText(listProductes.get(position).getModelProducte());
+        //TODO cuidado no peti
+        viewHolder.quant.setText(listProductes.get(position).getQuantitat());
 
         return view;
     }
