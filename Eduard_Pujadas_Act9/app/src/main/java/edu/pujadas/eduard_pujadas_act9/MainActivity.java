@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             // paso les dades en el sharedpreferences
             editor.putString("marca",producte.getMarcaProducte());
             editor.putString("model",producte.getModelProducte());
-            editor.putInt("quant",producte.getQuantitat());
+            editor.putString("quant",spinner.getSelectedItem().toString());
             editor.putString("img",producte.getRutaImatge());
             editor.apply(); // necessari per poder guardar
 
