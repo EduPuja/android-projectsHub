@@ -3,6 +3,7 @@ package edu.pujadas.eduard_pujadas_act9;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -25,9 +26,22 @@ public class SecondActivity extends AppCompatActivity
         quant = findViewById(R.id.quant);
         ruta = findViewById(R.id.ruta);
 
-      //  String infoMarca = getIntent().get("infoMarca");
+        SharedPreferences preferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
 
-        //todo crear dades falses amb objectes
-        //marca.setText(infoMarca);
+
+        // recullo amb les preferencies els dades de producte
+        String infoMarca= preferences.getString("marca","");
+        String infoModel = preferences.getString("model","");
+        int quantitat = preferences.getInt("quant",0);
+        String rutaImgatge = preferences.getString("img","");
+
+        // afegiexo la informacio en els textes 
+        marca.setText(infoMarca);
+        model.setText(infoModel);
+        quant.setText(quantitat);
+        ruta.setText(rutaImgatge);
+
+
+
     }
 }
