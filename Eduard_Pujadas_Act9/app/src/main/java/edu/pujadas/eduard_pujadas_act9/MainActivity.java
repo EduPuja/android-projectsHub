@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -70,8 +71,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         String infoMarca = marcaProducte.getText().toString();
         String infoModel = modelProducte.getText().toString();
-
-
+        int quant = Integer.parseInt(spinner.getSelectedItem().toString());
+        String rutaImatge = "res/drawable/coding.png";
 
         if(infoMarca.isEmpty())
         {
@@ -83,17 +84,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         else
         {
-           // String rutaImatge = "src/main/res/drawable";
 
-            // agafo valor del spinner
-            //int quantiat = Integer.parseInt(spinner.getOnItemSelectedListener().toString());
+            Producte producte = new Producte();
+
+            producte.setMarcaProducte(infoMarca);
+            producte.setModelProducte(infoModel);
+            producte.setQuantitat(quant);
+            producte.setImageProducte(rutaImatge);
+
+
+            // preferencias
+            SharedPreferences sharedPreferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit(); // editor
+
+            // paso les dades en el sharedpreferences 
+            editor.putString("marca",producte.getMarcaProducte());
+            editor.putString("model",producte.getModelProducte());
+            editor.putInt("quant",producte.getQuantitat());
+            editor.putString("img",producte.getRutaImatge());
 
             Intent intent = new Intent(this,SecondActivity.class);
-            intent.putExtra("producte",infoMarca);
-            //Producte producte = new Producte();
-            //producte.setAllProducte(infoMarca,infoModel,quantiat,rutaImatge);
-
-            //intent.putExtra("producte",(Parcelable) producte);  // convertiexo el objecte producte amb parcelable per poderlo passar
             startActivity(intent);
         }
 
