@@ -34,9 +34,11 @@ public class SecondActivity extends AppCompatActivity
         SharedPreferences preferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
         String infoMarca = preferences.getString("marca","");
         String infoModel = preferences.getString("model","");
+        String infoQuant = preferences.getString("quant","");
 
         marca.setText(infoMarca);
         model.setText(infoModel);
+        quant.setText(infoQuant);
 
     }
 }
