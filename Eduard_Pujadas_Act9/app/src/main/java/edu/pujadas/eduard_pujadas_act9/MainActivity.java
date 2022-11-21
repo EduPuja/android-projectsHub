@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         String infoMarca = marcaProducte.getText().toString();
         String infoModel = modelProducte.getText().toString();
-        int quant = Integer.parseInt(spinner.getSelectedItem().toString());
+        String quant = spinner.getSelectedItem().toString();        // el guardo amb un string
         String rutaImatge = "res/drawable/coding.png";
 
         if(infoMarca.isEmpty())
