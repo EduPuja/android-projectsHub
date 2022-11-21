@@ -23,7 +23,7 @@ public class FragmentImage extends Fragment
 {
     private ArrayList<Producte> listProductes = new ArrayList<Producte>();
     /**
-     * Metode per crear un fragment TOTS SON IGUALS 
+     * Metode per crear un fragment TOTS SON IGUALS
      * @param layoutInflater
      * @param container
      * @param saveInstacneState
