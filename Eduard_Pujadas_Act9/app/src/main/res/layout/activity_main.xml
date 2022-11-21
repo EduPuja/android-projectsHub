@@ -63,7 +63,7 @@
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="25dp"
         android:width="190dp"
-        android:onClick="onImgButon"
+        android:onClick="onImgButton"
         android:text="@string/imatge_producte"
         app:layout_constraintBottom_toTopOf="@+id/container_fragment"
         app:layout_constraintEnd_toEndOf="parent"

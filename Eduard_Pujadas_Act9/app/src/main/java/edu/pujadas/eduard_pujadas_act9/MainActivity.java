@@ -4,20 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -114,42 +109,30 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     /**
-     * Metode que uilizara el boto de obrir la camara
+     * metode que crea la imatge
      * @param vista
      */
-    public void onImgButon(View vista)
+    public void onImgButton(View vista)
     {
 
-        //Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
+        // CREACIO DE UN FRAGEMENT
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.setReorderingAllowed(true);
         fragmentTransaction.replace(R.id.container_fragment, new FragmentImage()); // replace !!
         fragmentTransaction.commit();
-        /*try
-        {
-            startActivityForResult(takePictureIntent, REQUEST_VIDEO_CAPTURE);
 
-            // posar el fragemnt imatge
-
-        }
-        catch (ActivityNotFoundException e)
-        {
-            // display error state to the user
-            e.printStackTrace();
-        }*/
-        //todo agafa la foto i posarla en un iamge view per despres carregar un fragment
-
-
-
+        createToast("Image Producte");
     }
+
+
+
 
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
     {
-        crearToast("Stock :");
+        createToast("Stock :");
 
 
 
@@ -166,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      * Metode per crear un tosast
      * @param msg
      */
-    public void crearToast(String msg)
+    public void createToast(String msg)
     {
 
         Context context = getApplicationContext();
