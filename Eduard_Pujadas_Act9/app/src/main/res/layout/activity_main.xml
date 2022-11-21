@@ -47,8 +47,11 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="30dp"
+        android:layout_marginBottom="25dp"
         android:contentDescription="@string/spinner"
+        app:layout_constraintBottom_toTopOf="@+id/container_fragment"
         app:layout_constraintEnd_toStartOf="@+id/img_buton"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/model_product" />
 
@@ -71,7 +74,7 @@
         android:layout_width="302dp"
         android:layout_height="194dp"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="55dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
