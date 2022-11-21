@@ -43,10 +43,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view)  // canviar aquest nom de funcio
                 {
                     if(isName() && isPasswoord())
-                        {
-                            //open 2n activity
-                             currentWeekActivity();
-                        }
+                    {
+                        //open 2n activity
+                        currentWeekActivity();
+                    }
 
 
                 }
@@ -60,16 +60,25 @@ public class MainActivity extends AppCompatActivity
                 {
                     //obtinc el nom del edit text i el converteixo amb string
                     nameIntroduced = userName.getText().toString();
-                    if(nameIntroduced.equals("EduardPujadas2002"))
-                        {
-                           createToast("Nom usuari Correcte! :D");
-                            return true;
-                        }
-                    else    // el nom és incorrecte
-                        {
-                            createToast("Incorrecte Nom usuari! D:");
-                            return false;
-                        }
+                    if(nameIntroduced.isEmpty())
+                    {
+                        userName.setError("Nom Usuari Buit");
+                        return false;
+                    }
+                    else if(nameIntroduced.equals("EduardPujadas2002"))
+                    {
+
+                        createToast("Nom usuari Correcte! :D");
+                        return true;
+
+                    }
+
+                    else
+                    {
+                        createToast("Incorrecte Nom usuari! D:");
+                        return false;
+                    }
+
                 }
 
                 /**
@@ -82,23 +91,34 @@ public class MainActivity extends AppCompatActivity
                     //obtinc el nom del edit text i el converteixo amb string
                     passIntroduced = paswordInfo.getText().toString();
                         // primer comprovar si la password introduida te més de 5 caracters
-                    if(passIntroduced.length() <5)
+
+                    if(!passIntroduced.isEmpty())
+                    {
+                        if(passIntroduced.length() <5)
                         {
                             //incorrecte
                             createToast("Password to short :(");
                             return false;
                         }
-                    else if (passIntroduced.equals("EPF2002"))
+                        else if (passIntroduced.equals("EPF2002"))
                         {
                             createToast("PASSWORD CORRECTE :D");
-                          return true;
+                            return true;
 
                         }
-                    else
+                        else
                         {
                             createToast("Passowrd incorecte");
                             return false;
                         }
+                    }
+                    else
+                    {
+                        paswordInfo.setError("Password Vuida");
+                        return  false;
+
+                    }
+
 
 
                 }
