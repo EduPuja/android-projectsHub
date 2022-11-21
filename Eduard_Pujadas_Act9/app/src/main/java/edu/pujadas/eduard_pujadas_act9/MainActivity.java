@@ -69,14 +69,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     {
 
 
+        // variables que son recollides per el edit text
         String infoMarca = marcaProducte.getText().toString();
         String infoModel = modelProducte.getText().toString();
-        String quant = spinner.getSelectedItem().toString();        // el guardo amb un string
+        // el guardo amb un string
+        String quant = spinner.getSelectedItem().toString();
         String rutaImatge = "res/drawable/coding.png";
 
         if(infoMarca.isEmpty())
         {
             marcaProducte.setError("Aquest camp no pot esta buit");
+
         }
         else if(infoModel.isEmpty())
         {
@@ -117,23 +120,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onImgButon(View vista)
     {
 
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        try
+        //Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setReorderingAllowed(true);
+        fragmentTransaction.replace(R.id.container_fragment, new FragmentImage()); // replace !!
+        fragmentTransaction.commit();
+        /*try
         {
             startActivityForResult(takePictureIntent, REQUEST_VIDEO_CAPTURE);
 
             // posar el fragemnt imatge
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.setReorderingAllowed(true);
-            fragmentTransaction.replace(R.id.container_fragment, new FragmentImage()); // replace !!
-            fragmentTransaction.commit();
+
         }
         catch (ActivityNotFoundException e)
         {
             // display error state to the user
             e.printStackTrace();
-        }
+        }*/
         //todo agafa la foto i posarla en un iamge view per despres carregar un fragment
 
 
