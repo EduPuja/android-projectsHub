@@ -5,7 +5,7 @@ import android.media.Image;
 public class Producte
 {   private String marcaProducte;
     private String modelProducte;
-    private int quantitat;
+    private String quantitat;
     private String rutaImatge;
 
 
@@ -17,7 +17,7 @@ public class Producte
 
     }
 
-    public void setAllProducte(String marcaProducte, String modelProducte, int quantitat, String rutaImatge)
+    public void setAllProducte(String marcaProducte, String modelProducte, String quantitat, String rutaImatge)
     {
         this.marcaProducte = marcaProducte;
         this.modelProducte = modelProducte;
@@ -44,7 +44,7 @@ public class Producte
         this.modelProducte = modelProducte;
     }
 
-    public void setQuantitat(int quantitat)
+    public void setQuantitat(String quantitat)
     {
         this.quantitat = quantitat;
     }
@@ -69,7 +69,7 @@ public class Producte
         return modelProducte;
     }
 
-    public int getQuantitat()
+    public String getQuantitat()
     {
         return quantitat;
     }
