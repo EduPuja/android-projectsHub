@@ -175,19 +175,10 @@ public class MainActivity extends AppCompatActivity
         listStudients.clear();
 
         listStudients.addAll(studentDB.getAllItems());
-        if(listStudients.size()>=1)
-        {
-            //studentDB.updateItem(st);
 
-            listStudients.get(0).setName("Alumne Moded");
+        listStudients.get(0).setName("Pere");
+        listView.setAdapter(studentAdapter);
 
-
-            listStudients.addAll(studentDB.getAllItems());
-
-            listView.setAdapter(studentAdapter);
-
-        }
-        
     }
 
     /**
