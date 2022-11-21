@@ -45,19 +45,29 @@ public class MainActivity extends AppCompatActivity
         String passInfo = paswordInfo.getText().toString();     // recullo les dades del editext de password
         Intent intent = new Intent(this,SecondActivity.class);
 
-        if(userInfo.equals("user") && passInfo.equals("1234"))
+        if(userInfo.isEmpty() || passInfo.isEmpty())
         {
-            intent.putExtra("user",0);              // envio el valor del usuari
-            startActivity(intent);
-        }
-        else if (userInfo.equals("admin") && passInfo.equals("1234"))
-        {
-            intent.putExtra("admin",1);         //envio el valor del admin
-            startActivity(intent);
+            userName.setError("Usuari Vuit");
+            paswordInfo.setError("Password Vuit");
+            createToast("Dades vuides");
         }
         else
         {
-            createToast("No ets user ni admin!");         // informo al usuari / admin que no ha entrat correctament
+            if(userInfo.equals("user") && passInfo.equals("1234"))
+            {
+                intent.putExtra("user",0);              // envio el valor del usuari
+                startActivity(intent);
+            }
+            else if (userInfo.equals("admin") && passInfo.equals("1234"))
+            {
+                intent.putExtra("admin",1);         //envio el valor del admin
+                startActivity(intent);
+            }
+            else
+            {
+                createToast("No ets user ni admin!");         // informo al usuari / admin que no ha entrat correctament
+            }
+
         }
 
 
