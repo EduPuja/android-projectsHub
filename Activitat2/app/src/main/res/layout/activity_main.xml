@@ -8,48 +8,40 @@
 
     <Button
         android:id="@+id/btn_name"
-        android:layout_width="200dp"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="150dp"
-        android:layout_marginBottom="150dp"
         android:onClick="openEduardActivity"
         android:text="@string/btn_name"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_cognom"
-        android:layout_width="200dp"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="150dp"
-        android:layout_marginBottom="150dp"
         android:onClick="openPujadasActivity"
         android:text="@string/btn_cognom"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.366" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_name" />
 
     <Button
         android:id="@+id/btn_second_cognom"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="175dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="35dp"
         android:onClick="sendMessage"
         android:text="@string/btn_segon_cognom"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/enviarMissatge"
         app:layout_constraintTop_toBottomOf="@+id/btn_cognom" />
@@ -58,16 +50,13 @@
         android:id="@+id/enviarMissatge"
         android:layout_width="150dp"
         android:layout_height="53dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_cognom"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
