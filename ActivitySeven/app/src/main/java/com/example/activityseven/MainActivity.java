@@ -137,18 +137,16 @@ public class MainActivity extends AppCompatActivity
     }
     /**
      * Metode que esborra l'ultim alumne
-     * esborra l’últim alumne de la llista
-     *
-     * NO FUNCIONA PETA LA APP
+     * esborra l’últim alumne de la llista ✅✅✅✅✅✅
      */
     private void onClearLast()
     {
-       /*listStudients.clear();
-       int ultim = listStudients.size()-1;
+        studentDB.deleteItem(listStudients.get(listStudients.size()-1));
+        listStudients.clear();
+        //studentAdapter.notifyDataSetChanged();
         listStudients.addAll(studentDB.getAllItems());
-       studentDB.deleteItem(listStudients.get(ultim));
-       listView.setAdapter(studentAdapter);*/
-
+        studentAdapter = new StudentAdapter(this, listStudients);
+        listView.setAdapter(studentAdapter);
     }
 
     /**
