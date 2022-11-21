@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity
                 {
                     if(isName() && isPasswoord())
                     {
+                        createToast("LOGIN CORRECTE ✅");
                         //open 2n activity
                         currentWeekActivity();
                     }
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity
                     else if(nameIntroduced.equals("EduardPujadas2002"))
                     {
 
-                        createToast("Nom usuari Correcte! :D");
+                        //createToast("Nom usuari Correcte! :D");
                         return true;
 
                     }
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity
                         }
                         else if (passIntroduced.equals("EPF2002"))
                         {
-                            createToast("PASSWORD CORRECTE :D");
+                            //createToast("PASSWORD CORRECTE :D");
                             return true;
 
                         }
