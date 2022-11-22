@@ -110,6 +110,8 @@ public class ProducteAdapter extends ArrayAdapter<Producte>
 
     static class ViewHolder
     {
+
+        //text view producte list item
         TextView marca;
         TextView model;
         TextView quant;

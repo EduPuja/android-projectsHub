@@ -21,7 +21,7 @@ public class SecondActivity extends AppCompatActivity
     private TextView marca;
     private TextView model;
     private TextView quant;
-    private TextView ruta;
+    //private TextView ruta;
 
 
     private final ArrayList<Producte> listProductes =new ArrayList<>();
@@ -46,22 +46,24 @@ public class SecondActivity extends AppCompatActivity
 
 
         //text views que agafo
-        /*marca = findViewById(R.id.marca);
-        model = findViewById(R.id.model);
-        quant = findViewById(R.id.quant);
-        ruta = findViewById(R.id.ruta);*/
+
+       // ruta = findViewById(R.id.ruta);
 
 
-        /*SharedPreferences preferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
         String infoMarca = preferences.getString("marca","");
         String infoModel = preferences.getString("model","");
         String infoQuant = preferences.getString("quant","");
-        String infoRuta = preferences.getString("img","");*/
+        String infoRuta = preferences.getString("img","");
 
-       /* marca.setText(infoMarca);
+
+
+
+        /*marca.setText(infoMarca);
         model.setText(infoModel);
         quant.setText(infoQuant);
-        ruta.setText(infoRuta);*/
+       // ruta.setText(infoRuta);*/
 
+        listView.setAdapter(producteAdapter);
     }
 }
