@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -114,13 +115,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      */
     public void onImgButton(View vista)
     {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-        // CREACIO DE UN FRAGEMENT
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.setReorderingAllowed(true);
-        fragmentTransaction.replace(R.id.container_fragment, new FragmentImage()); // replace !!
-        fragmentTransaction.commit();
+        try
+        {
+            startActivityForResult(takePictureIntent, REQUEST_VIDEO_CAPTURE);
+
+            // CREACIO DE UN FRAGEMENT
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.setReorderingAllowed(true);
+            fragmentTransaction.replace(R.id.container_fragment, new FragmentImage()); // replace !!
+            fragmentTransaction.commit();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
 
         createToast("Image Producte");
     }
