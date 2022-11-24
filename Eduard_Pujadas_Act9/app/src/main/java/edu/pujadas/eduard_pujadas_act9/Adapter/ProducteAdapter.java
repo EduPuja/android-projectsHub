@@ -30,7 +30,7 @@ public class ProducteAdapter extends ArrayAdapter<Producte>
      */
     public ProducteAdapter(Context context, ArrayList<Producte> listProductes)
     {
-        super(context, R.layout.producte_list_item);
+        super(context, R.layout.product_list_item);
         this.context = context;
         this.listProductes= listProductes;
     }
@@ -75,7 +75,7 @@ public class ProducteAdapter extends ArrayAdapter<Producte>
         if (convertView == null || convertView.getTag() == null)
         {
             viewHolder = new ViewHolder();
-            view = LayoutInflater.from(context).inflate(R.layout.producte_list_item, parent, false);
+            view = LayoutInflater.from(context).inflate(R.layout.product_list_item, parent, false);
             viewHolder.marca = view.findViewById(R.id.marca);
             viewHolder.model = view.findViewById(R.id.model);
             viewHolder.quant = view.findViewById(R.id.quant);
@@ -102,7 +102,6 @@ public class ProducteAdapter extends ArrayAdapter<Producte>
 
         viewHolder.marca.setText(listProductes.get(position).getMarcaProducte());
         viewHolder.model.setText(listProductes.get(position).getModelProducte());
-        //TODO cuidado no peti
         viewHolder.quant.setText(listProductes.get(position).getQuantitat());
 
         return view;
