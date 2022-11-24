@@ -17,12 +17,17 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+
 import edu.pujadas.eduard_pujadas_act9.Fragments.FragmentImage;
 import edu.pujadas.eduard_pujadas_act9.Models.Producte;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
 {
-
+    //arraylist productes
+    ArrayList<Producte> listProducte;
     // permisos camera
     private final int REQUEST_PERMISSION_STORAGE_SAVE = 101;
     private final int REQUEST_PERMISSION_STORAGE_DELETE = 102;
@@ -44,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setTitle("Formulari Producte");
         marcaProducte=findViewById(R.id.marca_product);
         modelProducte = findViewById(R.id.model_product);
+
+
         //spinner
         spinner  = findViewById(R.id.spinner);
         // adaptador
@@ -51,6 +58,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+        //construeixo el arraylist
+        listProducte = new ArrayList<>();
+        // build recicleview
+
 
 
 
@@ -84,7 +95,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         else
         {
 
-            Producte producte = new Producte();
+            SharedPreferences sharedPreferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
+            // editor
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            Gson gson = new Gson();
+            String json = gson.toJson(listProducte);
+            editor.putString("producte", json);
+            editor.apply();
+
+            /*Producte producte = new Producte();
 
             producte.setMarcaProducte(infoMarca);
             producte.setModelProducte(infoModel);
@@ -102,7 +121,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             editor.putString("quant",spinner.getSelectedItem().toString());
             editor.putString("img",producte.getRutaImatge());
             editor.apply(); // necessari per poder guardar
+            */
 
+            //canviar de pantalla
             Intent intent = new Intent(MainActivity.this,SecondActivity.class);
             startActivity(intent);
         }
