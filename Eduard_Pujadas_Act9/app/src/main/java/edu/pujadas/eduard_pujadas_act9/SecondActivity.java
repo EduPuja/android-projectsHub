@@ -60,24 +60,29 @@ public class SecondActivity extends AppCompatActivity
      * @param menu
      * @return
      */
-   /* @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflem el menú. Aquesta acció afegeix els items a la barra de acció
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_inventari, menu);
         return true;
-    }*/
+    }
 
     /**
      * Funcio que sutiliza en els items del menu que quant es selecionen utilzien
      * una funcio
      */
-    /*@Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        return null;
+        if (item.getItemId() == R.id.showMacs)
+        {
+            // veure macs
+            return true;
+        }
+        return false;
     }
-*/
+
 
 
 }
