@@ -30,7 +30,7 @@ public class ProducteAdapter extends ArrayAdapter<Producte>
      */
     public ProducteAdapter(Context context, ArrayList<Producte> listProductes)
     {
-        super(context, R.layout.product_list_item);
+        super(context, R.layout.producte_list_item);
         this.context = context;
         this.listProductes= listProductes;
     }
@@ -75,10 +75,10 @@ public class ProducteAdapter extends ArrayAdapter<Producte>
         if (convertView == null || convertView.getTag() == null)
         {
             viewHolder = new ViewHolder();
-            view = LayoutInflater.from(context).inflate(R.layout.product_list_item, parent, false);
-            viewHolder.marca = view.findViewById(R.id.marca);
-            viewHolder.model = view.findViewById(R.id.model);
-            viewHolder.quant = view.findViewById(R.id.quant);
+            view = LayoutInflater.from(context).inflate(R.layout.producte_list_item, parent, false);
+            viewHolder.marca_product = view.findViewById(R.id.marca_product);   // marca
+            viewHolder.model_product = view.findViewById(R.id.model_product);   // model
+            viewHolder.quant_product= view.findViewById(R.id.quantitat_product); // quant
 
             view.setTag(viewHolder);
 
@@ -100,9 +100,9 @@ public class ProducteAdapter extends ArrayAdapter<Producte>
         String infoQuant = preferences.getString("quant","");
         String infoRuta = preferences.getString("img","");*/
 
-        viewHolder.marca.setText(listProductes.get(position).getMarcaProducte());
-        viewHolder.model.setText(listProductes.get(position).getModelProducte());
-        viewHolder.quant.setText(listProductes.get(position).getQuantitat());
+        viewHolder.marca_product.setText(listProductes.get(position).getMarcaProducte());
+        viewHolder.model_product.setText(listProductes.get(position).getModelProducte());
+        viewHolder.quant_product.setText(listProductes.get(position).getQuantitat());
 
         return view;
     }
@@ -111,8 +111,8 @@ public class ProducteAdapter extends ArrayAdapter<Producte>
     {
 
         //text view producte list item
-        TextView marca;
-        TextView model;
-        TextView quant;
+        TextView marca_product;
+        TextView model_product;
+        TextView quant_product;
     }
 }

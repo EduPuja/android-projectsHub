@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/marca"
+        android:id="@+id/marca_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -15,7 +15,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/model"
+        android:id="@+id/model_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -24,7 +24,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/quant"
+        android:id="@+id/quantitat_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
