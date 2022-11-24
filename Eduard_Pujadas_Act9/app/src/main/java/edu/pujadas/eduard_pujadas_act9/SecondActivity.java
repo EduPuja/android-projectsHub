@@ -38,13 +38,9 @@ public class SecondActivity extends AppCompatActivity
         producte.setAllProducte(marcaSP,modelSP,quantitatSP,rutaImg);
         listProducte.add(producte);
 
-
-        for(int i =0;i<listProducte.size();i++)
-        {
-            producteAdapter = new ProducteAdapter(this, listProducte);
-            listViewProducte.setAdapter(producteAdapter);
-
-        }
+        producteAdapter = new ProducteAdapter(this, listProducte);
+        listViewProducte.setAdapter(producteAdapter);
+     
 
     }
 }
