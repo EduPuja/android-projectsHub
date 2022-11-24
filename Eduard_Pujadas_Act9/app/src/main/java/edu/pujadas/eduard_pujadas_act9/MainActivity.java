@@ -159,19 +159,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
 
-
-
-
+    /**
+     * Metode necessari per el implements en principi no fa res
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
     {
-        createToast("Stock :");
-
-
-
-
+        //res passa
     }
 
+    /**
+     * Metode nothing selected
+     * @param parent
+     */
     @Override
     public void onNothingSelected(AdapterView<?> parent)
     {
