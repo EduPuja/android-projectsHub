@@ -95,15 +95,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         else
         {
 
-            SharedPreferences sharedPreferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
+           /* SharedPreferences sharedPreferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
             // editor
             SharedPreferences.Editor editor = sharedPreferences.edit();
             Gson gson = new Gson();
             String json = gson.toJson(listProducte);
             editor.putString("producte", json);
             editor.apply();
-
-            /*Producte producte = new Producte();
+            */
+            Producte producte = new Producte();
 
             producte.setMarcaProducte(infoMarca);
             producte.setModelProducte(infoModel);
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             editor.putString("quant",spinner.getSelectedItem().toString());
             editor.putString("img",producte.getRutaImatge());
             editor.apply(); // necessari per poder guardar
-            */
+            
 
             //canviar de pantalla
             Intent intent = new Intent(MainActivity.this,SecondActivity.class);
