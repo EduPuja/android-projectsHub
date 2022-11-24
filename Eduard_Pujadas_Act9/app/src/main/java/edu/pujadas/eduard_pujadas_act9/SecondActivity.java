@@ -2,6 +2,7 @@ package edu.pujadas.eduard_pujadas_act9;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -101,21 +102,40 @@ public class SecondActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Metode que te envia a la tercera activitat i veus si son macs
+     */
     public void showMacs()
     {
-
+        Intent intent = new Intent(this,ThirdActivity.class);
+        startActivity(intent);
     }
+
+    /**
+     * Metode que te envia a la tercera pantalla i veus les pantalles
+     */
     public void showScreens()
     {
-
+        Intent intent = new Intent(this,ThirdActivity.class);
+        startActivity(intent);
     }
+
+    /**
+     * Metode que te envia a la tercera pantalla i veus les tv
+     */
     public void showTv()
     {
-
+        Intent intent = new Intent(this,ThirdActivity.class);
+        startActivity(intent);
     }
+
+    /**
+     * Metode que te envia a la tercera pantalla i veus les teclats
+     */
     public void showKeyboards()
     {
-
+        Intent intent = new Intent(this,ThirdActivity.class);
+        startActivity(intent);
     }
 
 
