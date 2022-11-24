@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
@@ -49,9 +51,33 @@ public class SecondActivity extends AppCompatActivity
 
         producteAdapter = new ProducteAdapter(this, listProducte);
         listViewProducte.setAdapter(producteAdapter);
-     
+
 
     }
+
+    /**
+     * Funcio per cridar el menu
+     * @param menu
+     * @return
+     */
+   /* @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        // Inflem el menú. Aquesta acció afegeix els items a la barra de acció
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }*/
+
+    /**
+     * Funcio que sutiliza en els items del menu que quant es selecionen utilzien
+     * una funcio
+     */
+    /*@Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        return null;
+    }
+*/
 
 
 }
