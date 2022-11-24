@@ -10,8 +10,9 @@
     >
 
     <ListView
-        android:id="@+id/producte_list_view"
+        android:id="@+id/producte_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:divider="@color/teal_200" />
 
 </FrameLayout>
