@@ -95,14 +95,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         else
         {
 
-           /* SharedPreferences sharedPreferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
-            // editor
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            Gson gson = new Gson();
-            String json = gson.toJson(listProducte);
-            editor.putString("producte", json);
-            editor.apply();
-            */
+
             Producte producte = new Producte();
 
             producte.setMarcaProducte(infoMarca);
@@ -110,18 +103,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             producte.setQuantitat(quant);
             producte.setImageProducte(rutaImatge);
 
+            listProducte.add(producte);
 
             // preferencias
             SharedPreferences sharedPreferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit(); // editor
+            Gson gson= new Gson();
 
+            String jsonProducte =gson.toJson(listProducte);
+            editor.putString("listProductes",jsonProducte);
+            editor.apply(); // necessari per poder guardar
             // paso les dades en el sharedpreferences
-            editor.putString("marca",producte.getMarcaProducte());
+            /*editor.putString("marca",producte.getMarcaProducte());
             editor.putString("model",producte.getModelProducte());
             editor.putString("quant",spinner.getSelectedItem().toString());
-            editor.putString("img",producte.getRutaImatge());
-            editor.apply(); // necessari per poder guardar
-            
+            editor.putString("img",producte.getRutaImatge());*/
+
+
 
             //canviar de pantalla
             Intent intent = new Intent(MainActivity.this,SecondActivity.class);
