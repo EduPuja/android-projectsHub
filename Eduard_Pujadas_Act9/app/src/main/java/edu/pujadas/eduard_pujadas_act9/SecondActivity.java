@@ -8,13 +8,13 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import edu.pujadas.eduard_pujadas_act9.Adapter.ProducteAdapter;
+import edu.pujadas.eduard_pujadas_act9.Adapter.ProducteAdapterListView;
 import edu.pujadas.eduard_pujadas_act9.Models.Producte;
 
 public class SecondActivity extends AppCompatActivity
 {
     private final ArrayList<Producte> listProducte = new ArrayList<Producte>();
-    private ProducteAdapter producteAdapter;
+    private ProducteAdapterListView producteAdapter;
     private ListView listViewProducte;
 
     @Override
@@ -38,7 +38,7 @@ public class SecondActivity extends AppCompatActivity
         producte.setAllProducte(marcaSP,modelSP,quantitatSP,rutaImg);
         listProducte.add(producte);
 
-        producteAdapter = new ProducteAdapter(this, listProducte);
+        producteAdapter = new ProducteAdapterListView(this, listProducte);
         listViewProducte.setAdapter(producteAdapter);
      
 

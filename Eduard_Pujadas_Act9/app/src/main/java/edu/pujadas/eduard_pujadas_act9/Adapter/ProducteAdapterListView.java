@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import edu.pujadas.eduard_pujadas_act9.Models.Producte;
 import edu.pujadas.eduard_pujadas_act9.R;
 
-public class ProducteAdapter extends ArrayAdapter<Producte>
+public class ProducteAdapterListView extends ArrayAdapter<Producte>
 {
     private final Context context;
     private final ArrayList<Producte> listProductes;
@@ -28,7 +28,7 @@ public class ProducteAdapter extends ArrayAdapter<Producte>
      * @param context
      * @param listProductes
      */
-    public ProducteAdapter(Context context, ArrayList<Producte> listProductes)
+    public ProducteAdapterListView(Context context, ArrayList<Producte> listProductes)
     {
         super(context, R.layout.producte_list_item);
         this.context = context;
