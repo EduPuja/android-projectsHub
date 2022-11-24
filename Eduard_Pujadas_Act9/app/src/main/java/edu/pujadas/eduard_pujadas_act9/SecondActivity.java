@@ -69,8 +69,7 @@ public class SecondActivity extends AppCompatActivity
     }
 
     /**
-     * Funcio que sutiliza en els items del menu que quant es selecionen utilzien
-     * una funcio
+     * Metode necessesari per poder tenir un menu en la segona activity
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
@@ -80,7 +79,22 @@ public class SecondActivity extends AppCompatActivity
             // veure macs
             return true;
         }
-        return false;
+        else if (item.getItemId() == R.id.showScreens)
+        {
+            //veure pantallas
+            return true;
+        }
+        else if (item.getItemId() == R.id.showTV)
+        {
+            //veures televison
+            return true;
+        }
+        else if (item.getItemId() == R.id.showKeyboards)
+        {
+            //veure teclats
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
