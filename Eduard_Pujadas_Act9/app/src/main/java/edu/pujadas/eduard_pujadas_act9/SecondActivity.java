@@ -77,24 +77,45 @@ public class SecondActivity extends AppCompatActivity
         if (item.getItemId() == R.id.showMacs)
         {
             // veure macs
+            showMacs();
             return true;
         }
         else if (item.getItemId() == R.id.showScreens)
         {
             //veure pantallas
+            showScreens();
             return true;
         }
         else if (item.getItemId() == R.id.showTV)
         {
             //veures televison
+            showTv();
             return true;
         }
         else if (item.getItemId() == R.id.showKeyboards)
         {
             //veure teclats
+            showKeyboards();
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showMacs()
+    {
+
+    }
+    public void showScreens()
+    {
+
+    }
+    public void showTv()
+    {
+
+    }
+    public void showKeyboards()
+    {
+
     }
 
 
