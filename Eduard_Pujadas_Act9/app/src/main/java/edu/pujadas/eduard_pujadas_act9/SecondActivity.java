@@ -2,6 +2,7 @@ package edu.pujadas.eduard_pujadas_act9;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -21,14 +22,29 @@ public class SecondActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        //titol de la segona atcivity
-        setTitle("Inventari Producte");
-        // busco en el xml per la id el listView
+
+        setTitle("Inventari productes");
+
         listViewProducte = findViewById(R.id.producte_list);
-        // llavors creo un adaptador agafant aquesta activitat i el arraylist que creo de producte
-        producteAdapter =new ProducteAdapter(this,listProducte);
-        // finalment inflo el adaptador
-        listViewProducte.setAdapter(producteAdapter);
+
+
+        SharedPreferences sharedPreferences = getSharedPreferences("PRODUCTE_DATA",MODE_PRIVATE);
+        String marcaSP = sharedPreferences.getString("marca","");
+        String modelSP = sharedPreferences.getString("model","");
+        String quantitatSP = sharedPreferences.getString("quant","");
+        String rutaImg = sharedPreferences.getString("img","");
+
+        Producte producte = new Producte();
+        producte.setAllProducte(marcaSP,modelSP,quantitatSP,rutaImg);
+        listProducte.add(producte);
+
+
+        for(int i =0;i<listProducte.size();i++)
+        {
+            producteAdapter = new ProducteAdapter(this, listProducte);
+            listViewProducte.setAdapter(producteAdapter);
+
+        }
 
     }
 }
