@@ -109,6 +109,7 @@ public class SecondActivity extends AppCompatActivity
     {
         Intent intent = new Intent(this,ThirdActivity.class);
         startActivity(intent);
+        intent.putExtra("product",1);
     }
 
     /**
@@ -117,6 +118,7 @@ public class SecondActivity extends AppCompatActivity
     public void showScreens()
     {
         Intent intent = new Intent(this,ThirdActivity.class);
+        intent.putExtra("product",2);
         startActivity(intent);
     }
 
@@ -126,6 +128,7 @@ public class SecondActivity extends AppCompatActivity
     public void showTv()
     {
         Intent intent = new Intent(this,ThirdActivity.class);
+        intent.putExtra("product",3);
         startActivity(intent);
     }
 
@@ -135,6 +138,7 @@ public class SecondActivity extends AppCompatActivity
     public void showKeyboards()
     {
         Intent intent = new Intent(this,ThirdActivity.class);
+        intent.putExtra("product",4);
         startActivity(intent);
     }
 
