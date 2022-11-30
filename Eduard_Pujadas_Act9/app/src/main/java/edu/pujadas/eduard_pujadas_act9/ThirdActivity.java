@@ -6,9 +6,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import edu.pujadas.eduard_pujadas_act9.Fragments.FragmentDescripcio;
 import edu.pujadas.eduard_pujadas_act9.Fragments.FragmentImage;
 
 public class ThirdActivity extends AppCompatActivity
@@ -63,5 +65,31 @@ public class ThirdActivity extends AppCompatActivity
         }
 
 
+    }
+
+    /**
+     * Metode que utiliza el buto de la activitat3
+     * @param vista
+     */
+    public void onImgFragmentBtn(View vista)
+    {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setReorderingAllowed(true);
+        fragmentTransaction.replace(R.id.container_fragment, new FragmentImage()); // replace !!
+        fragmentTransaction.commit();
+    }
+
+    /**
+     * Metode que fa on click buton de descripcio
+     * @param vista
+     */
+    public void onFragmentDescrip(View vista)
+    {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setReorderingAllowed(true);
+        fragmentTransaction.replace(R.id.container_fragment, new FragmentDescripcio()); // replace !!
+        fragmentTransaction.commit();
     }
 }
