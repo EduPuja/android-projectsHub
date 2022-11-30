@@ -13,11 +13,23 @@ public class ThirdActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
-        String a =getIntent().getStringExtra("producte");
-        if(a.equalsIgnoreCase("1"))
-        {
-            setTitle("");
-        }
-        setTitle("3Activity");
+       int[] product = getIntent().getIntArrayExtra("product");
+       for(int i =0;i<product.length;i++)
+       {
+           if(product[i] ==1)
+           {
+               setTitle("Macs");
+           }
+           else if(product[i] ==2)
+           {
+               setTitle("Pantalles");
+           }
+           else
+           {
+               setTitle("AAA");
+           }
+       }
+
+
     }
 }
