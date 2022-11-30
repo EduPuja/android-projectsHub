@@ -108,8 +108,9 @@ public class SecondActivity extends AppCompatActivity
     public void showMacs()
     {
         Intent intent = new Intent(this,ThirdActivity.class);
-        startActivity(intent);
         intent.putExtra("product",1);
+        startActivity(intent);
+
     }
 
     /**
