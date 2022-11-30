@@ -6,4 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".ThirdActivity">
 
+    <LinearLayout
+        android:id="@+id/container_fragment"
+        android:layout_width="335dp"
+        android:layout_height="372dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+
+    <Button
+        android:id="@+id/imgButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginBottom="60dp"
+        android:text="@string/imgBtn"
+        app:layout_constraintBottom_toTopOf="@+id/container_fragment"
+        app:layout_constraintEnd_toStartOf="@+id/descripButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/descripButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="55dp"
+        android:text="@string/descripBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
