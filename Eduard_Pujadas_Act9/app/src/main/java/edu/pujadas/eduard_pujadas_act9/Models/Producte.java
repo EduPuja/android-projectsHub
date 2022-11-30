@@ -78,4 +78,13 @@ public class Producte
     {
         return rutaImatge;
     }
+
+    public  String getOnlyMacs()
+    {
+        if(marcaProducte.equalsIgnoreCase("mac"))
+        {
+            return  getMarcaProducte();
+        }
+        return "";
+    }
 }
