@@ -58,35 +58,22 @@ public class FragmentDescripcio extends Fragment
         // afegiexo desde el json amb el arraylist i el type
         listProducte = gson.fromJson(info,type);
 
-        marcaDescrip = vista.findViewById(R.id.marcaDescrip);
+        //texviews que gracies a la vista els hi puc donar id per despres
+         marcaDescrip = vista.findViewById(R.id.marcaDescrip);
          modelDescrip = vista.findViewById(R.id.modelDescrip);
          quantDescrip = vista.findViewById(R.id.quantDescrip);
 
 
-
+        // poder afegir el text
          this.marcaDescrip.setText(listProducte.get(0).getMarcaProducte());
          this.modelDescrip.setText(listProducte.get(0).getModelProducte());
          this.quantDescrip.setText(listProducte.get(0).getQuantitat());
 
+         //finalment retorno la vista on ho poso tot
         return vista;
     }
 
-    /**
-     *
-     * @param view
-     * @param savedInstanceState
-     */
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
-    {
-        super.onViewCreated(view, savedInstanceState);
-        SharedPreferences pref = getActivity().getSharedPreferences("PRODUCTE_DATA", Context.MODE_PRIVATE);
 
-        Producte producte = new Producte();
-        producte.setMarcaProducte(pref.getString("marca",""));
-        producte.setModelProducte(pref.getString("model",""));
-        producte.setQuantitat(pref.getString("quantitat",""));
-    }
 
 
 }

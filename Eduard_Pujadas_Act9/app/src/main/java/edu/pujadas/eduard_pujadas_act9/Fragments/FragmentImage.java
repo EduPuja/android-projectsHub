@@ -38,21 +38,5 @@ public class FragmentImage extends Fragment
         return vista;
     }
 
-    /**
-     * Metode per el shared preferences amb el utilziat en el fragment imatge
-     * @param view
-     * @param savedInstanceState
-     */
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
-    {
-        super.onViewCreated(view, savedInstanceState);
-        SharedPreferences pref = getActivity().getSharedPreferences("PRODUCTE_DATA",Context.MODE_PRIVATE);
-
-        Producte producte = new Producte();
-        producte.setMarcaProducte(pref.getString("marca",""));
-        producte.setModelProducte(pref.getString("model",""));
-        producte.setQuantitat(pref.getString("quantitat",""));
-    }
+  
 }
