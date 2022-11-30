@@ -27,7 +27,7 @@ public class FragmentDescripcio extends Fragment
     public View onCreateView (LayoutInflater layoutInflater, ViewGroup container, Bundle saveInstacneState)
     {
         super.onCreateView(layoutInflater,container,saveInstacneState);
-        View vista = layoutInflater.inflate(R.layout.fragment_img,container,false);
+        View vista = layoutInflater.inflate(R.layout.fragment_descrip,container,false);
 
         return vista;
     }
