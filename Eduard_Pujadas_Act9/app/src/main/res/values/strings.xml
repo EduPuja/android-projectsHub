@@ -21,4 +21,6 @@
     <string name="veure_pantalles">Veure Pantalles</string>
     <string name="veure_tv">Veure TVs</string>
     <string name="veure_teclats">Veure Tecalats</string>
+    <string name="descripBtn">Descripció</string>
+    <string name="imgBtn">Imatge</string>
 </resources>
