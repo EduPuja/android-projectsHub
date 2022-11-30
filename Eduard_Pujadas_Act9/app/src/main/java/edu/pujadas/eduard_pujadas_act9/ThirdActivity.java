@@ -22,6 +22,9 @@ public class ThirdActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
+        // butons
+        imgButon = findViewById(R.id.img_buton);
+        descrpico = findViewById(R.id.descripButton);
 
         //info = findViewById(R.)
         // recullo els intents i els hi poso un valor per defecte :D
