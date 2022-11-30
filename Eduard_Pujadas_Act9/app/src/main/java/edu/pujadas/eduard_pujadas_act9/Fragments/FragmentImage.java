@@ -21,7 +21,7 @@ import edu.pujadas.eduard_pujadas_act9.R;
 
 public class FragmentImage extends Fragment
 {
-   
+
     /**
      * Metode per crear un fragment TOTS SON IGUALS
      * @param layoutInflater
@@ -37,6 +37,12 @@ public class FragmentImage extends Fragment
 
         return vista;
     }
+
+    /**
+     * Metode per el shared preferences amb el utilziat en el fragment imatge
+     * @param view
+     * @param savedInstanceState
+     */
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)

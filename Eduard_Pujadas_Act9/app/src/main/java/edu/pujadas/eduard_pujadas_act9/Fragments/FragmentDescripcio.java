@@ -35,6 +35,11 @@ public class FragmentDescripcio extends Fragment
         return vista;
     }
 
+    /**
+     *
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
     {
