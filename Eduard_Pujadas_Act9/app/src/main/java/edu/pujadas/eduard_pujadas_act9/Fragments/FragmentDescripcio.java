@@ -10,18 +10,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import org.jetbrains.annotations.NonNls;
-
-import java.util.ArrayList;
-
 import edu.pujadas.eduard_pujadas_act9.Models.Producte;
 import edu.pujadas.eduard_pujadas_act9.R;
 
-
-public class FragmentImage extends Fragment
+public class FragmentDescripcio extends Fragment
 {
-    private ArrayList<Producte> listProductes = new ArrayList<Producte>();
+
     /**
      * Metode per crear un fragment TOTS SON IGUALS
      * @param layoutInflater
@@ -42,11 +36,13 @@ public class FragmentImage extends Fragment
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
-        SharedPreferences pref = getActivity().getSharedPreferences("PRODUCTE_DATA",Context.MODE_PRIVATE);
+        SharedPreferences pref = getActivity().getSharedPreferences("PRODUCTE_DATA", Context.MODE_PRIVATE);
 
         Producte producte = new Producte();
         producte.setMarcaProducte(pref.getString("marca",""));
         producte.setModelProducte(pref.getString("model",""));
         producte.setQuantitat(pref.getString("quantitat",""));
     }
+
+
 }
