@@ -21,7 +21,7 @@ import edu.pujadas.eduard_pujadas_act9.R;
 
 public class FragmentImage extends Fragment
 {
-    private ArrayList<Producte> listProductes = new ArrayList<Producte>();
+   
     /**
      * Metode per crear un fragment TOTS SON IGUALS
      * @param layoutInflater
