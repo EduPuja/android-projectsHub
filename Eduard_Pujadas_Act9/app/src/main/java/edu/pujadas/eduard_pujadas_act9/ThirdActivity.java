@@ -17,16 +17,14 @@ public class ThirdActivity extends AppCompatActivity
 {
 
     private TextView info;
-    private Button imgButon;
-    private Button descrpico;
+   
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
         // butons
-        imgButon = findViewById(R.id.img_buton);
-        descrpico = findViewById(R.id.descripButton);
+
 
         //info = findViewById(R.)
         // recullo els intents i els hi poso un valor per defecte :D
