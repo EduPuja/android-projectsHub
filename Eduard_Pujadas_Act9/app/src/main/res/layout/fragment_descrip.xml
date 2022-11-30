@@ -7,7 +7,7 @@ android:layout_height="match_parent"
 android:orientation="vertical">
 
     <TextView
-        android:id="@+id/marca"
+        android:id="@+id/marcaDescrip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="marca"
@@ -16,7 +16,7 @@ android:orientation="vertical">
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/model"
+        android:id="@+id/modelDescrip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="model"
@@ -25,7 +25,7 @@ android:orientation="vertical">
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/quant"
+        android:id="@+id/quantDescrip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="quant"

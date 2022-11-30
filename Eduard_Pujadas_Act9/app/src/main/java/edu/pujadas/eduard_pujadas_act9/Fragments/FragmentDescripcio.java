@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +20,14 @@ import edu.pujadas.eduard_pujadas_act9.R;
 public class FragmentDescripcio extends Fragment
 {
 
+    private TextView marcaDescrip;
+    private TextView modelDescrip;
+    private TextView quantDescrip;
+
+    public TextView getMarcaDescrip()
+    {
+        getView().findViewById(R.id.marcaD)
+    }
     /**
      * Metode per crear un fragment TOTS SON IGUALS
      * @param layoutInflater
