@@ -20,7 +20,7 @@ import edu.pujadas.eduard_pujadas_act9.Models.Producte;
 
 public class SecondActivity extends AppCompatActivity
 {
-    protected static ArrayList<Producte> listProducte = new ArrayList<Producte>();
+    private  ArrayList<Producte> listProducte = new ArrayList<Producte>();
     private ProducteAdapter producteAdapter;
     private ListView listViewProducte;
 
