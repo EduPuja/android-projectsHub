@@ -118,6 +118,7 @@ public class FragmentDescripcio extends Fragment
         }
         else if (tv == 3)
         {
+            
             for (int i=0;i<listProducte.size(); i++)
             {
 

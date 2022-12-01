@@ -41,14 +41,8 @@ public class ThirdActivity extends AppCompatActivity
         {
             //ONLY MACS
             setTitle("MACS");
+                //aixo es per anara directament a la opcio de macs
 
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.setReorderingAllowed(true);
-            FragmentDescripcio fragmentDescripcio = new FragmentDescripcio();
-
-            fragmentTransaction.replace(R.id.container_fragment, new FragmentDescripcio()); // replace !!
-            fragmentTransaction.commit();
 
         }
         else if(screen ==2 )
