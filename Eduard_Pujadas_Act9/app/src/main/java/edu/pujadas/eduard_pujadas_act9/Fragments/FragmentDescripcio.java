@@ -147,11 +147,18 @@ public class FragmentDescripcio extends Fragment
 
             }
         }
+        else
+        {
+            this.marcaDescrip.setText(listProducte.get(0).getMarcaProducte());
+            this.modelDescrip.setText(listProducte.get(0).getModelProducte());
+            this.quantDescrip.setText(listProducte.get(0).getQuantitat());
+            //finalment retorno la vista on ho poso tot
+            return vista;
+        }
 
 
+    return vista;
 
-         //finalment retorno la vista on ho poso tot
-        return vista;
     }
 
 
