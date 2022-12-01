@@ -76,6 +76,9 @@ public class FragmentDescripcio extends Fragment
         int tv = getActivity().getIntent().getIntExtra("product",3);
         int keyboard = getActivity().getIntent().getIntExtra("product",4);
 
+
+
+
         if(mac ==1) // digueimn que aixo agafga la activitat3 el seu intent que li passo jo
         {
 
@@ -84,7 +87,7 @@ public class FragmentDescripcio extends Fragment
             for (int i=0;i<listProducte.size(); i++)
             {
 
-                if(listProducte.get(i).getMarcaProducte().equalsIgnoreCase("mac"))
+                if(listProducte.get(i).getMarcaProducte().equalsIgnoreCase("Mac") || listProducte.get(i).getMarcaProducte().equalsIgnoreCase("Pc"))
                 {
                     // poder afegir el text dels macs??
                     this.marcaDescrip.setText(listProducte.get(i).getMarcaProducte());
@@ -114,6 +117,36 @@ public class FragmentDescripcio extends Fragment
             }
         }
         else if (tv == 3)
+        {
+            for (int i=0;i<listProducte.size(); i++)
+            {
+
+                if(listProducte.get(i).getMarcaProducte().equalsIgnoreCase("TV") ||  listProducte.get(i).getMarcaProducte().equalsIgnoreCase("Televisio"))
+                {
+                    // poder afegir el text dels macs??
+                    this.marcaDescrip.setText(listProducte.get(i).getMarcaProducte());
+                    this.modelDescrip.setText(listProducte.get(i).getModelProducte());
+                    this.quantDescrip.setText(listProducte.get(i).getQuantitat());
+                }
+
+            }
+        }
+        else if(keyboard ==4)
+        {
+            for (int i=0;i<listProducte.size(); i++)
+            {
+
+                if(listProducte.get(i).getMarcaProducte().equalsIgnoreCase("Teclat") ||  listProducte.get(i).getMarcaProducte().equalsIgnoreCase("Keyboard"))
+                {
+                    // poder afegir el text dels macs??
+                    this.marcaDescrip.setText(listProducte.get(i).getMarcaProducte());
+                    this.modelDescrip.setText(listProducte.get(i).getModelProducte());
+                    this.quantDescrip.setText(listProducte.get(i).getQuantitat());
+                }
+
+            }
+        }
+
 
 
          //finalment retorno la vista on ho poso tot
