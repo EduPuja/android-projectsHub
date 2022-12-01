@@ -1,6 +1,7 @@
 package edu.pujadas.eduard_pujadas_act9.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -49,6 +50,15 @@ public class FragmentDescripcio extends Fragment
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("PRODUCTE_DATA",Context.MODE_PRIVATE);
 
 
+
+
+
+        //texviews que gracies a la vista els hi puc donar id per despres
+        marcaDescrip = vista.findViewById(R.id.marcaDescrip);
+        modelDescrip = vista.findViewById(R.id.modelDescrip);
+        quantDescrip = vista.findViewById(R.id.quantDescrip);
+
+
         // agafo el gson el creo
         Gson gson = new Gson();
         // creo un string amb tota la info del arraylsit
@@ -58,16 +68,53 @@ public class FragmentDescripcio extends Fragment
         // afegiexo desde el json amb el arraylist i el type
         listProducte = gson.fromJson(info,type);
 
-        //texviews que gracies a la vista els hi puc donar id per despres
-         marcaDescrip = vista.findViewById(R.id.marcaDescrip);
-         modelDescrip = vista.findViewById(R.id.modelDescrip);
-         quantDescrip = vista.findViewById(R.id.quantDescrip);
+
+        //inteens
+
+        int mac = getActivity().getIntent().getIntExtra("product",1);
+        int screen =  getActivity().getIntent().getIntExtra("product",2);
+        int tv = getActivity().getIntent().getIntExtra("product",3);
+        int keyboard = getActivity().getIntent().getIntExtra("product",4);
+
+        if(mac ==1) // digueimn que aixo agafga la activitat3 el seu intent que li passo jo
+        {
+
+            // bucle per poder comprovar cada valor del arraylist que tincgui macs nomes i els imprimeixi en els
+            //texviews per poder despres retoraro amb forma de fragment
+            for (int i=0;i<listProducte.size(); i++)
+            {
+
+                if(listProducte.get(i).getMarcaProducte().equalsIgnoreCase("mac"))
+                {
+                    // poder afegir el text dels macs??
+                    this.marcaDescrip.setText(listProducte.get(i).getMarcaProducte());
+                    this.modelDescrip.setText(listProducte.get(i).getModelProducte());
+                    this.quantDescrip.setText(listProducte.get(i).getQuantitat());
+                }
+
+            }
 
 
-        // poder afegir el text
-         this.marcaDescrip.setText(listProducte.get(0).getMarcaProducte());
-         this.modelDescrip.setText(listProducte.get(0).getModelProducte());
-         this.quantDescrip.setText(listProducte.get(0).getQuantitat());
+            return vista;
+        }
+        else if(screen == 2)
+        {
+
+            for (int i=0;i<listProducte.size(); i++)
+            {
+
+                if(listProducte.get(i).getMarcaProducte().equalsIgnoreCase("Screen") ||  listProducte.get(i).getMarcaProducte().equalsIgnoreCase("Pantalla"))
+                {
+                    // poder afegir el text dels macs??
+                    this.marcaDescrip.setText(listProducte.get(i).getMarcaProducte());
+                    this.modelDescrip.setText(listProducte.get(i).getModelProducte());
+                    this.quantDescrip.setText(listProducte.get(i).getQuantitat());
+                }
+
+            }
+        }
+        else if (tv == 3)
+
 
          //finalment retorno la vista on ho poso tot
         return vista;

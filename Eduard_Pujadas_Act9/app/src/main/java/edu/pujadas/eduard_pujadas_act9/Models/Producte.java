@@ -79,5 +79,5 @@ public class Producte
         return rutaImatge;
     }
 
-  
+
 }

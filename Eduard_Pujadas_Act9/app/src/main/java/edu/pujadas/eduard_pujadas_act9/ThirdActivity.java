@@ -19,7 +19,7 @@ import edu.pujadas.eduard_pujadas_act9.Models.Producte;
 public class ThirdActivity extends AppCompatActivity
 {
 
-    private TextView info;
+
    
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -42,12 +42,14 @@ public class ThirdActivity extends AppCompatActivity
             //ONLY MACS
             setTitle("MACS");
 
-            /*FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.setReorderingAllowed(true);
-            fragmentTransaction.replace(R.id.container_fragment, new FragmentImage()); // replace !!
-            fragmentTransaction.commit();*/
-           // SecondActivity.listProducte.get(0)
+            FragmentDescripcio fragmentDescripcio = new FragmentDescripcio();
+
+            fragmentTransaction.replace(R.id.container_fragment, new FragmentDescripcio()); // replace !!
+            fragmentTransaction.commit();
+
         }
         else if(screen ==2 )
         {
