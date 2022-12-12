@@ -49,9 +49,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap)
     {
-        Negoci negoci = new Negoci(1,"Can Paco","restaurant",41.8513,3.1267);
+        Negoci negociCanPaco = new Negoci(1,"Can Paco","restaurant",41.8513,3.1267);
+        listNegocis.add(negociCanPaco);
 
-
+        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        googleMap.getUiSettings().setZoomGesturesEnabled(true);
+        googleMap.getUiSettings().setRotateGesturesEnabled(true);
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
