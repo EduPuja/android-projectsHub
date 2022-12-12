@@ -5,14 +5,14 @@ public class Negoci
      int idNegoci;
      String nom;
      String tipusNegoci;
-     int latitud;
-     int longitud;
+     double latitud;
+     double longitud;
 
     public Negoci()
     {
     }
 
-    public Negoci(int idNegoci, String nom, String tipusNegoci, int latitud, int longitud)
+    public Negoci(int idNegoci, String nom, String tipusNegoci, double latitud, double longitud)
     {
         this.idNegoci = idNegoci;
         this.nom = nom;
@@ -51,7 +51,7 @@ public class Negoci
         this.tipusNegoci = tipusNegoci;
     }
 
-    public int getLatitud()
+    public double getLatitud()
     {
         return latitud;
     }
@@ -61,7 +61,7 @@ public class Negoci
         this.latitud = latitud;
     }
 
-    public int getLongitud()
+    public double getLongitud()
     {
         return longitud;
     }

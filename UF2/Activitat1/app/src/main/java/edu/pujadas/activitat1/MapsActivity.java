@@ -11,6 +11,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+
+import edu.pujadas.activitat1.Models.Negoci;
 import edu.pujadas.activitat1.databinding.ActivityMapsBinding;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
@@ -18,6 +21,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
+    private ArrayList<Negoci> listNegocis = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,6 +49,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap)
     {
+        Negoci negoci = new Negoci(1,"Can Paco","restaurant",41.8513,3.1267);
+
+
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
