@@ -32,21 +32,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         super.onCreate(savedInstanceState);
 
+        Negoci negociCanPaco = new Negoci(1,"Can Paco","restaurant",41.8513,3.1267);
+        Negoci mecanic= new Negoci(2,"Garatge Enric","mecanic",41.8484,3.1291);
+        Negoci botiga= new Negoci(3,"Botiga Pujadas","mecanic",3.157414, 41.919915);
+
+        listNegocis.add(negociCanPaco);
+        listNegocis.add(mecanic);
+        listNegocis.add(botiga);
+
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        Negoci negociCanPaco = new Negoci(1,"Can Paco","restaurant",41.8513,3.1267);
-        Negoci mecanic= new Negoci(2,"Garatge Enric","mecanic",41.8484,3.1291);
-        Negoci botiga= new Negoci(3,"Botiga Pujadas","mecanic",41.1284,3.201);
 
-        listNegocis.add(negociCanPaco);
-        listNegocis.add(mecanic);
-        listNegocis.add(botiga);
 
     }
 
@@ -98,6 +101,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.mecanico));
 
             }
+
+            mMap.addMarker(markerOptions);
         }
 
 
