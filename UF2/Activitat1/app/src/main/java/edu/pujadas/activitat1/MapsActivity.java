@@ -91,11 +91,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             else if(listNegocis.get(i).getTipusNegoci().equalsIgnoreCase("botiga"))
             {
 
-                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurant));
+                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.tienda));
             }
             else if(listNegocis.get(i).getTipusNegoci().equalsIgnoreCase("mecanic"))
             {
-                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurant));
+                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.mecanico));
 
             }
         }
@@ -104,6 +104,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-        
+
     }
 }
