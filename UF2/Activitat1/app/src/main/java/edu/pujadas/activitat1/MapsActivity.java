@@ -47,7 +47,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         listNegocis.add(negoci);
         listNegocis.add(negoci2);
         listNegocis.add(negoci3);
-        
+
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
