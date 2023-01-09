@@ -2,12 +2,16 @@ package edu.pujadas.activitat1;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -35,6 +39,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        Negoci negociCanPaco = new Negoci(1,"Can Paco","restaurant",41.8513,3.1267);
+        Negoci mecanic= new Negoci(2,"Garatge Enric","mecanic",41.8484,3.1291);
+        Negoci botiga= new Negoci(3,"Botiga Pujadas","mecanic",41.1284,3.201);
+
+        listNegocis.add(negociCanPaco);
+        listNegocis.add(mecanic);
+        listNegocis.add(botiga);
+
     }
 
     /**
@@ -49,25 +62,52 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap)
     {
-        Negoci negociCanPaco = new Negoci(1,"Can Paco","restaurant",41.8513,3.1267);
-        Negoci mecanic= new Negoci(1,"Garatge Enric","mecanic",41.8484,3.1291);
-
-        listNegocis.add(negociCanPaco);
-        listNegocis.add(mecanic);
+        mMap = googleMap;
 
         googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         googleMap.getUiSettings().setZoomGesturesEnabled(true);
         googleMap.getUiSettings().setRotateGesturesEnabled(true);
-        mMap = googleMap;
+
 
 
 
         // Add a marker in Sydney and move the camera
         //sidney
         //LatLng sydney = new LatLng(-34, 151);
-        LatLng canPaco = new LatLng(listNegocis.get(0).getLatitud(),listNegocis.get(0).getLongitud());
 
-        mMap.addMarker(new MarkerOptions().position(canPaco).title("MARCA CAN PACO").icon());
+        for(int i =0;i<listNegocis.size();i++)
+        {
+            LatLng posicion = new LatLng(listNegocis.get(i).getLatitud(),listNegocis.get(i).getLongitud());
+
+            MarkerOptions markerOptions = new MarkerOptions();
+            markerOptions.position(posicion);
+            markerOptions.title(listNegocis.get(i).getNom());
+            if(listNegocis.get(i).getTipusNegoci().equalsIgnoreCase("restaurant"))
+            {
+
+                //icono restaruante
+                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurant));
+            }
+            else if(listNegocis.get(i).getTipusNegoci().equalsIgnoreCase("botiga"))
+            {
+
+                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurant));
+            }
+            else if(listNegocis.get(i).getTipusNegoci().equalsIgnoreCase("mecanic"))
+            {
+                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurant));
+
+            }
+        }
+
+
+        MarkerOptions paco = new MarkerOptions();
+        paco.position(canPaco);
+        paco.title("Restaruant can Paco");
+
+
+        paco.icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurant));
+        mMap.addMarker(paco);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(canPaco));
     }
 }
