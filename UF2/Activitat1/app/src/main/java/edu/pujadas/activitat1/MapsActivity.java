@@ -101,13 +101,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
 
-        MarkerOptions paco = new MarkerOptions();
-        paco.position(canPaco);
-        paco.title("Restaruant can Paco");
 
 
-        paco.icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurant));
-        mMap.addMarker(paco);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(canPaco));
+
+        
     }
 }
