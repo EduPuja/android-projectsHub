@@ -36,17 +36,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Negoci mecanic= new Negoci(2,"Garatge Enric","mecanic",41.8484,3.1291);
         Negoci botiga= new Negoci(3,"Botiga Pujadas","mecanic",3.157414, 41.919915);
         Negoci spar= new Negoci(4,"Spar Begur", "botiga",  41.952177, 3.206757);
-        Negoci negoci= new Negoci(5,"Spar Begur", "botiga",41.952177, 3.206757);
-        Negoci negoci2= new Negoci(6,"Spar Begur", "botiga", 41.952177, 3.206757);
-        Negoci negoci3= new Negoci(7,"Spar Begur", "botiga",41.952177, 3.206757);
+        Negoci sparBegur= new Negoci(5,"Spar Begur", "botiga",41.952177, 3.206757);
+        Negoci laVila= new Negoci(6,"La vila", "restaurant", 41.970175, 3.146094);
+        Negoci mecanicPals= new Negoci(7,"Taller Mecanic Pals", "mecanic",41.968923, 3.150106);
 
         listNegocis.add(negociCanPaco);
         listNegocis.add(mecanic);
         listNegocis.add(botiga);
         listNegocis.add(spar);
-        listNegocis.add(negoci);
-        listNegocis.add(negoci2);
-        listNegocis.add(negoci3);
+        listNegocis.add(sparBegur);
+        listNegocis.add(laVila);
+        listNegocis.add(mecanicPals);
 
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
