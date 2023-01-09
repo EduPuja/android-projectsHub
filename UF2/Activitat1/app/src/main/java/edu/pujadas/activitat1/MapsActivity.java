@@ -21,7 +21,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
-    private ArrayList<Negoci> listNegocis = new ArrayList<>();
+    public  ArrayList<Negoci> listNegocis = new ArrayList<Negoci>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -50,17 +50,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap)
     {
         Negoci negociCanPaco = new Negoci(1,"Can Paco","restaurant",41.8513,3.1267);
+        Negoci mecanic= new Negoci(1,"Garatge Enric","mecanic",41.8484,3.1291);
+
         listNegocis.add(negociCanPaco);
+        listNegocis.add(mecanic);
 
         googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         googleMap.getUiSettings().setZoomGesturesEnabled(true);
         googleMap.getUiSettings().setRotateGesturesEnabled(true);
         mMap = googleMap;
 
+
+
         // Add a marker in Sydney and move the camera
         //sidney
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        //LatLng sydney = new LatLng(-34, 151);
+        LatLng canPaco = new LatLng(listNegocis.get(0).getLatitud(),listNegocis.get(0).getLongitud());
+
+        mMap.addMarker(new MarkerOptions().position(canPaco).title("MARCA CAN PACO").icon());
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(canPaco));
     }
 }
