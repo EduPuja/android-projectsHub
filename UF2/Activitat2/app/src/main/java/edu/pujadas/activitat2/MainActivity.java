@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         // imatge view find by id
         man = findViewById(R.id.man);
         interficia = findViewById(R.id.interficia);
-        recicle = findViewById(R.id.reciclar);
+        recicle = findViewById(R.id.recicle);
         restaurant = findViewById(R.id.restaurant);
         tienda = findViewById(R.id.tienda);
         viatjar= findViewById(R.id.viatgar);
