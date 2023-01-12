@@ -23,24 +23,45 @@
 
             <ImageView
                 android:id="@+id/man"
-                android:layout_width="50px"
-                android:layout_height="100px"
+                android:layout_width="450px"
+                android:layout_height="250px"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/man" />
 
             <ImageView
                 android:id="@+id/recicle"
-                android:layout_width="50px"
-                android:layout_height="100px"
+                android:layout_width="450px"
+                android:layout_height="250px"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/reciclar" />
 
             <ImageView
                 android:id="@+id/viatgar"
-                android:layout_width="50px"
-                android:layout_height="100px"
+                android:layout_width="450px"
+                android:layout_height="250px"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/viajar" />
+
+            <ImageView
+                android:id="@+id/interficia"
+                android:layout_width="450px"
+                android:layout_height="250px"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/interficia" />
+
+            <ImageView
+                android:id="@+id/restaurant"
+                android:layout_width="450px"
+                android:layout_height="250px"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/restaurant" />
+
+            <ImageView
+                android:id="@+id/tienda"
+                android:layout_width="450px"
+                android:layout_height="250px"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tienda" />
         </LinearLayout>
     </HorizontalScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
