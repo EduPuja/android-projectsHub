@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity
         //video
 
         video = findViewById(R.id.video);
-        video.setVideoPath("/raw/ibai.mkv");
-        video.start();
+        //video.setVideoPath("/raw/ibai.mkv");
+        //video.start();
 
 
     }
@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity
         any.setText("2023");
         descripcio.setText("Hombre solo en la vida inventada per Eduard Pujadas");
         // todo posar un video
+        video.setVideoPath("video1.mp4");
+        video.start();
+
 
     }
 }

@@ -82,9 +82,12 @@
         android:id="@+id/titol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginEnd="100dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
@@ -93,11 +96,13 @@
         android:id="@+id/any"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginEnd="100dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titol" />
 
@@ -105,23 +110,25 @@
         android:id="@+id/descripcio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/video"
+        android:layout_marginEnd="100dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/any" />
 
     <VideoView
         android:id="@+id/video"
-        android:layout_width="207dp"
-        android:layout_height="107dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="267dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcio" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
