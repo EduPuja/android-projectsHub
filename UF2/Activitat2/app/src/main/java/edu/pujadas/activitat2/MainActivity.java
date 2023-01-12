@@ -2,10 +2,12 @@ package edu.pujadas.activitat2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity
@@ -53,6 +55,11 @@ public class MainActivity extends AppCompatActivity
 
     public void onImgClick(View vista)
     {
+       /* Context context = getApplicationContext();
+        CharSequence text = "Hello toast!";
+        int duration = Toast.LENGTH_SHORT;
 
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();*/
     }
 }
