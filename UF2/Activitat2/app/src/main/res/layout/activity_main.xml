@@ -27,45 +27,53 @@
 
             <ImageView
                 android:id="@+id/man"
-                android:layout_width="450px"
-                android:layout_height="250px"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/man" />
+                android:contentDescription="@string/man"
+                app:srcCompat="@drawable/man"
+                tools:ignore="ImageContrastCheck" />
 
             <ImageView
                 android:id="@+id/recicle"
-                android:layout_width="450px"
-                android:layout_height="250px"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/todo"
                 app:srcCompat="@drawable/reciclar" />
 
             <ImageView
                 android:id="@+id/viatgar"
-                android:layout_width="450px"
-                android:layout_height="250px"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/todo"
                 app:srcCompat="@drawable/viajar" />
 
             <ImageView
                 android:id="@+id/interficia"
-                android:layout_width="450px"
-                android:layout_height="250px"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/todo"
                 app:srcCompat="@drawable/interficia" />
 
             <ImageView
                 android:id="@+id/restaurant"
-                android:layout_width="450px"
-                android:layout_height="250px"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/restaurant" />
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/restaurant"
+                tools:ignore="ImageContrastCheck" />
 
             <ImageView
                 android:id="@+id/tienda"
-                android:layout_width="450px"
-                android:layout_height="250px"
+                android:layout_width="100dp"
+                android:layout_height="75dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/tienda" />
+                app:srcCompat="@drawable/tienda"
+                android:contentDescription="@string/todo" />
         </LinearLayout>
     </HorizontalScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
