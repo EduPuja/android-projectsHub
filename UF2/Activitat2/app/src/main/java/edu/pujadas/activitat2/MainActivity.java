@@ -60,11 +60,10 @@ public class MainActivity extends AppCompatActivity
 
     public void onImgClick(View vista)
     {
-       Context context = getApplicationContext();
-        CharSequence text = "Hello toast!";
-        int duration = Toast.LENGTH_SHORT;
+        titol.setText("Hombre solo");
+        any.setText("2023");
+        descripcio.setText("Hombre solo en la vida inventada per Eduard Pujadas");
+        // todo posar un video
 
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
     }
 }
