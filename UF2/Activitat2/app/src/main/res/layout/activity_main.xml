@@ -32,8 +32,9 @@
                 android:layout_height="75dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/man"
+                android:onClick="onImgClick"
                 app:srcCompat="@drawable/man"
-                tools:ignore="ImageContrastCheck" />
+                tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
 
             <ImageView
                 android:id="@+id/recicle"
