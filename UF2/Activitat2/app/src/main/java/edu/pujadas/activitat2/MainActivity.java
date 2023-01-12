@@ -60,11 +60,11 @@ public class MainActivity extends AppCompatActivity
 
     public void onImgClick(View vista)
     {
-       /* Context context = getApplicationContext();
+       Context context = getApplicationContext();
         CharSequence text = "Hello toast!";
         int duration = Toast.LENGTH_SHORT;
 
         Toast toast = Toast.makeText(context, text, duration);
-        toast.show();*/
+        toast.show();
     }
 }
