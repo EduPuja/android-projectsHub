@@ -25,9 +25,11 @@ public class MainActivity extends AppCompatActivity {
         MediaController mediaController = new MediaController(this);
         video.setMediaController(mediaController);
         mediaController.setAnchorView(video);
-        video.requestFocus();
+
+
+       
         video.start();
-        video.setZOrderOnTop(true);
+
 
         video.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override

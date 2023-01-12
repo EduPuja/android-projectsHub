@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity
         any.setText("2023");
         descripcio.setText("Hombre solo en la vida inventada per Eduard Pujadas");
         // todo posar un video
-        video.setVideoPath("video1.mp4");
+        video.setVideoPath("raw/video1.mp4");
         video.start();
 
 
