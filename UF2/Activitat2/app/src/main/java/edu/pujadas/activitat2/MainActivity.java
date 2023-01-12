@@ -10,13 +10,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import java.net.URL;
+
 public class MainActivity extends AppCompatActivity
 {
 
     //imatges
     ImageView man;
     ImageView interficia;
-    ImageView reciciclar;
+    ImageView recicle;
     ImageView restaurant;
     ImageView tienda;
     ImageView viatjar;
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         // imatge view find by id
         man = findViewById(R.id.man);
         interficia = findViewById(R.id.interficia);
-        reciciclar = findViewById(R.id.reciclar);
+        recicle = findViewById(R.id.reciclar);
         restaurant = findViewById(R.id.restaurant);
         tienda = findViewById(R.id.tienda);
         viatjar= findViewById(R.id.viatgar);
@@ -50,6 +52,9 @@ public class MainActivity extends AppCompatActivity
         //video
 
         video = findViewById(R.id.video);
+        video.setVideoPath("/raw/ibai.mkv");
+        video.start();
+
 
     }
 
