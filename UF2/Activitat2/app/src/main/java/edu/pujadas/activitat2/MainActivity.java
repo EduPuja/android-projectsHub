@@ -32,10 +32,12 @@ public class MainActivity extends AppCompatActivity
     // videos
     String videoIbai = "android.resource://" + getPackageName() + "/" + R.raw.ibai;
     String video1   = "android.resource://" + getPackageName() + "/" + R.raw.video1;
+    String mercadona = "android.resource://" + getPackageName() + "/" + R.raw.mercadona;
 
     // URI VIDEOS
     Uri uriIbai = Uri.parse(videoIbai);
     Uri uriVideo = Uri.parse(video1);
+    Uri uriMercadona = Uri.parse(mercadona);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -138,7 +140,7 @@ public class MainActivity extends AppCompatActivity
         any.setText("2023");
         descripcio.setText("MERCADOONA MERCADOONA");
         //uri video exemple
-        videoView.setVideoURI(uriVideo);
+        videoView.setVideoURI(mercadona);
         videoView.start();
     }
 }
