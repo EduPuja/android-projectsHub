@@ -130,9 +130,9 @@ public class MainActivity extends AppCompatActivity
         String restaurant   = "android.resource://" + getPackageName() + "/" + R.raw.restaurant;
         Uri uriRestaruant = Uri.parse(restaurant);
 
-        titol.setText("Restaurant");
+        titol.setText("Restaurant ");
         any.setText("2023");
-        descripcio.setText("EL nou restaurant");
+        descripcio.setText("EL nou restaurant renovat");
         //uri video exemple
         videoView.setVideoURI(uriRestaruant);
         videoView.start();
@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity
         String mercadona = "android.resource://" + getPackageName() + "/" + R.raw.mercadona;
         Uri uriMercadona = Uri.parse(mercadona);
 
-        titol.setText("Tenda!");
+        titol.setText("Mercadona Song!");
         any.setText("2023");
         descripcio.setText("MERCADOONA MERCADOONA");
         videoView.setVideoURI(uriMercadona);
@@ -163,9 +163,9 @@ public class MainActivity extends AppCompatActivity
         String luisito = "android.resource://" + getPackageName() + "/" + R.raw.viatje;
         Uri uriViatge = Uri.parse(luisito);
 
-        titol.setText("Tenda!");
+        titol.setText("Explorando el interior de una cueva de hielo!");
         any.setText("2023");
-        descripcio.setText("MERCADOONA MERCADOONA");
+        descripcio.setText("Una travesía por el glaciar más grande Islandia. Me sentí en otro planeta. ");
         videoView.setVideoURI(uriViatge);
         videoView.start();
     }
