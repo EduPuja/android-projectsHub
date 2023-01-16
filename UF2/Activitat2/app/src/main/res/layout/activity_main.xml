@@ -42,7 +42,8 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/todo"
                 android:onClick="onReciclarClick"
-                app:srcCompat="@drawable/reciclar" />
+                app:srcCompat="@drawable/reciclar"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <ImageView
                 android:id="@+id/viatgar"
@@ -50,7 +51,7 @@
                 android:layout_height="75dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/todo"
-                android:onClick="onImgClick"
+                android:onClick="onViatjarClick"
                 app:srcCompat="@drawable/viajar" />
 
             <ImageView
@@ -90,7 +91,6 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="100dp"
-        android:text="TextView"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +104,6 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="100dp"
-        android:text="TextView"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +117,6 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="100dp"
-        android:text="TextView"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
