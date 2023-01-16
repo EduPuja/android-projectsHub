@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity
         any.setText("2023");
         descripcio.setText("MERCADOONA MERCADOONA");
         //uri video exemple
-        videoView.setVideoURI(mercadona);
+        videoView.setVideoURI(uriMercadona);
         videoView.start();
     }
 }
