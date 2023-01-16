@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Contacts</string>
+    <string name="uf2_activitat_2">UF2: Activitat 2</string>
+    <string name="title_activity_maps">MapsActivity</string>
+</resources>
