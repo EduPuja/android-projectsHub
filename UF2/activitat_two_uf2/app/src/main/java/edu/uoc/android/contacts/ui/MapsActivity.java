@@ -15,6 +15,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import edu.uoc.android.contacts.R;
 import edu.uoc.android.contacts.databinding.ActivityMapsBinding;
+import edu.uoc.android.contacts.model.Contact;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback
 {
@@ -55,9 +56,16 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
+        /*// Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
+    }
+
+    public void contacts()
+    {
+        Contact contact=  new Contact();
+        //todo no hi ha setters ni getters ??????
+
     }
 }
