@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity
     String videoIbai = "android.resource://" + getPackageName() + "/" + R.raw.ibai;
     String video1   = "android.resource://" + getPackageName() + "/" + R.raw.video1;
 
+    // URI VIDEOS
+    Uri uriIbai = Uri.parse(videoIbai);
+    Uri uriVideo = Uri.parse(video1);
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -69,39 +73,15 @@ public class MainActivity extends AppCompatActivity
     public void onManClick(View vista)
     {
 
+        titol.setText("Hombre solo");
+        any.setText("2023");
+        descripcio.setText("Hombre solo en la vida inventada per Eduard Pujadas");
+        // uri video ibai
+        videoView.setVideoURI(uriIbai);
 
-        // URI VIDEOS
-        Uri uriIbai = Uri.parse(videoIbai);
-        Uri uriVideo = Uri.parse(video1);
-
-        if(R.id.man == man.getId())
-        {
-            titol.setText("Hombre solo");
-            any.setText("2023");
-            descripcio.setText("Hombre solo en la vida inventada per Eduard Pujadas");
-            // uri video ibai
-            videoView.setVideoURI(uriIbai);
+        videoView.start();
 
 
-            videoView.start();
-        }
-
-        else if(R.id.interficia == interficia.getId())
-        {
-            titol.setText("@string/interficia");
-            any.setText("2023");
-            descripcio.setText("Interficices que guai!");
-            //uri video exemple
-            videoView.setVideoURI(uriVideo);
-            videoView.start();
-        }
-
-        else
-        {
-            titol.setText("Nothing");
-            any.setText("nothing");
-            descripcio.setText("nothing");
-        }
 
 
     }
@@ -112,7 +92,12 @@ public class MainActivity extends AppCompatActivity
      */
     public void onInterficieClcik(View vista)
     {
-
+        titol.setText("Interficies!");
+        any.setText("2023");
+        descripcio.setText("Interficices que guai!");
+        //uri video exemple
+        videoView.setVideoURI(uriVideo);
+        videoView.start();
     }
 
     /**
@@ -121,7 +106,12 @@ public class MainActivity extends AppCompatActivity
      */
     public void onReciclarClick(View vista)
     {
-
+        titol.setText("RECICLAR!");
+        any.setText("2023");
+        descripcio.setText("El reciclatge és molt importnat");
+        //uri video exemple
+        videoView.setVideoURI(uriVideo);
+        videoView.start();
     }
 
     /**
@@ -130,7 +120,12 @@ public class MainActivity extends AppCompatActivity
      */
     public void onRestaurantClick(View vista)
     {
-
+        titol.setText("Restaurant");
+        any.setText("2023");
+        descripcio.setText("EL nou restaurant");
+        //uri video exemple
+        videoView.setVideoURI(uriVideo);
+        videoView.start();
     }
 
     /**
@@ -139,6 +134,11 @@ public class MainActivity extends AppCompatActivity
      */
     public void onTiendaClick(View vista)
     {
-
+        titol.setText("Tenda!");
+        any.setText("2023");
+        descripcio.setText("MERCADOONA MERCADOONA");
+        //uri video exemple
+        videoView.setVideoURI(uriVideo);
+        videoView.start();
     }
 }
