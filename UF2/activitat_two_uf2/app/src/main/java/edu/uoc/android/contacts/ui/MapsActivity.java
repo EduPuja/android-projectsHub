@@ -2,6 +2,8 @@ package edu.uoc.android.contacts.ui;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -11,13 +13,20 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import edu.uoc.android.contacts.ui.databinding.ActivityMaps2Binding;
+import edu.uoc.android.contacts.R;
+import edu.uoc.android.contacts.databinding.ActivityMaps2Binding;
+//import edu.uoc.android.contacts.ui.databinding.ActivityMaps2Binding;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 {
 
     private GoogleMap mMap;
     private ActivityMaps2Binding binding;
+
+    public static Intent makeIntent(Context context)
+    {
+        return new Intent(context,MapsActivity.class);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
