@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-    <!--
-         TODO: Per tal que el mapa fucnioni correctament heu d'aplicar en aquest aparat els permissos corresponents
-         TODO: També recordeu el codi per cridar la clau per tal de fer funcionar el mapa
-
-         To get one, follow the directions here:
-
-            https://developers.google.com/maps/documentation/android-sdk/get-api-key
-
-         Once you have your API key (it starts with "AIza"), define a new property in your
-         project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
-         "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
-    -->
+    <!--permisos-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:name="edu.uoc.android.contacts.ContactListApplication"
         android:allowBackup="true"
-        android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity
+            android:name=".ui.MapsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
@@ -37,10 +34,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
-
-
     </application>
-
-
 
 </manifest>
