@@ -29,15 +29,6 @@ public class MainActivity extends AppCompatActivity
     //videoView
     VideoView videoView;
 
-    // videos
-    String videoIbai = "android.resource://" + getPackageName() + "/" + R.raw.ibai;
-    String video1   = "android.resource://" + getPackageName() + "/" + R.raw.video1;
-    String mercadona = "android.resource://" + getPackageName() + "/" + R.raw.mercadona;
-
-    // URI VIDEOS
-    Uri uriIbai = Uri.parse(videoIbai);
-    Uri uriVideo = Uri.parse(video1);
-    Uri uriMercadona = Uri.parse(mercadona);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -74,6 +65,14 @@ public class MainActivity extends AppCompatActivity
 
     public void onManClick(View vista)
     {
+        // videos
+        String videoIbai = "android.resource://" + getPackageName() + "/" + R.raw.ibai;
+
+
+        // URI VIDEOS
+        Uri uriIbai = Uri.parse(videoIbai);
+
+
 
         titol.setText("Hombre solo");
         any.setText("2023");
@@ -94,6 +93,10 @@ public class MainActivity extends AppCompatActivity
      */
     public void onInterficieClcik(View vista)
     {
+        String video1   = "android.resource://" + getPackageName() + "/" + R.raw.video1;
+        Uri uriVideo = Uri.parse(video1);
+
+
         titol.setText("Interficies!");
         any.setText("2023");
         descripcio.setText("Interficices que guai!");
@@ -104,15 +107,17 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Quant li doncs click a la imatge de reciclar
-     * @param vista
+     * @param vista View vista
      */
     public void onReciclarClick(View vista)
     {
+        String reciclar   = "android.resource://" + getPackageName() + "/" + R.raw.reciclar;
+        Uri uriRecilar = Uri.parse(reciclar);
+
         titol.setText("RECICLAR!");
         any.setText("2023");
         descripcio.setText("El reciclatge és molt importnat");
-        //uri video exemple
-        videoView.setVideoURI(uriVideo);
+        videoView.setVideoURI(uriRecilar);
         videoView.start();
     }
 
@@ -136,10 +141,12 @@ public class MainActivity extends AppCompatActivity
      */
     public void onTiendaClick(View vista)
     {
+        String mercadona = "android.resource://" + getPackageName() + "/" + R.raw.mercadona;
+        Uri uriMercadona = Uri.parse(mercadona);
+
         titol.setText("Tenda!");
         any.setText("2023");
         descripcio.setText("MERCADOONA MERCADOONA");
-        //uri video exemple
         videoView.setVideoURI(uriMercadona);
         videoView.start();
     }
