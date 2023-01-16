@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -65,6 +66,9 @@ public class MainActivity extends AppCompatActivity
         String videoIbai = "android.resource://" + getPackageName() + "/" + R.raw.ibai;
         String video1   = "android.resource://" + getPackageName() + "/" + R.raw.video1;
 
+        // media
+        MediaController mediaController = new MediaController(vista.getContext());
+
         // URI VIDEOS
         Uri uriIbai = Uri.parse(videoIbai);
         Uri uriVideo = Uri.parse(video1);
@@ -74,8 +78,17 @@ public class MainActivity extends AppCompatActivity
             titol.setText("Hombre solo");
             any.setText("2023");
             descripcio.setText("Hombre solo en la vida inventada per Eduard Pujadas");
+
+
+
+            video.setMediaController(mediaController);
+            mediaController.setAnchorView(video);
+
+
             // uri video ibai
             video.setVideoURI(uriIbai);
+
+
             video.start();
         }
 
@@ -84,9 +97,20 @@ public class MainActivity extends AppCompatActivity
             titol.setText("Interficies");
             any.setText("2023");
             descripcio.setText("Interficices que guai!");
+
+
+            video.setMediaController(mediaController);
+            mediaController.setAnchorView(video);
             //uri video exemple
             video.setVideoURI(uriVideo);
             video.start();
+        }
+
+        else
+        {
+            titol.setText("Nothing");
+            any.setText("nothing");
+            descripcio.setText("nothing");
         }
 
 
@@ -96,7 +120,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        video.setVideoPath("raw/video1.mp4");
+
 
 
         /*
