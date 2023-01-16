@@ -60,9 +60,8 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Metode que li doncs a la foto del home
-     * @param vista
+     * @param vista vista
      */
-
     public void onManClick(View vista)
     {
         // videos
@@ -127,11 +126,15 @@ public class MainActivity extends AppCompatActivity
      */
     public void onRestaurantClick(View vista)
     {
+
+        String restaurant   = "android.resource://" + getPackageName() + "/" + R.raw.restaurant;
+        Uri uriRestaruant = Uri.parse(restaurant);
+
         titol.setText("Restaurant");
         any.setText("2023");
         descripcio.setText("EL nou restaurant");
         //uri video exemple
-        videoView.setVideoURI(uriVideo);
+        videoView.setVideoURI(uriRestaruant);
         videoView.start();
     }
 
@@ -149,5 +152,14 @@ public class MainActivity extends AppCompatActivity
         descripcio.setText("MERCADOONA MERCADOONA");
         videoView.setVideoURI(uriMercadona);
         videoView.start();
+    }
+
+    /**
+     * Clcik viatgar
+     * @param vista vista
+     */
+    public void onViatjarClick(View vista)
+    {
+
     }
 }
