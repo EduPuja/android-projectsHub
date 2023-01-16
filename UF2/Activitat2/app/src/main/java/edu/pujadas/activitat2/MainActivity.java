@@ -3,6 +3,7 @@ package edu.pujadas.activitat2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -60,13 +61,57 @@ public class MainActivity extends AppCompatActivity
 
     public void onImgClick(View vista)
     {
-        titol.setText("Hombre solo");
-        any.setText("2023");
-        descripcio.setText("Hombre solo en la vida inventada per Eduard Pujadas");
-        // todo posar un video
+        // videos
+        String videoIbai = "android.resource://" + getPackageName() + "/" + R.raw.ibai;
+        String video1   = "android.resource://" + getPackageName() + "/" + R.raw.video1;
+
+        // URI VIDEOS
+        Uri uriIbai = Uri.parse(videoIbai);
+        Uri uriVideo = Uri.parse(video1);
+
+        if(R.id.man == man.getId())
+        {
+            titol.setText("Hombre solo");
+            any.setText("2023");
+            descripcio.setText("Hombre solo en la vida inventada per Eduard Pujadas");
+            // uri video ibai
+            video.setVideoURI(uriIbai);
+            video.start();
+        }
+
+        else if(R.id.interficia == interficia.getId())
+        {
+            titol.setText("Interficies");
+            any.setText("2023");
+            descripcio.setText("Interficices que guai!");
+            //uri video exemple
+            video.setVideoURI(uriVideo);
+            video.start();
+        }
+
+
+
+
+
+
+
+
         video.setVideoPath("raw/video1.mp4");
+
+
+        /*
+           VideoView video = findViewById(R.id.videoView);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.ibai;
+        Uri uri = Uri.parse(videoPath);
+        video.setVideoURI(uri);
+
+        MediaController mediaController = new MediaController(this);
+        video.setMediaController(mediaController);
+        mediaController.setAnchorView(video);
+
+
+
         video.start();
-
-
+         */
     }
 }
