@@ -2,17 +2,12 @@ package edu.pujadas.activitat2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.MediaController;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
-
-import java.net.URL;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -30,7 +25,13 @@ public class MainActivity extends AppCompatActivity
     TextView any;
     TextView descripcio;
 
-    VideoView video;
+
+    //videoView
+    VideoView videoView;
+
+    // videos
+    String videoIbai = "android.resource://" + getPackageName() + "/" + R.raw.ibai;
+    String video1   = "android.resource://" + getPackageName() + "/" + R.raw.video1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -53,21 +54,21 @@ public class MainActivity extends AppCompatActivity
 
         //video
 
-        video = findViewById(R.id.video);
+        videoView = findViewById(R.id.videoView);
         //video.setVideoPath("/raw/ibai.mkv");
         //video.start();
 
 
     }
 
-    public void onImgClick(View vista)
-    {
-        // videos
-        String videoIbai = "android.resource://" + getPackageName() + "/" + R.raw.ibai;
-        String video1   = "android.resource://" + getPackageName() + "/" + R.raw.video1;
+    /**
+     * Metode que li doncs a la foto del home
+     * @param vista
+     */
 
-        // media
-        MediaController mediaController = new MediaController(vista.getContext());
+    public void onManClick(View vista)
+    {
+
 
         // URI VIDEOS
         Uri uriIbai = Uri.parse(videoIbai);
@@ -78,32 +79,21 @@ public class MainActivity extends AppCompatActivity
             titol.setText("Hombre solo");
             any.setText("2023");
             descripcio.setText("Hombre solo en la vida inventada per Eduard Pujadas");
-
-
-
-            video.setMediaController(mediaController);
-            mediaController.setAnchorView(video);
-
-
             // uri video ibai
-            video.setVideoURI(uriIbai);
+            videoView.setVideoURI(uriIbai);
 
 
-            video.start();
+            videoView.start();
         }
 
         else if(R.id.interficia == interficia.getId())
         {
-            titol.setText("Interficies");
+            titol.setText("@string/interficia");
             any.setText("2023");
             descripcio.setText("Interficices que guai!");
-
-
-            video.setMediaController(mediaController);
-            mediaController.setAnchorView(video);
             //uri video exemple
-            video.setVideoURI(uriVideo);
-            video.start();
+            videoView.setVideoURI(uriVideo);
+            videoView.start();
         }
 
         else
@@ -114,28 +104,41 @@ public class MainActivity extends AppCompatActivity
         }
 
 
+    }
 
+    /**
+     * Interficia vista quant li donguis click a la foto
+     * @param vista vista necessaria
+     */
+    public void onInterficieClcik(View vista)
+    {
 
+    }
 
+    /**
+     * Quant li doncs click a la imatge de reciclar
+     * @param vista
+     */
+    public void onReciclarClick(View vista)
+    {
 
+    }
 
+    /**
+     * Quant li dons clcik a la imatge del resturants
+     * @param vista View vista necessria per fer el onClick
+     */
+    public void onRestaurantClick(View vista)
+    {
 
+    }
 
+    /**
+     * Metode que utliza la foto de tenda
+     * @param vista View
+     */
+    public void onTiendaClick(View vista)
+    {
 
-
-        /*
-           VideoView video = findViewById(R.id.videoView);
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.ibai;
-        Uri uri = Uri.parse(videoPath);
-        video.setVideoURI(uri);
-
-        MediaController mediaController = new MediaController(this);
-        video.setMediaController(mediaController);
-        mediaController.setAnchorView(video);
-
-
-
-        video.start();
-         */
     }
 }

@@ -31,7 +31,7 @@
                 android:layout_height="75dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/man"
-                android:onClick="onImgClick"
+                android:onClick="onManClick"
                 app:srcCompat="@drawable/man"
                 tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
 
@@ -41,7 +41,7 @@
                 android:layout_height="75dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/todo"
-                android:onClick="onImgClick"
+                android:onClick="onReciclarClick"
                 app:srcCompat="@drawable/reciclar" />
 
             <ImageView
@@ -59,7 +59,7 @@
                 android:layout_height="75dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/todo"
-                android:onClick="onImgClick"
+                android:onClick="onInterficieClcik"
                 app:srcCompat="@drawable/interficia" />
 
             <ImageView
@@ -68,7 +68,7 @@
                 android:layout_height="75dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/todo"
-                android:onClick="onImgClick"
+                android:onClick="onRestaurantClick"
                 app:srcCompat="@drawable/restaurant"
                 tools:ignore="ImageContrastCheck" />
 
@@ -78,7 +78,7 @@
                 android:layout_height="75dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/todo"
-                android:onClick="onImgClick"
+                android:onClick="onTiendaClick"
                 app:srcCompat="@drawable/tienda" />
         </LinearLayout>
     </HorizontalScrollView>
@@ -126,7 +126,7 @@
         app:layout_constraintTop_toBottomOf="@+id/any" />
 
     <VideoView
-        android:id="@+id/video"
+        android:id="@+id/videoView"
         android:layout_width="267dp"
         android:layout_height="168dp"
         android:layout_marginTop="20dp"
