@@ -160,6 +160,13 @@ public class MainActivity extends AppCompatActivity
      */
     public void onViatjarClick(View vista)
     {
+        String luisito = "android.resource://" + getPackageName() + "/" + R.raw.viatje;
+        Uri uriViatge = Uri.parse(luisito);
 
+        titol.setText("Tenda!");
+        any.setText("2023");
+        descripcio.setText("MERCADOONA MERCADOONA");
+        videoView.setVideoURI(uriViatge);
+        videoView.start();
     }
 }
