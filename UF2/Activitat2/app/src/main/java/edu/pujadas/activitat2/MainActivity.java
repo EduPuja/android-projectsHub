@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity
         descripcio.setText("Hombre solo en la vida inventada per Eduard Pujadas");
         // uri video ibai
         videoView.setVideoURI(uriIbai);
-
+        videoView.setVisibility(View.VISIBLE);
         videoView.start();
 
     }
@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity
         descripcio.setText("Interficices que guai!");
         //uri video exemple
         videoView.setVideoURI(uriVideo);
+        videoView.setVisibility(View.VISIBLE);
         videoView.start();
     }
 
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity
         any.setText("2023");
         descripcio.setText("El reciclatge és molt importnat");
         videoView.setVideoURI(uriRecilar);
+        videoView.setVisibility(View.VISIBLE);
         videoView.start();
     }
 
@@ -129,6 +131,7 @@ public class MainActivity extends AppCompatActivity
         descripcio.setText("EL nou restaurant renovat");
         //uri video exemple
         videoView.setVideoURI(uriRestaruant);
+        videoView.setVisibility(View.VISIBLE);
         videoView.start();
     }
 
@@ -145,6 +148,7 @@ public class MainActivity extends AppCompatActivity
         any.setText("2023");
         descripcio.setText("MERCADOONA MERCADOONA");
         videoView.setVideoURI(uriMercadona);
+        videoView.setVisibility(View.VISIBLE);
         videoView.start();
     }
 
@@ -161,6 +165,7 @@ public class MainActivity extends AppCompatActivity
         any.setText("2023");
         descripcio.setText("Una travesía por el glaciar más grande Islandia. Me sentí en otro planeta. ");
         videoView.setVideoURI(uriViatge);
+        videoView.setVisibility(View.VISIBLE);
         videoView.start();
     }
 }
