@@ -67,11 +67,8 @@ public class MainActivity extends AppCompatActivity
         // videos
         String videoIbai = "android.resource://" + getPackageName() + "/" + R.raw.ibai;
 
-
         // URI VIDEOS
         Uri uriIbai = Uri.parse(videoIbai);
-
-
 
         titol.setText("Hombre solo");
         any.setText("2023");
@@ -80,9 +77,6 @@ public class MainActivity extends AppCompatActivity
         videoView.setVideoURI(uriIbai);
 
         videoView.start();
-
-
-
 
     }
 
