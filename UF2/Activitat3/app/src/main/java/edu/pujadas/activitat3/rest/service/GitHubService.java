@@ -1,5 +1,6 @@
 package edu.pujadas.activitat3.rest.service;
 
+import edu.pujadas.activitat3.rest.model.Owner;
 import edu.uoc.android.restservice.rest.contants.ApiConstants;
 import edu.uoc.android.restservice.rest.model.Owner;
 import retrofit2.Call;
