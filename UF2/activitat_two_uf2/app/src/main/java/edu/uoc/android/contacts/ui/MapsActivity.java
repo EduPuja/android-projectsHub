@@ -72,6 +72,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         contacts();
     }
 
+
+    /**
+     * Metode que utliza el inserta tots els contactes amb una posicio
+     */
     public void contacts()
     {
 
