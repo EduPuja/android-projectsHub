@@ -13,8 +13,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.List;
+
 import edu.uoc.android.contacts.R;
 import edu.uoc.android.contacts.databinding.ActivityMapsBinding;
+import edu.uoc.android.contacts.manager.FirebaseContactManager;
 import edu.uoc.android.contacts.model.Contact;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback
@@ -22,6 +25,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
+
 
     public static Intent makeIntent(Context context)
     {
@@ -63,12 +67,20 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        //contacts();
     }
 
     public void contacts()
     {
-        Contact contact=  new Contact();
-        //todo no hi ha setters ni getters ??????
+        /*List<Contact> listContacts= manager.getAllContacts();
+
+
+        double latitutd =listContacts.get(0).getAddress().getLatitude();
+        double longitud = listContacts.get(0).getAddress().getLongitude();
+        LatLng contact1 = new LatLng(latitutd,longitud);
+        mMap.addMarker(new MarkerOptions().position(contact1).title("Primer contacte"));
+        */
 
 
     }
