@@ -1,17 +1,29 @@
 package edu.pujadas.activitat3.followers;
 
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import edu.pujadas.activitat3.R;
+
 public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHolder>
 {
+    private final Context context;
+
+    public FollowerAdapter(Context context)
+    {
+        super(context, R.layout.producte_list_item);
+        this.context = context;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
+
         return null;
     }
 
