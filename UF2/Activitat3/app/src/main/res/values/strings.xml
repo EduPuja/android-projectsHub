@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Activitat3</string>
     <string name="github_username">GitHub UserName</string>
+    <string name="explore">Explore</string>
 </resources>
