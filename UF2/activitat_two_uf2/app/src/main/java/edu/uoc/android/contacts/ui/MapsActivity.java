@@ -10,6 +10,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -63,12 +64,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
         //zoom enambled
         mMap.getUiSettings().setZoomControlsEnabled(true);
-        // Add a marker in Sydney and move the camera
-        /*LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
-
-
+        // metode per afegir tots els contactes
         contacts();
     }
 
@@ -87,8 +83,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             double latitude = listContacts.get(i).getAddress().getLatitude();
 
             LatLng conactes = new LatLng(latitude, longitud);
-
-            mMap.addMarker(new MarkerOptions().position(conactes).title(listContacts.get(i).getName()));
+            //adiing a marker with a position and title and icon
+            mMap.addMarker(new MarkerOptions().position(conactes).title(listContacts.get(i).getName()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_account_circle_black_24dp)));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(conactes));
         }
 
