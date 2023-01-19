@@ -12,8 +12,8 @@ import edu.uoc.android.restservice.R;
 
 public class EnterUserActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText etUser;
-    private Button btnFollowers;
+    EditText etUser;
+    Button btnFollowers;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
