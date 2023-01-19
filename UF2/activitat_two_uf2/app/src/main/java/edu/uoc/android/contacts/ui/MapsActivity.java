@@ -64,23 +64,31 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         //zoom enambled
         mMap.getUiSettings().setZoomControlsEnabled(true);
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
+        /*LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
 
-        //contacts();
+
+        contacts();
     }
 
     public void contacts()
     {
-        /*List<Contact> listContacts= manager.getAllContacts();
+
+        List<Contact> listContacts= FirebaseContactManager.getInstance().getAllContacts();
+
+        for(int i =0;i<listContacts.size();i++)
+        {
+            double longitud = listContacts.get(i).getAddress().getLongitude();
+            double latitude = listContacts.get(i).getAddress().getLatitude();
+
+            LatLng conactes = new LatLng(latitude, longitud);
+
+            mMap.addMarker(new MarkerOptions().position(conactes).title(listContacts.get(i).getName()));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(conactes));
+        }
 
 
-        double latitutd =listContacts.get(0).getAddress().getLatitude();
-        double longitud = listContacts.get(0).getAddress().getLongitude();
-        LatLng contact1 = new LatLng(latitutd,longitud);
-        mMap.addMarker(new MarkerOptions().position(contact1).title("Primer contacte"));
-        */
 
 
     }
