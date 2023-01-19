@@ -1,11 +1,12 @@
 package edu.pujadas.activitat3.rest.adapter;
 
-import edu.uoc.android.restservice.rest.contants.ApiConstants;
-import edu.uoc.android.restservice.rest.model.Owner;
-import edu.uoc.android.restservice.rest.service.GitHubService;
+import edu.pujadas.activitat3.rest.contants.ApiConstants;
+import edu.pujadas.activitat3.rest.model.Owner;
+import edu.pujadas.activitat3.rest.service.GitHubService;
 import retrofit2.Call;
 
-public class GitHubAdapter extends BaseAdapter implements GitHubService {
+public class GitHubAdapter extends BaseAdapter implements GitHubService
+{
 
     private GitHubService gitHubService;
 
