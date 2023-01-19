@@ -1,6 +1,7 @@
 package edu.pujadas.activitat3.rest.adapter;
 
-import edu.uoc.android.restservice.BuildConfig;
+import edu.pujadas.activitat3.rest.BuildConfig;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
