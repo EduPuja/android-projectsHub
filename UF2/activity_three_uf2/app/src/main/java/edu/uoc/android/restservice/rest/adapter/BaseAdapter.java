@@ -5,6 +5,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import com.facebook.react.BuildConfig;
 
 class BaseAdapter {
 
@@ -27,6 +28,7 @@ class BaseAdapter {
     private OkHttpClient getClient() {
         OkHttpClient.Builder builderClientHttp = new OkHttpClient().newBuilder();
         // Show HTTPS logs in dev mode
+
         if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.setLevel(LEVEL_LOG);
