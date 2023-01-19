@@ -39,5 +39,6 @@ public class SplashActivity extends AppCompatActivity implements ValueEventListe
     private void startMainActivity()
     {
        startActivity(MapsActivity.makeIntent(this));
+       finish();
     }
 }
