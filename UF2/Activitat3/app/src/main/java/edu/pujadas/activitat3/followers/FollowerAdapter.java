@@ -1,8 +1,11 @@
 package edu.pujadas.activitat3.followers;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,26 +14,28 @@ import edu.pujadas.activitat3.R;
 
 public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHolder>
 {
-    private final Context context;
 
-    public FollowerAdapter(Context context)
+    private String[] localDataSet;
+
+    public FollowerAdapter(String[] dataSet)
     {
-        super(context, R.layout.producte_list_item);
-        this.context = context;
-    }
-
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
-    {
-
-        return null;
+        localDataSet = dataSet;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position)
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
+        // Create a new view, which defines the UI of the list item
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.follower_recicle_item, parent, false);
 
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position)
+    {
+        //holder.item_avavtar;
     }
 
     @Override
@@ -39,25 +44,37 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
         return 0;
     }
 
-    /**
-     * Provide a reference to the type of views that you are using
-     * (custom ViewHolder).
-     */
+    // VIEW HOLDER
     public static class ViewHolder extends RecyclerView.ViewHolder
     {
-        //private final TextView textView;
+        private final ImageView item_avatar;
+        private final TextView item_follower_username;
 
         public ViewHolder(View view)
         {
             super(view);
             // Define click listener for the ViewHolder's View
 
-            //textView =  view.findViewById(R.id.textView);
+            item_avatar =  view.findViewById(R.id.item_avatar);
+            item_follower_username = view.findViewById(R.id.item_follower_username);
         }
 
-        /*public TextView getTextView() {
-            return textView;
-        }*/
-    }
+        /**
+         * metode que et retrona el username
+         * @return textview
+         */
+        public TextView getUsername()
+        {
+            return item_follower_username;
+        }
 
+        /**
+         * metode que et retrona el avatar
+         * @return avatar
+         */
+        public ImageView getAvatar()
+        {
+            return item_avatar;
+        }
+    }
 }
