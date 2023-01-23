@@ -2,7 +2,7 @@
     <string name="app_name">Activitat4_Final</string>
     <string name="todo">TODO</string>
     <string name="insertar_les_dades">Inserta les dades</string>
-    <string name="button">Button</string>
+    <string name="button">Send</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
 </resources>
