@@ -33,7 +33,7 @@ public class SplashActivity extends AppCompatActivity
 
 
         Timer tiempo = new Timer();
-        tiempo.schedule(task,4000);
+        tiempo.schedule(task,2500);
     }
 
 
