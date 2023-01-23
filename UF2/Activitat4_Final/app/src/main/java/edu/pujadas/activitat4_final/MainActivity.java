@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity
         Persona persona = new Persona(emailFiled.getText().toString(),passwordFiled.getText().toString());
 
         listPersona.add(persona);
-        for(int i=0;i<listPersona.size(); i++)
+        /*for(int i=0;i<listPersona.size(); i++)
         {
             if(!listPersona.get(i).getEmail().matches(emailFiled.getText().toString()))
             {
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity
             {
                 System.out.println("correu repetit");
             }
-        }
+        }*/
 
 
 
