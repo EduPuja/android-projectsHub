@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 public class SplashActivity extends AppCompatActivity
 {
 
+    ImageView logo;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -16,7 +18,7 @@ public class SplashActivity extends AppCompatActivity
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-
+        logo.findViewById(R.id.logo);
     }
 
 
