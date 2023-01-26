@@ -19,6 +19,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Random;
 
 import edu.pujadas.activitat4_final.Models.Home;
 
@@ -60,16 +61,23 @@ public class AddHomeActivity extends AppCompatActivity
     {
         if(!nameCity.getText().toString().isEmpty())
         {
-            Home home= new Home(nameCity.getText().toString(), BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casaa));
+         
 
-            SharedPreferences homePreferences = getSharedPreferences("HOME_INFO",MODE_PRIVATE);
+
+            Home home= new Home(nameCity.getText().toString(), BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casab));
+
+           /* SharedPreferences homePreferences = getSharedPreferences("HOME_INFO",MODE_PRIVATE);
             Gson gson = new Gson();
             String info = homePreferences.getString("listHomes","");
             Type type = new TypeToken<ArrayList<Home>>() {}.getType();
             listHomes= gson.fromJson(info,type);
 
             listHomes.add(home);
+            System.out.println("Home inserted");*/
+            UserActivity.listHomes.add(home);
             System.out.println("Home inserted");
+            Intent intent = new Intent(this,UserActivity.class);
+            startActivity(intent);
 
         }
         else

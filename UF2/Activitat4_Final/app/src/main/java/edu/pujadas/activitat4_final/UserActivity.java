@@ -22,7 +22,7 @@ public class UserActivity extends AppCompatActivity
 {
 
      //arraylist necesarri per informacio de cases per el recicleview
-     private ArrayList<Home> listHomes = new ArrayList<Home>();
+     public static ArrayList<Home> listHomes =new ArrayList<>();
 
      RecyclerView recyclerView ;
      HomeAdapter homeAdapter;
@@ -37,44 +37,21 @@ public class UserActivity extends AppCompatActivity
         setContentView(R.layout.activity_user);
         addHomeBtn =findViewById(R.id.addHomeBtn);
 
-        // metode shared prefenrece
-        preferencies();
-
-
-
-        // metode que crea el reciclerview
-        initRecylcerView();
-    }
-
-    /**
-     * Metode que utliza el shared preferences
-     */
-    private void preferencies()
-    {
         //preferenices USUARI
         SharedPreferences sharedPreferences = getSharedPreferences("USER_INFO",MODE_PRIVATE);
 
         String correu = sharedPreferences.getString("correu","");
         setTitle("Hello " + correu);
 
+
+
         // metode que inicia dades falses al arraylist de cases
-        initData();
-
-        //preferenices cases
-        SharedPreferences homePreferences = getSharedPreferences("HOME_INFO",MODE_PRIVATE);
-        //editor
-        SharedPreferences.Editor editorHome = homePreferences.edit();
-        //gson per passar el arraylist a string
-        Gson gson = new Gson();
-        String infoHomes = gson.toJson(listHomes);
-        editorHome.putString("listHomes",infoHomes);
-        editorHome.commit();
-        editorHome.apply();;
-
-
-
-
+        //initData();
+        // metode que crea el reciclerview
+        initRecylcerView();
     }
+
+
 
 
 
@@ -83,6 +60,7 @@ public class UserActivity extends AppCompatActivity
      */
     private void initData()
     {
+
         //creant un objecte casa
         Home homePals= new Home("Pals",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casaa));
         Home homePalamos= new Home("Palamos",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casab));
@@ -96,6 +74,7 @@ public class UserActivity extends AppCompatActivity
         listHomes.add(homePalamos);
         listHomes.add(homeCasaC);
         listHomes.add(homeCasaD);
+
 
        // listHomes.add(casa);
     }
