@@ -10,18 +10,30 @@
         <androidx.cardview.widget.CardView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:id="@+id/homeImg"
-            app:cardCornerRadius="60dp"
+            android:id="@+id/cardView"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp">
-            
+            <!--app:cardCornerRadius="60dp"-->
             <ImageView
                 android:layout_width="60dp"
-                android:layout_height="60dp">
-
+                android:layout_height="60dp"
+                android:src="@drawable/casaa"
+                android:scaleType="centerCrop"
+                android:id="@+id/homeImg">
             </ImageView>
-            
+
+
+
         </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@id/homeImg"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="120dp"
+            android:textSize="20dp"
+            android:text="@string/test_home" />
 
     </RelativeLayout>
 
