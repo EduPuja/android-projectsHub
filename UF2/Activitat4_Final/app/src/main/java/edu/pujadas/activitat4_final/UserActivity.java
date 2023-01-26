@@ -7,28 +7,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.PerformanceHintManager;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 import edu.pujadas.activitat4_final.Models.Home;
 import edu.pujadas.activitat4_final.Models.HomeAdapter;
-import edu.pujadas.activitat4_final.Models.Persona;
 
 public class UserActivity extends AppCompatActivity
 {
-    // arraylist de persones per poder afegir el titol
-     private ArrayList<Persona> listPersona = new ArrayList<Persona>();
-     //arryalist necessari per poder afegir les cases
+
+     //arraylist necesarri per informacio de cases per el recicleview
      private ArrayList<Home> listHomes = new ArrayList<Home>();
 
      RecyclerView recyclerView ;
      HomeAdapter homeAdapter;
-    LinearLayoutManager layoutManager;
+     LinearLayoutManager layoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -52,14 +46,14 @@ public class UserActivity extends AppCompatActivity
     {
         //preferenices
         SharedPreferences sharedPreferences = getSharedPreferences("USER_INFO",MODE_PRIVATE);
-        Gson gson = new Gson();
-        String info = sharedPreferences.getString("listPersona","");
+        //Gson gson = new Gson();
+        String correu = sharedPreferences.getString("correu","");
 
-        Type type = new TypeToken<ArrayList<Persona>>() {}.getType();
-        listPersona = gson.fromJson(info,type);
+      //  Type type = new TypeToken<ArrayList<Persona>>() {}.getType();
+        //listPersona = gson.fromJson(info,type);
         // per mostrar el ultim  persona registrada
-        int ultim = listPersona.size()-1;
-        setTitle("Hello " + listPersona.get(ultim).getEmail());
+       // int ultim = listPersona.size()-1;
+        setTitle("Hello " + correu);
     }
 
     /**
