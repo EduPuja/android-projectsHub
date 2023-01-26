@@ -20,6 +20,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
 {
     private List<Home> listHomes = new ArrayList<Home>();
 
+    public HomeAdapter(List<Home> listHomes)
+    {
+        this.listHomes=listHomes;
+    }
+
     @NonNull
     @Override
     public HomeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
