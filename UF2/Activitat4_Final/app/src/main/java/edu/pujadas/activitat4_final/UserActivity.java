@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 
 import edu.pujadas.activitat4_final.Models.Home;
@@ -38,8 +40,7 @@ public class UserActivity extends AppCompatActivity
         // metode shared prefenrece
         preferencies();
 
-        // metode que inicia dades falses al arraylist de cases
-        initData();
+
 
         // metode que crea el reciclerview
         initRecylcerView();
@@ -50,17 +51,32 @@ public class UserActivity extends AppCompatActivity
      */
     private void preferencies()
     {
-        //preferenices
+        //preferenices USUARI
         SharedPreferences sharedPreferences = getSharedPreferences("USER_INFO",MODE_PRIVATE);
-        //Gson gson = new Gson();
-        String correu = sharedPreferences.getString("correu","");
 
-      //  Type type = new TypeToken<ArrayList<Persona>>() {}.getType();
-        //listPersona = gson.fromJson(info,type);
-        // per mostrar el ultim  persona registrada
-       // int ultim = listPersona.size()-1;
+        String correu = sharedPreferences.getString("correu","");
         setTitle("Hello " + correu);
+
+        // metode que inicia dades falses al arraylist de cases
+        initData();
+
+        //preferenices cases
+        SharedPreferences homePreferences = getSharedPreferences("HOME_INFO",MODE_PRIVATE);
+        //editor
+        SharedPreferences.Editor editorHome = homePreferences.edit();
+        //gson per passar el arraylist a string
+        Gson gson = new Gson();
+        String infoHomes = gson.toJson(listHomes);
+        editorHome.putString("listHomes",infoHomes);
+        editorHome.commit();
+        editorHome.apply();;
+
+
+
+
     }
+
+
 
     /**
      * Metode que afegiex dades en el recicleView
@@ -72,11 +88,16 @@ public class UserActivity extends AppCompatActivity
         Home homePalamos= new Home("Palamos",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casab));
         Home homeCasaC= new Home("Vallobrega",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casac));
         Home homeCasaD= new Home("Mataró",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casad));
+       // Home casa = (Home) getIntent().getExtras().getSerializable("casa");
+
+
 
         listHomes.add(homePals);
         listHomes.add(homePalamos);
         listHomes.add(homeCasaC);
         listHomes.add(homeCasaD);
+
+       // listHomes.add(casa);
     }
 
     private void initRecylcerView()
