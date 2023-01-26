@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -23,11 +26,14 @@ public class UserActivity extends AppCompatActivity
      HomeAdapter homeAdapter;
      LinearLayoutManager layoutManager;
 
+     Button addHomeBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+        addHomeBtn =findViewById(R.id.addHomeBtn);
 
         // metode shared prefenrece
         preferencies();
@@ -83,5 +89,12 @@ public class UserActivity extends AppCompatActivity
         homeAdapter = new HomeAdapter(listHomes);
         recyclerView.setAdapter(homeAdapter);
         homeAdapter.notifyDataSetChanged();
+    }
+
+    public void onAddHomeCick(View vista)
+    {
+        Intent intent = new Intent(this,AddHomeActivity.class);
+        startActivity(intent);
+
     }
 }
