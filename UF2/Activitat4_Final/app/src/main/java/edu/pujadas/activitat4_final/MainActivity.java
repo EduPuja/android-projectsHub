@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.google.gson.Gson;
+import com.google.gson.*;
 
 import java.util.ArrayList;
 
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity
 {
 
 
-     EditText emailFiled;
+     EditText  emailFiled;
      EditText passwordFiled;
 
      ArrayList<Persona> listPersona = new ArrayList<Persona>();
@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        emailFiled.findViewById(R.id.emailFiled);
-        passwordFiled.findViewById(R.id.passwordFiled);
+        emailFiled =findViewById(R.id.emailFiled);
+        passwordFiled =findViewById(R.id.passwordFiled);
 
 
     }
@@ -40,11 +40,56 @@ public class MainActivity extends AppCompatActivity
     public void onSendClick(View v)
     {
 
+        if(!emailFiled.getText().toString().isEmpty() && !passwordFiled.getText().toString().isEmpty())
+        {
 
-        Persona persona = new Persona(emailFiled.getText().toString(),passwordFiled.getText().toString());
+            Persona persona = new Persona(emailFiled.getText().toString(),passwordFiled.getText().toString());
 
-        listPersona.add(persona);
-        /*for(int i=0;i<listPersona.size(); i++)
+            listPersona.add(persona);
+            // preferencias
+            SharedPreferences sharedPreferences = getSharedPreferences("USER_INFO",MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit(); // editor
+            Gson gson= new Gson();
+
+            String jsonPersones =gson.toJson(listPersona);
+            editor.putString("listPersona",jsonPersones);
+            editor.putBoolean("isRegisterd",true);
+            editor.apply();
+
+            if(sharedPreferences.getBoolean("isRegisterd",true))
+            {
+                //todo canviar de pantalla
+                System.out.println("user registerd");
+            }
+
+            else
+            {
+                System.out.println("usuari not registerd");
+            }
+
+
+
+            /*String correu = listPersona.get(0).getEmail();
+            String password = listPersona.get(0).getPassword();
+            if(correu.matches(emailFiled.getText().toString()) && password.matches(passwordFiled.getText().toString()))
+            {
+                System.out.println("nice");
+            }
+            else
+            {
+                System.out.println("no");
+            }*/
+        }
+        else
+        {
+            emailFiled.setError("Correu buit");
+            passwordFiled.setError("Password buit");
+        }
+
+
+
+
+       /* for(int i=0;i<listPersona.size(); i++)
         {
             if(!listPersona.get(i).getEmail().matches(emailFiled.getText().toString()))
             {
