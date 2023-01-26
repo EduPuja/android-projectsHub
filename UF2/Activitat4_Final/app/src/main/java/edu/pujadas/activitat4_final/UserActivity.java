@@ -32,8 +32,9 @@ public class UserActivity extends AppCompatActivity
 
         Type type = new TypeToken<ArrayList<Persona>>() {}.getType();
         listPersona = gson.fromJson(info,type);
-
-        setTitle(listPersona.get(0).getEmail());
+        // per mostrar el ultim  persona registrada
+        int ultim = listPersona.size()-1;
+        setTitle("Hello " + listPersona.get(ultim).getEmail());
 
     }
 }
