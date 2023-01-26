@@ -58,8 +58,11 @@ public class MainActivity extends AppCompatActivity
 
             if(sharedPreferences.getBoolean("isRegisterd",true))
             {
-                //todo canviar de pantalla
+            
                 System.out.println("user registerd");
+                Intent intent = new Intent(this,UserActivity.class);
+                startActivity(intent);
+
             }
 
             else
