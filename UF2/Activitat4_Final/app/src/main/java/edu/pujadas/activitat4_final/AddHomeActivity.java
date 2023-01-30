@@ -74,7 +74,7 @@ public class AddHomeActivity extends AppCompatActivity
 
             listHomes.add(home);
             System.out.println("Home inserted");*/
-            UserActivity.listHomes.add(home);
+
             System.out.println("Home inserted");
             Intent intent = new Intent(this,UserActivity.class);
             startActivity(intent);
