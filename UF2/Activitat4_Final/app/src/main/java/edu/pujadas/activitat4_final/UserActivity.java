@@ -38,16 +38,16 @@ public class UserActivity extends AppCompatActivity
         setContentView(R.layout.activity_user);
         addHomeBtn =findViewById(R.id.addHomeBtn);
 
-
+        // metode de les preferencices d'usuari
         preferencies();
 
         // SI el arraylsit de cases esta buit doncs entra en el metode initData
-        if(listHomes.isEmpty()) initData();
-
-
+        if(listHomes.isEmpty())
+        {
+            initData();
+        }
+        //metode per afegir al recicleview
         initRecylcerView();
-
-
 
     }
 
@@ -98,7 +98,7 @@ public class UserActivity extends AppCompatActivity
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-        homeAdapter = new HomeAdapter(new ArrayList<Home>());
+        homeAdapter = new HomeAdapter(listHomes);
         recyclerView.setAdapter(homeAdapter);
         //homeAdapter.notifyDataSetChanged();
     }
