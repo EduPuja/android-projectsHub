@@ -24,7 +24,7 @@ public class UserActivity extends AppCompatActivity
 {
 
      //arraylist necesarri per informacio de cases per el recicleview
-    public static ArrayList<Home> listHomes;
+    public static ArrayList<Home> listHomes = new ArrayList<Home>();
 
      RecyclerView recyclerView;
      HomeAdapter homeAdapter;
@@ -41,10 +41,14 @@ public class UserActivity extends AppCompatActivity
 
         preferencies();
 
-        listHomes = new ArrayList<Home>();
 
 
-        initData();
+
+        if(listHomes.isEmpty())
+        {
+            initData();
+        }
+
 
         //recicleview
         recyclerView = findViewById(R.id.recicleView);

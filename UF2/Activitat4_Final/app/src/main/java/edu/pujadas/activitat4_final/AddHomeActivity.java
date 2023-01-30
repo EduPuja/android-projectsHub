@@ -29,7 +29,7 @@ public class AddHomeActivity extends AppCompatActivity
     EditText nameCity;
     Button openCamera;
     Button insertHome;
-    ArrayList<Home> listHomes = new ArrayList<Home>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
