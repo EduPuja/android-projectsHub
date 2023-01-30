@@ -61,7 +61,7 @@ public class AddHomeActivity extends AppCompatActivity
     {
         if(!nameCity.getText().toString().isEmpty())
         {
-         
+
 
 
             Home home= new Home(nameCity.getText().toString(), BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casab));
