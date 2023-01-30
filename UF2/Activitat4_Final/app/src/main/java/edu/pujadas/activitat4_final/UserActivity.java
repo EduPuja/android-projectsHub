@@ -52,6 +52,9 @@ public class UserActivity extends AppCompatActivity
     }
 
 
+    /**
+     * Metode per iniciar les dades falces de cases
+     */
     public void initData()
     {
 
@@ -60,7 +63,6 @@ public class UserActivity extends AppCompatActivity
         Home homePalamos= new Home("Palamos",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casab));
         Home homeCasaC= new Home("Vallobrega",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casac));
         Home homeCasaD= new Home("Mataró",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casad));
-        // Home casa = (Home) getIntent().getExtras().getSerializable("casa");
 
 
 
@@ -71,7 +73,10 @@ public class UserActivity extends AppCompatActivity
     }
 
 
-
+    /**
+     * Metode que agafa el shared prefrences i et posa el titol de la activitat amb nom correu
+     * electroinic
+     */
 
     private void preferencies()
     {
@@ -80,9 +85,12 @@ public class UserActivity extends AppCompatActivity
         String correu = sharedPreferences.getString("correu","");
         setTitle("Hello " + correu);
 
-
     }
 
+    /**
+     * Metode que es utilizat en el onCreate utilzia el recyclerview
+     * i posa tot el necessari per poder-lo utilitzar
+     */
     private void initRecylcerView()
     {
         //recicleview
@@ -95,6 +103,11 @@ public class UserActivity extends AppCompatActivity
         //homeAdapter.notifyDataSetChanged();
     }
 
+    /**
+     * Metode que utlizes quant cliques el botó addHomeBtn
+     *
+     * @param vista necesari per el onClick
+     */
     public void onAddHomeCick(View vista)
     {
         Intent intent = new Intent(this,AddHomeActivity.class);
