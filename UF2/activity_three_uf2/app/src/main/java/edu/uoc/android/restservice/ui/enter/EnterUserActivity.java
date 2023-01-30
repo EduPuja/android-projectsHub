@@ -1,5 +1,6 @@
 package edu.uoc.android.restservice.ui.enter;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
@@ -32,6 +33,7 @@ public class EnterUserActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         if (v == btnFollowers) {
             // TODO: Go to nex activity
+            Intent intent = new Intent(this, FollowersActivity.class);
         }
     }
 }

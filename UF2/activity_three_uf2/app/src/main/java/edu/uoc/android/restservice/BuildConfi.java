@@ -1,6 +1,6 @@
 package edu.uoc.android.restservice;
 
-public final  class BuildConfig
+public final class BuildConfi
 {
     public static final boolean DEBUG;
 

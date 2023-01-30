@@ -1,6 +1,6 @@
 package edu.uoc.android.restservice.rest.adapter;
 
-import edu.uoc.android.restservice.BuildConfig;
+import edu.uoc.android.restservice.BuildConfi;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -29,7 +29,7 @@ class BaseAdapter {
         OkHttpClient.Builder builderClientHttp = new OkHttpClient().newBuilder();
         // Show HTTPS logs in dev mode
 
-        if (BuildConfig.DEBUG) {
+        if (BuildConfi.DEBUG) {
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.setLevel(LEVEL_LOG);
             builderClientHttp.addInterceptor(interceptor);
