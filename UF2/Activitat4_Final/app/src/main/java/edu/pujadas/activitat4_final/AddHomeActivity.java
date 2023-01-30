@@ -66,16 +66,12 @@ public class AddHomeActivity extends AppCompatActivity
 
             Home home= new Home(nameCity.getText().toString(), BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casab));
 
-           /* SharedPreferences homePreferences = getSharedPreferences("HOME_INFO",MODE_PRIVATE);
-            Gson gson = new Gson();
-            String info = homePreferences.getString("listHomes","");
-            Type type = new TypeToken<ArrayList<Home>>() {}.getType();
-            listHomes= gson.fromJson(info,type);
+            UserActivity.listHomes.add(home);
 
-            listHomes.add(home);
+            /*listHomes.add(home);
             System.out.println("Home inserted");*/
 
-            System.out.println("Home inserted");
+
             Intent intent = new Intent(this,UserActivity.class);
             startActivity(intent);
 

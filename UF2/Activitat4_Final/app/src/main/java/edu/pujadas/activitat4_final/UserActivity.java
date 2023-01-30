@@ -24,9 +24,9 @@ public class UserActivity extends AppCompatActivity
 {
 
      //arraylist necesarri per informacio de cases per el recicleview
-     ArrayList<Home> listHomes =new ArrayList<>();
+    public static ArrayList<Home> listHomes;
 
-     RecyclerView recyclerView ;
+     RecyclerView recyclerView;
      HomeAdapter homeAdapter;
      LinearLayoutManager layoutManager;
      Button addHomeBtn;
@@ -37,13 +37,23 @@ public class UserActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
         addHomeBtn =findViewById(R.id.addHomeBtn);
-        // metode de les preferencies d'usuari
-        initData();
+
 
         preferencies();
 
-        // metode per inicialitzar el reciclerview
-        initRecylcerView();
+        listHomes = new ArrayList<Home>();
+
+
+        initData();
+
+        //recicleview
+        recyclerView = findViewById(R.id.recicleView);
+        layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        homeAdapter = new HomeAdapter(listHomes);
+        recyclerView.setAdapter(homeAdapter);
+
 
 
 
@@ -77,7 +87,7 @@ public class UserActivity extends AppCompatActivity
         SharedPreferences sharedPreferences = getSharedPreferences("USER_INFO",MODE_PRIVATE);
         String correu = sharedPreferences.getString("correu","");
         setTitle("Hello " + correu);
-
+        /*
         //preferencies cases
         SharedPreferences homePreferences = getSharedPreferences("HOME_INFO",MODE_PRIVATE);
         //editor preferencies
@@ -85,7 +95,7 @@ public class UserActivity extends AppCompatActivity
         Gson gson = new Gson();
         String jsonHomes =gson.toJson(listHomes);
         homeEditor.putString("listHomes",jsonHomes);
-        homeEditor.apply();
+        homeEditor.apply();*/
 
 
     }
@@ -97,7 +107,7 @@ public class UserActivity extends AppCompatActivity
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-        homeAdapter = new HomeAdapter(listHomes);
+        homeAdapter = new HomeAdapter(new ArrayList<Home>());
         recyclerView.setAdapter(homeAdapter);
         //homeAdapter.notifyDataSetChanged();
     }
