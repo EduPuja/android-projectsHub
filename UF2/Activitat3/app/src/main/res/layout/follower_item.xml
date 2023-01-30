@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        tools:ignore="UselessParent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp">
+            <!--app:cardCornerRadius="60dp"-->
+            <ImageView
+                android:id="@+id/item_avatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/todo"
+                android:scaleType="centerCrop"
+                android:src="@drawable/xbox"
+                tools:ignore="ImageContrastCheck"></ImageView>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@id/item_follower_username"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="120dp"
+            android:text="@string/test"
+            android:textSize="20sp"
+            tools:ignore="TextSizeCheck" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
