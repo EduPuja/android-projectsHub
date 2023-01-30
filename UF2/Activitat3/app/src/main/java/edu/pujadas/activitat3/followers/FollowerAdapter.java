@@ -14,7 +14,7 @@ import edu.pujadas.activitat3.R;
 
 public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHolder>
 {
-
+    //TODO REFACTOR THIS RECICLE VIEW
     private String[] localDataSet;
 
     public FollowerAdapter(String[] dataSet)
@@ -27,7 +27,7 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
     {
         // Create a new view, which defines the UI of the list item
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.follower_recicle_item, parent, false);
+                .inflate(R.layout.follower_item, parent, false);
 
         return new ViewHolder(view);
     }
