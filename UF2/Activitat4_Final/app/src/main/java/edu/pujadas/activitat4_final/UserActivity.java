@@ -29,7 +29,6 @@ public class UserActivity extends AppCompatActivity
      RecyclerView recyclerView ;
      HomeAdapter homeAdapter;
      LinearLayoutManager layoutManager;
-
      Button addHomeBtn;
 
     @Override
@@ -39,7 +38,10 @@ public class UserActivity extends AppCompatActivity
         setContentView(R.layout.activity_user);
         addHomeBtn =findViewById(R.id.addHomeBtn);
         // metode de les preferencies d'usuari
+        initData();
+
         preferencies();
+
         // metode per inicialitzar el reciclerview
         initRecylcerView();
 
@@ -47,23 +49,27 @@ public class UserActivity extends AppCompatActivity
 
     }
 
-    @Override
-    protected void onStart()
-    {
-        super.onStart();
-        initData();
-    }
 
-    /**
-     * Metode que afegiex dades en el recicleView
-     */
-    private void initData()
+    public void initData()
     {
 
+        //creant un objecte casa
+        Home homePals= new Home("Pals",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casaa));
+        Home homePalamos= new Home("Palamos",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casab));
+        Home homeCasaC= new Home("Vallobrega",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casac));
+        Home homeCasaD= new Home("Mataró",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casad));
+        // Home casa = (Home) getIntent().getExtras().getSerializable("casa");
 
 
 
+        listHomes.add(homePals);
+        listHomes.add(homePalamos);
+        listHomes.add(homeCasaC);
+        listHomes.add(homeCasaD);
     }
+
+
+
 
     private void preferencies()
     {
