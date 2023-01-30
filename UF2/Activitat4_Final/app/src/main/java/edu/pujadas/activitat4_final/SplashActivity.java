@@ -4,10 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TableLayout;
 
-import java.util.MissingFormatArgumentException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -25,7 +22,7 @@ public class SplashActivity extends AppCompatActivity
             @Override
             public void run()
             {
-                Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivty.class);
                 startActivity(intent);
                 finish();
             }
