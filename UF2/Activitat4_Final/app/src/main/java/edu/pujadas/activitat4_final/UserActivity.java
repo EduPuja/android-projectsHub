@@ -41,23 +41,11 @@ public class UserActivity extends AppCompatActivity
 
         preferencies();
 
+        // SI el arraylsit de cases esta buit doncs entra en el metode initData
+        if(listHomes.isEmpty()) initData();
 
 
-
-        if(listHomes.isEmpty())
-        {
-            initData();
-        }
-
-
-        //recicleview
-        recyclerView = findViewById(R.id.recicleView);
-        layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(RecyclerView.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
-        homeAdapter = new HomeAdapter(listHomes);
-        recyclerView.setAdapter(homeAdapter);
-
+        initRecylcerView();
 
 
 
@@ -91,15 +79,6 @@ public class UserActivity extends AppCompatActivity
         SharedPreferences sharedPreferences = getSharedPreferences("USER_INFO",MODE_PRIVATE);
         String correu = sharedPreferences.getString("correu","");
         setTitle("Hello " + correu);
-        /*
-        //preferencies cases
-        SharedPreferences homePreferences = getSharedPreferences("HOME_INFO",MODE_PRIVATE);
-        //editor preferencies
-        SharedPreferences.Editor homeEditor = homePreferences.edit();
-        Gson gson = new Gson();
-        String jsonHomes =gson.toJson(listHomes);
-        homeEditor.putString("listHomes",jsonHomes);
-        homeEditor.apply();*/
 
 
     }
