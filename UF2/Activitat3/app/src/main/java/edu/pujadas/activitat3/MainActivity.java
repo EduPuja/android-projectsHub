@@ -26,5 +26,7 @@ public class MainActivity extends AppCompatActivity
     public void onFollowersClick(View vista)
     {
         Intent intent = new Intent(MainActivity.this, FollowersActivity.class);
+
+        startActivity(intent);
     }
 }
