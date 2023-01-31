@@ -4,6 +4,6 @@
     <string name="explore">Explore</string>
     <string name="todo">Todo</string>
     <string name="test">Test</string>
-    <string name="repos">repos</string>
-    <string name="followers">followers</string>
+    <string name="repos">Num Reposoitorios</string>
+    <string name="followers">Num Followers</string>
 </resources>
