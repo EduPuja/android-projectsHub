@@ -53,7 +53,7 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
             super(view);
             // Define click listener for the ViewHolder's View
 
-            item_avatar =  view.findViewById(R.id.item_avatar);
+            item_avatar =  view.findViewById(R.id.follower_avatar);
             item_follower_username = view.findViewById(R.id.count_repos);
         }
 
