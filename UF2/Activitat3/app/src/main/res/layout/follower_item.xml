@@ -6,40 +6,77 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
+        android:id="@+id/userLayout"
         android:layout_width="match_parent"
-        android:layout_height="95dp"
+        android:layout_height="150dp"
         tools:ignore="UselessParent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp">
             <!--app:cardCornerRadius="60dp"-->
             <ImageView
                 android:id="@+id/item_avatar"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:contentDescription="@string/todo"
                 android:scaleType="centerCrop"
                 android:src="@drawable/xbox"
-                tools:ignore="ImageContrastCheck"></ImageView>
+                tools:ignore="ImageContrastCheck" />
 
 
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@id/item_follower_username"
+            android:id="@id/count_repos"
             android:layout_width="120dp"
             android:layout_height="30dp"
             android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="120dp"
-            android:text="@string/test"
+            android:layout_marginStart="170dp"
+            android:layout_marginEnd="170dp"
+            android:text="@string/repos"
+            android:textSize="20sp"
+            tools:ignore="TextSizeCheck"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/followers"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/count_repos"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="170dp"
+            android:layout_marginEnd="170dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="-50dp"
+            android:text="@string/followers"
             android:textSize="20sp"
             tools:ignore="TextSizeCheck" />
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/followers_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@id/count_repos"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="170dp"
+            android:text="@string/followers"
+            android:textSize="20sp"
+            tools:ignore="TextSizeCheck" />
+    </RelativeLayout>
 </RelativeLayout>
