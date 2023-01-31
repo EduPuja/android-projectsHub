@@ -1,13 +1,11 @@
 package edu.pujadas.activitat3.followers;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import edu.pujadas.activitat3.R;
@@ -56,7 +54,7 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
             // Define click listener for the ViewHolder's View
 
             item_avatar =  view.findViewById(R.id.item_avatar);
-            item_follower_username = view.findViewById(R.id.item_follower_username);
+            item_follower_username = view.findViewById(R.id.count_repos);
         }
 
         /**
