@@ -1,5 +1,6 @@
 package edu.pujadas.activitat3.followers;
 
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,16 +9,20 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.pujadas.activitat3.R;
+import edu.pujadas.activitat3.rest.model.Owner;
 
 public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHolder>
 {
     //TODO REFACTOR THIS RECICLE VIEW
-    private String[] localDataSet;
+    private List<Owner> listOwners = new ArrayList<Owner>();
 
-    public FollowerAdapter(String[] dataSet)
+    public FollowerAdapter(List<Owner> listOwners)
     {
-        localDataSet = dataSet;
+        this.listOwners = listOwners;
     }
 
     @Override
@@ -34,6 +39,10 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position)
     {
         //holder.item_avavtar;
+        String nomUser = listOwners.get(position).getName();
+        String imgUrl = listOwners.get(position).getAvatarUrl();
+
+        
     }
 
     @Override
