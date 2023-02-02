@@ -43,7 +43,9 @@ public class FollowersActivity extends AppCompatActivity
 
         count_repos.setText(nom);
 
-        num_followers.setText(listFollowers.size() +" Followers");
+
+        String numFollowersText = listFollowers.size() + " Followers";
+        num_followers.setText(numFollowersText);
 
 
         // metode per iniciar el recicler view
