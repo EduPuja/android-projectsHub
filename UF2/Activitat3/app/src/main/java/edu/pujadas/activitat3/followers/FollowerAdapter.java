@@ -16,7 +16,7 @@ import edu.pujadas.activitat3.R;
 
 public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHolder>
 {
-    
+
     private List<Follower> listFollowers = new ArrayList<Follower>();
 
     public FollowerAdapter(List<Follower> listOwners)
