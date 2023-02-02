@@ -21,6 +21,11 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
 {
     List<Persona> listPersones = new ArrayList<Persona>();
 
+    public PersonAdapter(List<Persona> listPersones)
+    {
+        this.listPersones = listPersones;
+    }
+
     @NonNull
     @Override
     public PersonAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
