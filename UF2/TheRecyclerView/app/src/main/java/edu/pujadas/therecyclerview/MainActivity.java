@@ -35,14 +35,7 @@ public class MainActivity extends AppCompatActivity
         }
 
 
-        //iniciar el reciclerview
-        recyclerView = findViewById(R.id.contact_recyclerView);
-        layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(RecyclerView.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
-        personAdapter = new PersonAdapter(listPersones);
-        recyclerView.setAdapter(personAdapter);
-
+        initRecylcerView();
 
     }
     protected void initData()
@@ -53,5 +46,22 @@ public class MainActivity extends AppCompatActivity
         listPersones.add(new Persona(avatar,"Lluis","Bofill"));
         listPersones.add(new Persona(avatar,"Daniel","Escobar"));
 
+    }
+
+    /**
+     * Metode que es utilizat en el onCreate utilzia el recyclerview
+     * i posa tot el necessari per poder-lo utilitzar
+     */
+    private void initRecylcerView()
+    {
+        //recicleview
+        recyclerView = findViewById(R.id.contact_recyclerView);
+        //recyclerView.addOnItemTouchListener();
+        layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        personAdapter = new PersonAdapter(listPersones);
+        recyclerView.setAdapter(personAdapter);
+        //homeAdapter.notifyDataSetChanged();
     }
 }

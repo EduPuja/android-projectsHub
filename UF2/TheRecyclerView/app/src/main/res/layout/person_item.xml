@@ -2,40 +2,53 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp">
+            <!--app:cardCornerRadius="60dp"-->
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/avatar"
+                android:scaleType="centerCrop"
+                android:src="@drawable/person"/>
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp">
+        </androidx.cardview.widget.CardView>
 
-        <ImageView
-            android:id="@+id/avatar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/avatar"
-            tools:ignore="ImageContrastCheck">
+        <TextView
+            android:id="@id/nom"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="120dp"
+            android:layout_marginBottom="-60dp"
+            android:text="@string/nom"
+            android:textSize="20sp" />
 
+        <TextView
+            android:id="@id/cognom"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
 
-        </ImageView>
+            android:layout_marginStart="114dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/cognom"
+            android:textSize="20sp" />
 
-    </androidx.cardview.widget.CardView>
-
-
-    <TextView
-        android:id="@+id/nom"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="10dp"
-        android:text="nom" />
-
-    <TextView
-        android:id="@+id/cognom"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="30dp"
-        android:text="cognom" />
+    </RelativeLayout>
 </RelativeLayout>
+
