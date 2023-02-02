@@ -32,7 +32,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@id/username"
+            android:id="@id/follower_username"
             android:layout_width="100dp"
             android:layout_height="20dp"
             android:layout_alignParentStart="true"
