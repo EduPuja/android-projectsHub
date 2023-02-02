@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity
     protected void initData()
     {
         Bitmap avatar = BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.person);
-        // afegint dades al arraylist 
+        // afegint dades al arraylist
         listPersones.add(new Persona(avatar,"Eduard","Pujadas"));
         listPersones.add(new Persona(avatar,"Lluis","Bofill"));
         listPersones.add(new Persona(avatar,"Daniel","Escobar"));
