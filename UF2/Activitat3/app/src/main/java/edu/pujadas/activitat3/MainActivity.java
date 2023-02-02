@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import edu.pujadas.activitat3.rest.model.Owner;
+
 public class MainActivity extends AppCompatActivity
 {
     EditText usernameFiled;
@@ -25,8 +27,16 @@ public class MainActivity extends AppCompatActivity
 
     public void onFollowersClick(View vista)
     {
-        Intent intent = new Intent(MainActivity.this, FollowersActivity.class);
+        if(usernameFiled.getText().toString().isEmpty())
+        {
+            usernameFiled.setError("Username Empty");
+        }
+        else
+        {
+            Intent intent = new Intent(MainActivity.this, FollowersActivity.class);
+            intent.putExtra("nomUsuari",usernameFiled.getText().toString());
+            startActivity(intent);
+        }
 
-        startActivity(intent);
     }
 }

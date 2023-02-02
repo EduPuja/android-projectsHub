@@ -46,7 +46,7 @@
         tools:ignore="TextSizeCheck" />
 
     <TextView
-        android:id="@+id/followers"
+        android:id="@+id/num_followers"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_alignBottom="@+id/count_repos"
@@ -72,6 +72,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/followers" />
+        app:layout_constraintTop_toBottomOf="@+id/num_followers" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

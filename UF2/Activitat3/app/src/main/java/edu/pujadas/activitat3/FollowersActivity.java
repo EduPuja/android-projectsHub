@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -19,10 +21,13 @@ public class FollowersActivity extends AppCompatActivity
 
     public static ArrayList<Follower> listFollowers = new ArrayList<Follower>();
 
+
     RecyclerView followers_recyclerView;
     FollowerAdapter followerAdapter;
     LinearLayoutManager layoutManager;
 
+    TextView count_repos;
+    TextView num_followers;
 
 
     @Override
@@ -30,8 +35,16 @@ public class FollowersActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_followers);
-
+        count_repos = findViewById(R.id.count_repos);
+        num_followers =findViewById(R.id.num_followers);
         if(listFollowers.isEmpty()) initData();
+
+        String nom = getIntent().getExtras().getString("nomUsuari");
+
+        count_repos.setText(nom);
+
+        num_followers.setText(listFollowers.size() +" Followers");
+
 
         // metode per iniciar el recicler view
         initRecylcerView();
