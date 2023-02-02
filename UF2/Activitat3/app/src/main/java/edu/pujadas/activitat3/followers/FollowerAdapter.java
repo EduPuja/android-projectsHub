@@ -13,16 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.pujadas.activitat3.R;
-import edu.pujadas.activitat3.rest.model.Owner;
 
 public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHolder>
 {
-    //TODO REFACTOR THIS RECICLE VIEW
-    private List<Owner> listOwners = new ArrayList<Owner>();
+    
+    private List<Follower> listFollowers = new ArrayList<Follower>();
 
-    public FollowerAdapter(List<Owner> listOwners)
+    public FollowerAdapter(List<Follower> listOwners)
     {
-        this.listOwners = listOwners;
+        this.listFollowers = listOwners;
     }
 
     @Override
@@ -39,31 +38,37 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position)
     {
         //holder.item_avavtar;
-        String nomUser = listOwners.get(position).getName();
-        String imgUrl = listOwners.get(position).getAvatarUrl();
+        String nomUser = listFollowers.get(position).getNameFollower();
+        Bitmap avatar = listFollowers.get(position).getAvatarFollower();
 
-        
+        holder.setData(nomUser,avatar);
     }
 
     @Override
     public int getItemCount()
     {
-        return 0;
+        return listFollowers.size();
     }
 
     // VIEW HOLDER
     public static class ViewHolder extends RecyclerView.ViewHolder
     {
-        private final ImageView item_avatar;
-        private final TextView item_follower_username;
+        private final ImageView follower_avatar;
+        private final TextView follower_username;
 
         public ViewHolder(View view)
         {
             super(view);
             // Define click listener for the ViewHolder's View
 
-            item_avatar =  view.findViewById(R.id.follower_avatar);
-            item_follower_username = view.findViewById(R.id.count_repos);
+            follower_avatar =  view.findViewById(R.id.follower_avatar);
+            follower_username = view.findViewById(R.id.follower_username);
+        }
+
+        public void setData(String nomFollower, Bitmap avatar)
+        {
+            follower_avatar.setImageBitmap(avatar);
+            follower_username.setText(nomFollower);
         }
 
         /**
@@ -72,7 +77,7 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
          */
         public TextView getUsername()
         {
-            return item_follower_username;
+            return follower_username;
         }
 
         /**
@@ -81,7 +86,7 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
          */
         public ImageView getAvatar()
         {
-            return item_avatar;
+            return follower_avatar;
         }
     }
 }
