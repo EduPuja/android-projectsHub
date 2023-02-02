@@ -11,11 +11,11 @@
         android:layout_marginStart="20dp">
 
         <ImageView
+            android:id="@+id/avatar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/avatar"
-            tools:ignore="ImageContrastCheck"
-            >
+            tools:ignore="ImageContrastCheck">
 
 
         </ImageView>
@@ -24,15 +24,18 @@
 
 
     <TextView
+        android:id="@+id/nom"
         android:layout_width="100dp"
         android:layout_height="20dp"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="100dp"
+        android:layout_marginTop="10dp"
         android:text="nom" />
+
     <TextView
+        android:id="@+id/cognom"
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="30dp"
-        android:text="cognom"/>
+        android:text="cognom" />
 </RelativeLayout>
