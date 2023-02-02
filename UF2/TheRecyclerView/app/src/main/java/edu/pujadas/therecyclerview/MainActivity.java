@@ -29,11 +29,15 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(listPersones.isEmpty()) initData();
+        if(listPersones.isEmpty())
+        {
+            initData();
+        }
 
 
         //iniciar el reciclerview
-        recyclerView  = findViewById(R.id.contact_recyclerView);
+        recyclerView = findViewById(R.id.contact_recyclerView);
+        layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         personAdapter = new PersonAdapter(listPersones);

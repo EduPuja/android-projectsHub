@@ -26,16 +26,15 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
         this.listPersones = listPersones;
     }
 
-    @NonNull
     @Override
-    public PersonAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    public PersonAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
         View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.person_item,parent,false);
         return new ViewHolder(vista);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PersonAdapter.ViewHolder holder, int position)
+    public void onBindViewHolder(PersonAdapter.ViewHolder holder, int position)
     {
         Bitmap avatar = listPersones.get(position).getAvatar();
         String nom = listPersones.get(position).getNom();
