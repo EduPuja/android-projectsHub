@@ -1,11 +1,17 @@
 package edu.pujadas.pujafoot;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
 public class UserActivity extends AppCompatActivity
 {
+
+    RecyclerView productesRView;
+    // adapter
+    //layout manager
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

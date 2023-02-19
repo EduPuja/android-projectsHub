@@ -32,19 +32,28 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    /**
+     * metode onClick que va dirigit al submitBtn
+     * @param v vista
+     */
     public void onClick(View v)
     {
         if(validateData())
         {
             Intent  intent = new Intent(this, UserActivity.class);
             startActivity(intent);
+            // acabo la activity_main perque un cop logejat ja no és necessari tornar a entrar
             finish();
         }
 
 
     }
 
-    public boolean validateData()
+    /**
+     * Metode que valida les dades del usuari
+     * @return true si es correcte
+     */
+    private boolean validateData()
     {
         if(userName.getText().toString().isEmpty())
         {
