@@ -14,6 +14,7 @@ public class UserActivity extends AppCompatActivity
     // adapter
     //layout manager
 
+   //todo poner un recyclerView amb adapter i layoutManager ... and per ultim un arraylist que pugui insertar dades al recyclerView
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
