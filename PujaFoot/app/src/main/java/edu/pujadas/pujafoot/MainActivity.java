@@ -27,9 +27,6 @@ public class MainActivity extends AppCompatActivity
         password = findViewById(R.id.password);
         submitBtn = findViewById(R.id.submitBtn);
 
-
-
-
     }
 
     /**
@@ -46,7 +43,6 @@ public class MainActivity extends AppCompatActivity
             finish();
         }
 
-
     }
 
     /**
@@ -55,17 +51,20 @@ public class MainActivity extends AppCompatActivity
      */
     private boolean validateData()
     {
+        //usuari vuit
         if(userName.getText().toString().isEmpty())
         {
             userName.setError("Introudeix el usuari");
 
         }
+        // password empty
         else if(password.getText().toString().isEmpty())
         {
             password.setError("Introudeix el password");
         }
         else
         {
+            // not empty
             if(userName.getText().toString().equalsIgnoreCase("epujadas") && password.getText().toString().equalsIgnoreCase("123asd123"))
                 return true;
 
