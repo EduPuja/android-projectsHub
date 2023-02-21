@@ -49,6 +49,7 @@ public class AddProductActivity extends AppCompatActivity
 
 
             Product product = new Product(id, name, quantity);
+            //todo arraylist userActivty
 
         }
 
