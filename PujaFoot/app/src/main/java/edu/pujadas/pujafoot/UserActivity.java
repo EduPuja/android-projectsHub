@@ -7,11 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import edu.pujadas.pujafoot.Objects.ProductAdapter;
+
 public class UserActivity extends AppCompatActivity
 {
 
     RecyclerView productesRView;
     // adapter
+    ProductAdapter productAdapter;
+
     //layout manager
 
    //todo poner un recyclerView amb adapter i layoutManager ... and per ultim un arraylist que pugui insertar dades al recyclerView
