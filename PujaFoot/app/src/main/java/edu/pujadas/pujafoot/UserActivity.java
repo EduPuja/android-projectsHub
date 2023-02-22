@@ -38,13 +38,24 @@ public class UserActivity extends AppCompatActivity
 
         if(listProducte.isEmpty()) initData();
         //reciclerView
-        productesRView =findViewById(R.id.productesRView);
-        productAdapter = new ProductAdapter(listProducte);
-        layoutManager =new LinearLayoutManager(this);
-        productesRView.setLayoutManager(layoutManager);
-        productesRView.setAdapter(productAdapter);
+        initRecylcerView();
     }
 
+    /**
+     * Metode que es utilizat en el onCreate utilzia el recyclerview
+     * i posa tot el necessari per poder-lo utilitzar
+     */
+    private void initRecylcerView()
+    {
+        //recicleview
+        productesRView = findViewById(R.id.productRecyclerView);
+        layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        productesRView.setLayoutManager(layoutManager);
+        productAdapter = new ProductAdapter(listProducte);
+        productesRView.setAdapter(productAdapter);
+
+    }
 
     private void initData()
     {
