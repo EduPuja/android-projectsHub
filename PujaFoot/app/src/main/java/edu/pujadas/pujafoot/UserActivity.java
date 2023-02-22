@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,7 +29,6 @@ public class UserActivity extends AppCompatActivity
     LinearLayoutManager layoutManager;
 
     public static ArrayList<Product> listProducte = new ArrayList<Product>();
-    //todo poner un recyclerView amb adapter i layoutManager ... and per ultim un arraylist que pugui insertar dades al recyclerView
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -36,7 +37,7 @@ public class UserActivity extends AppCompatActivity
         setContentView(R.layout.activity_user);
         setTitle("Llistat de Prodcutes");
 
-        if(listProducte.isEmpty()) initData();
+       // if(listProducte.isEmpty()) initData();
         //reciclerView
         initRecylcerView();
     }
@@ -45,7 +46,7 @@ public class UserActivity extends AppCompatActivity
      * Metode que es utilizat en el onCreate utilzia el recyclerview
      * i posa tot el necessari per poder-lo utilitzar
      */
-    private void initRecylcerView()
+    protected void initRecylcerView()
     {
         //recicleview
         productesRView = findViewById(R.id.productRecyclerView);
@@ -57,15 +58,13 @@ public class UserActivity extends AppCompatActivity
 
     }
 
-    private void initData()
+    protected void initData()
     {
-        Product product = new Product(1,"Test",1);
-        Product product2 = new Product(2,"Test 2",1);
-        Product product3 = new Product(3,"Test 3",1);
 
-        listProducte.add(product);
-        listProducte.add(product2);
-        listProducte.add(product3);
+        // afegint dades al arraylist
+        listProducte.add(new Product (1,"Eduard",3));
+        listProducte.add(new Product(2,"Lluis",4));
+        listProducte.add(new Product(3,"Daniel",10));
 
     }
 
