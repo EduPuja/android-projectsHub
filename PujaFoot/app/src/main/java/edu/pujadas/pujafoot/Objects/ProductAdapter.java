@@ -31,9 +31,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @Override
     public void onBindViewHolder(ProductAdapter.ViewHolder holder, int position)
     {
-        int id = listProduct.get(position).getId();
+        String  id = Integer.toString(listProduct.get(position).getId());
         String nom = listProduct.get(position).getName();
-        int quantitat = listProduct.get(position).getQuantity();
+        String quantitat = Integer.toString(listProduct.get(position).getQuantity());
 
         holder.setData(id,nom,quantitat);
     }
@@ -60,11 +60,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         }
 
 
-        public void setData(int id, String nom, int quantitat)
+        public void setData(String id, String nom, String quantitat)
         {
-            this.idTextView.setText(Integer.toString(id));
+            this.idTextView.setText(id);
             this.idTextView.setText(nom);
-            this.idTextView.setText(Integer.toString(quantitat));
+            this.idTextView.setText(quantitat);
         }
     }
 }
