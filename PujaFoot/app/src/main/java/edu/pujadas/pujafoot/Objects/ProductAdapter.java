@@ -33,9 +33,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     {
         int id = listProduct.get(position).getId();
         String nom = listProduct.get(position).getName();
-        int quant = listProduct.get(position).getQuantity();
+        int quantitat = listProduct.get(position).getQuantity();
 
-        holder.setData(id,nom,quant);
+        holder.setData(id,nom,quantitat);
     }
 
     @Override
@@ -46,25 +46,25 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     public static class ViewHolder extends RecyclerView.ViewHolder
     {
-        private TextView id;
-        private TextView nom;
-        private TextView quant;
+        private final TextView idText;
+        private final TextView nom;
+        private final TextView quant;
 
         public ViewHolder(@NonNull View vista)
         {
             super(vista);
-            id = vista.findViewById(R.id.idItem);
+            idText = vista.findViewById(R.id.idItem);
             nom = vista.findViewById(R.id.nameItem);
             quant = vista.findViewById(R.id.quantItem);
 
         }
 
 
-        public void setData(int id, String nom, int quant)
+        public void setData(int id, String nom, int quantitat)
         {
-            this.id.setText(id);
+            this.idText.setText(id);
             this.nom.setText(nom);
-            this.quant.setText(quant);
+            this.quant.setText(quantitat);
         }
     }
 }
