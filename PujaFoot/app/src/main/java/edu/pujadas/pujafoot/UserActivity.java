@@ -37,7 +37,7 @@ public class UserActivity extends AppCompatActivity
         setContentView(R.layout.activity_user);
         setTitle("Llistat de Prodcutes");
 
-       // if(listProducte.isEmpty()) initData();
+        if(listProducte.isEmpty()) initData();
         //reciclerView
         initRecylcerView();
     }
@@ -102,6 +102,7 @@ public class UserActivity extends AppCompatActivity
                 return true;
             case R.id.clear:
                 listProducte.clear();
+                initRecylcerView();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
