@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/idItem"
+        android:id="@+id/idProducte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="assadas"
-        android:textAlignment="center" />
+        android:text="TextView" />
 
     <TextView
-        android:id="@+id/nameItem"
+        android:id="@+id/nomProducte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="assadas"
-        android:textAlignment="center" />
+        android:text="TextView"
+        android:layout_marginStart="100dp"/>
 
     <TextView
-        android:id="@+id/quantItem"
+        android:id="@+id/quantitatProducte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="assadas"
-        android:textAlignment="center" />
-</LinearLayout>
+        android:text="TextView"
+        android:layout_marginStart="200dp"/>
+
+</RelativeLayout>
+
