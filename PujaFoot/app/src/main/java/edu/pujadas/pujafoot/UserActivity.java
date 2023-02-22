@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
 import edu.pujadas.pujafoot.Objects.ProductAdapter;
@@ -39,5 +41,15 @@ public class UserActivity extends AppCompatActivity
     public void onClearClcick(View v)
     {
         //todo clear the arraylist
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_llistat, menu);
+        return true;
+
     }
 }
