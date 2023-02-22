@@ -7,8 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
+import java.util.ArrayList;
+
+import edu.pujadas.pujafoot.Objects.Product;
 import edu.pujadas.pujafoot.Objects.ProductAdapter;
 
 public class UserActivity extends AppCompatActivity
@@ -20,7 +24,8 @@ public class UserActivity extends AppCompatActivity
 
     //layout manager
 
-   //todo poner un recyclerView amb adapter i layoutManager ... and per ultim un arraylist que pugui insertar dades al recyclerView
+    public static ArrayList<Product> listProducte = new ArrayList<Product>();
+    //todo poner un recyclerView amb adapter i layoutManager ... and per ultim un arraylist que pugui insertar dades al recyclerView
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -32,16 +37,6 @@ public class UserActivity extends AppCompatActivity
     }
 
 
-    public void onAddClick(View v)
-    {
-        Intent  intent = new Intent(this, AddProductActivity.class);
-        startActivity(intent);
-    }
-
-    public void onClearClcick(View v)
-    {
-        //todo clear the arraylist
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -51,5 +46,23 @@ public class UserActivity extends AppCompatActivity
         inflater.inflate(R.menu.menu_llistat, menu);
         return true;
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+
+        // Handle item selection
+        switch (item.getItemId())
+        {
+            case R.id.add:
+                Intent intent = new Intent(this, AddProductActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.clear:
+                listProducte.clear();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
