@@ -2,6 +2,7 @@ package edu.pujadas.pujafoot;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,7 +50,10 @@ public class AddProductActivity extends AppCompatActivity
 
 
             Product product = new Product(id, name, quantity);
-            //todo arraylist userActivty
+            UserActivity.listProducte.add(product);
+
+            Intent  intent = new Intent(this,UserActivity.class);
+            startActivity(intent);
 
         }
 
