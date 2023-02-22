@@ -1,6 +1,7 @@
 package edu.pujadas.pujafoot;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -23,6 +24,7 @@ public class UserActivity extends AppCompatActivity
     ProductAdapter productAdapter;
 
     //layout manager
+    LinearLayoutManager layoutManager;
 
     public static ArrayList<Product> listProducte = new ArrayList<Product>();
     //todo poner un recyclerView amb adapter i layoutManager ... and per ultim un arraylist que pugui insertar dades al recyclerView
@@ -32,12 +34,22 @@ public class UserActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
-
         setTitle("Llistat de Prodcutes");
+
+        //reciclerView
+        productesRView =findViewById(R.id.productesRView);
+        productAdapter = new ProductAdapter(listProducte);
+        layoutManager =new LinearLayoutManager(this);
+        productesRView.setLayoutManager(layoutManager);
+        productesRView.setAdapter(productAdapter);
     }
 
 
-
+    /**
+     * Metode que el que fa es afegir un menu
+     * @param menu menu
+     * @return true
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -47,6 +59,12 @@ public class UserActivity extends AppCompatActivity
         return true;
 
     }
+
+    /**
+     * Metode item seleccionat del menu
+     * @param item menu item
+     * @return si es true
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
