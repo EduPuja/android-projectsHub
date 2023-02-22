@@ -13,6 +13,8 @@ import edu.pujadas.pujafoot.Objects.Product;
 public class AddProductActivity extends AppCompatActivity
 {
 
+    //todo fer ho amb combobox
+
     EditText idProduct;
     EditText nameProduct;
     EditText quantityProduct;

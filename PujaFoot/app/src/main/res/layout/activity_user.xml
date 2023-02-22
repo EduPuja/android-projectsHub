@@ -11,10 +11,11 @@
         android:id="@+id/productRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="0dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:paddingBottom="0dp"
-        android:layout_marginEnd="0dp"/>
+        tools:listitem="@layout/product_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>
