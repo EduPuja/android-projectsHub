@@ -63,8 +63,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         public void setData(String id, String nom, String quantitat)
         {
             this.idTextView.setText(id);
-            this.idTextView.setText(nom);
-            this.idTextView.setText(quantitat);
+            this.nomView.setText(nom);
+            this.cognomView.setText(quantitat);
         }
     }
 }
