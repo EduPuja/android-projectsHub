@@ -41,30 +41,30 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @Override
     public int getItemCount()
     {
-        return 0;
+        return listProduct.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder
     {
-        private final TextView idText;
-        private final TextView nom;
-        private final TextView quant;
+        TextView idTextView;
+        TextView nomView;
+        TextView cognomView;
 
         public ViewHolder(@NonNull View vista)
         {
             super(vista);
-            idText = vista.findViewById(R.id.idItem);
-            nom = vista.findViewById(R.id.nameItem);
-            quant = vista.findViewById(R.id.quantItem);
+            idTextView = vista.findViewById(R.id.idItem);
+            nomView = vista.findViewById(R.id.nameItem);
+            cognomView = vista.findViewById(R.id.quantItem);
 
         }
 
 
         public void setData(int id, String nom, int quantitat)
         {
-            this.idText.setText(id);
-            this.nom.setText(nom);
-            this.quant.setText(quantitat);
+            this.idTextView.setText(id);
+            this.idTextView.setText(nom);
+            this.idTextView.setText(quantitat);
         }
     }
 }
