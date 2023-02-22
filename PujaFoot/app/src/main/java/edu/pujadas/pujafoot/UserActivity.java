@@ -36,12 +36,26 @@ public class UserActivity extends AppCompatActivity
         setContentView(R.layout.activity_user);
         setTitle("Llistat de Prodcutes");
 
+        if(listProducte.isEmpty()) initData();
         //reciclerView
         productesRView =findViewById(R.id.productesRView);
         productAdapter = new ProductAdapter(listProducte);
         layoutManager =new LinearLayoutManager(this);
         productesRView.setLayoutManager(layoutManager);
         productesRView.setAdapter(productAdapter);
+    }
+
+
+    private void initData()
+    {
+        Product product = new Product(1,"Test",1);
+        Product product2 = new Product(2,"Test 2",1);
+        Product product3 = new Product(3,"Test 3",1);
+
+        listProducte.add(product);
+        listProducte.add(product2);
+        listProducte.add(product3);
+
     }
 
 
