@@ -62,9 +62,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
         public void setData(int id, String nom, int quantitat)
         {
-            this.idTextView.setText(id);
+            this.idTextView.setText(Integer.toString(id));
             this.idTextView.setText(nom);
-            this.idTextView.setText(quantitat);
+            this.idTextView.setText(Integer.toString(quantitat));
         }
     }
 }
