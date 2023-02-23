@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import edu.pujadas.pujafoot.Objects.Product;
 
@@ -17,7 +18,7 @@ public class AddProductActivity extends AppCompatActivity
 
     EditText idProduct;
     EditText nameProduct;
-    EditText quantityProduct;
+    Spinner quantityProduct;
     Button  saveButon;
 
 
@@ -29,7 +30,7 @@ public class AddProductActivity extends AppCompatActivity
         setTitle("Add Product");
         idProduct = findViewById(R.id.idProduct);
         nameProduct = findViewById(R.id.nameProduct);
-        quantityProduct = findViewById(R.id.quanityProduct);
+        quantityProduct = findViewById(R.id.quantitatProduct);
         saveButon = findViewById(R.id.saveBtn);
 
 
@@ -39,11 +40,11 @@ public class AddProductActivity extends AppCompatActivity
     public void onSaveButon(View v)
     {
 
-        if(idProduct.getText().toString().isEmpty() || nameProduct.getText().toString().isEmpty() ||quantityProduct.getText().toString().isEmpty())
+        if(idProduct.getText().toString().isEmpty() || nameProduct.getText().toString().isEmpty() ||quantityProduct.getSelectedItem().toString().isEmpty())
         {
             idProduct.setError("Camp vuit");
             nameProduct.setError("Camp vuit");
-            quantityProduct.setError("Camp vuit");
+
 
 
         }
@@ -51,7 +52,7 @@ public class AddProductActivity extends AppCompatActivity
         { saveButon.setEnabled(true);
             int id = Integer.parseInt(idProduct.getText().toString());
             String name = nameProduct.getText().toString();
-            int quantity =Integer.parseInt( quantityProduct.getText().toString());
+            int quantity =Integer.parseInt( quantityProduct.getSelectedItem().toString());
 
 
             Product product = new Product(id, name, quantity);

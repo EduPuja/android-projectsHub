@@ -40,19 +40,14 @@
         app:layout_constraintTop_toBottomOf="@+id/idProduct"
         android:importantForAutofill="no" />
 
-    <EditText
-        android:id="@+id/quanityProduct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="100dp"
-        android:ems="10"
-        android:hint="@string/quantitat_producte"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
+    <Spinner
+        android:id="@+id/quantitatProduct"
+        android:layout_width="76dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="177dp"
+        android:contentDescription="sippiner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameProduct" />
@@ -62,15 +57,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="175dp"
         android:onClick="onSaveButon"
         android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quanityProduct" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/goFragmentBtn"

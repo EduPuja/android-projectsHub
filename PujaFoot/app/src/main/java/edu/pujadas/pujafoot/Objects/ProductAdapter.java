@@ -55,7 +55,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             super(vista);
             idTextView = vista.findViewById(R.id.idProducte);
             nomView = vista.findViewById(R.id.nomProducte);
-            cognomView = vista.findViewById(R.id.quantitatProducte);
+            cognomView = vista.findViewById(R.id.quantitatProduct);
 
         }
 
