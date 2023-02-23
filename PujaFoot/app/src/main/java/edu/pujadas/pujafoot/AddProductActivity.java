@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -31,6 +32,10 @@ public class AddProductActivity extends AppCompatActivity
         idProduct = findViewById(R.id.idProduct);
         nameProduct = findViewById(R.id.nameProduct);
         quantityProduct = findViewById(R.id.quantitatProduct);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.quantitat_productes, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        quantityProduct.setAdapter(adapter);
         saveButon = findViewById(R.id.saveBtn);
 
 
