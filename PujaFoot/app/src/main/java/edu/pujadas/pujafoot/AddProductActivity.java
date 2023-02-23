@@ -31,6 +31,9 @@ public class AddProductActivity extends AppCompatActivity
         nameProduct = findViewById(R.id.nameProduct);
         quantityProduct = findViewById(R.id.quanityProduct);
         saveButon = findViewById(R.id.saveBtn);
+
+
+
     }
 
     public void onSaveButon(View v)
@@ -45,7 +48,7 @@ public class AddProductActivity extends AppCompatActivity
 
         }
         else
-        {
+        { saveButon.setEnabled(true);
             int id = Integer.parseInt(idProduct.getText().toString());
             String name = nameProduct.getText().toString();
             int quantity =Integer.parseInt( quantityProduct.getText().toString());
