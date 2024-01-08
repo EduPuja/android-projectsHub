@@ -34,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent mapa = new Intent(MapsActivity.class);
+                Intent mapa = new Intent(v.getContext(),MapsActivity.class);
+                startActivity(mapa); // inicializar el mapa
+
             }
         });
 
