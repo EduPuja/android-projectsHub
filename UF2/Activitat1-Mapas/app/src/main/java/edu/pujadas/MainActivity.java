@@ -38,15 +38,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (!latitud.getText().toString().isEmpty() && !longitud.getText().toString().isEmpty())
+                if (!latitud.getText().toString().isEmpty() || !longitud.getText().toString().isEmpty())
                 {
                     float lat = Float.parseFloat(latitud.getText().toString());
                     float lon = Float.parseFloat(longitud.getText().toString());
 
-                    Toast.makeText(v.getContext(), "El marcador s'ha creat", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), "Latitud: "+ lat +" Long: "+ lon, Toast.LENGTH_SHORT).show();
                 }
-                latitud.setError("No pot estar vuit");
-                longitud.setError("No pot estar vuit");
+                else
+                {
+                    latitud.setError("No pot estar vuit");
+                    longitud.setError("No pot estar vuit");
+                }
+
+
 
 
             }
