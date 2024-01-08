@@ -89,10 +89,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             //TODO agafar les shared preferences
 
 
-            SharedPreferences preferences = getSharedPreferences("marcador1",MODE_PRIVATE);
-            // he recuperat
-            String v1 = preferences.getString("Lat","");
-            String v2 = preferences.getString("Long","");
+
 
 
             Intent mainActivity = new Intent(this,MainActivity.class);
