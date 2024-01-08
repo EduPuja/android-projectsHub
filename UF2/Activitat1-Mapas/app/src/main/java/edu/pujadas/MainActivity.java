@@ -13,6 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,11 +61,17 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else{
                             Toast.makeText(v.getContext(), "Correcte!", Toast.LENGTH_SHORT).show();
-                            SharedPreferences.Editor editor = getSharedPreferences("marcadors", Context.MODE_PRIVATE).edit();
+                            // affegint un marcador
+                            LatLng marcador = new LatLng(lat, lon);
+                            ArrayList<LatLng> listMarcadors = new ArrayList<>();
+                            listMarcadors.add(marcador);
 
+                            //afegint la llista de marcadors al shared preferences
+                            SharedPreferences.Editor editor = getSharedPreferences("marcador",MODE_PRIVATE).edit();
+                            Gson gson = new Gson(); // creant un gson de la llibreria gson de google
+                            String jsonListMarcadors = gson.toJson(listMarcadors); // convertin-lo en string
+                            editor.putString("list_marcadores",jsonListMarcadors); //afegint en string
 
-                            editor.putFloat("lat",lat);
-                            editor.putFloat("lon",lon);
 
                         }
                     }
