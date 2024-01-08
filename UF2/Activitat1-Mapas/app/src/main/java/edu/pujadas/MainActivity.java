@@ -2,6 +2,7 @@ package edu.pujadas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.maps.model.LatLng;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else{
                             Toast.makeText(v.getContext(), "Correcte!", Toast.LENGTH_SHORT).show();
+                            SharedPreferences.Editor editor = getSharedPreferences("marcadors", Context.MODE_PRIVATE).edit();
+
+
+                            editor.putFloat("lat",lat);
+                            editor.putFloat("lon",lon);
+
                         }
                     }
                     catch (Exception e) {
