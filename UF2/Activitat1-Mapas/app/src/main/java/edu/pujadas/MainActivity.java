@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText latitud;
     EditText longitud;
-    TextView info;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,15 +31,8 @@ public class MainActivity extends AppCompatActivity {
         latitud = findViewById(R.id.latitud);
         longitud = findViewById(R.id.longitud);
 
-        info= findViewById(R.id.titol);
 
 
-        SharedPreferences preferences = getSharedPreferences("marcador1",MODE_PRIVATE);
-        // he recuperat
-        String v1 = preferences.getString("Lat","");
-        String v2 = preferences.getString("Long","");
-
-        info.setText(v1);
         addButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
