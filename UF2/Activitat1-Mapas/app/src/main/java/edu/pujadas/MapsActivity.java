@@ -3,7 +3,11 @@ package edu.pujadas;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -49,5 +53,24 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng palamos = new LatLng(41.846760, 3.128640);
         mMap.addMarker(new MarkerOptions().position(palamos).title("Palamos"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(palamos));
+    }
+
+
+    public boolean onCreateOptionMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.map_menu,menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int id = item.getItemId();
+        if (id == R.id.back_menu){
+            Intent mainActivity = new Intent(this,MainActivity.class);
+
+            startActivity(mainActivity);
+            //finish();
+        }
+        return true;
     }
 }
