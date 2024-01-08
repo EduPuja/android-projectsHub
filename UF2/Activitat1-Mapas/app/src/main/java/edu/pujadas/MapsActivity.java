@@ -50,45 +50,34 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.map_menu,menu);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.map_menu, menu);
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        int id = item.getItemId();
-        if (id == R.id.back_menu){
 
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.tornar) {
             //editor 1
             SharedPreferences.Editor editor1 = getSharedPreferences("marcador1", MODE_PRIVATE).edit();
             //editor 2
             SharedPreferences.Editor editor2 = getSharedPreferences("marcador2", MODE_PRIVATE).edit();
-
-            editor1.putString("Lat","43.8");
-            editor1.putString("Long","13");
-
+            editor1.putString("Lat", "43.8");
+            editor1.putString("Long", "13");
             editor1.apply(); // el comit() tambe fa el mateix
-
             //xina
-            editor2.putString("Lat","41.735320");
-            editor2.putString("Long","2.844690");
-
+            editor2.putString("Lat", "41.735320");
+            editor2.putString("Long", "2.844690");
             editor1.apply(); // el comit() tambe fa el mateix
             editor2.apply();
-
             //TODO agafar les shared preferences
-
-
-
-
-
-            Intent mainActivity = new Intent(this,MainActivity.class);
-
-            startActivity(mainActivity);
-            //finish();
         }
+
         return true;
     }
 }
