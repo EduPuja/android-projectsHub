@@ -42,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
                 {
                     float lat = Float.parseFloat(latitud.getText().toString());
                     float lon = Float.parseFloat(longitud.getText().toString());
+                    if (lat < -90 || lat > 90)
+                    {
+                        Toast.makeText(v.getContext(), "Latitud incorrecte", Toast.LENGTH_SHORT).show();
+                    }
+                    if (lon < -180 || lon > 180)
+                    {
+                        Toast.makeText(v.getContext(), "Longitud incorrecte", Toast.LENGTH_SHORT).show();
+                    }
 
                     Toast.makeText(v.getContext(), "Latitud: "+ lat +" Long: "+ lon, Toast.LENGTH_SHORT).show();
                 }
