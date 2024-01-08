@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -66,6 +68,33 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     {
         int id = item.getItemId();
         if (id == R.id.back_menu){
+
+            //editor 1
+            SharedPreferences.Editor editor1 = getSharedPreferences("marcador1", MODE_PRIVATE).edit();
+            //editor 2
+            SharedPreferences.Editor editor2 = getSharedPreferences("marcador2", MODE_PRIVATE).edit();
+
+            editor1.putString("Lat","43.8");
+            editor1.putString("Long","13");
+
+            editor1.apply(); // el comit() tambe fa el mateix
+
+            //xina
+            editor2.putString("Lat","41.735320");
+            editor2.putString("Long","2.844690");
+
+            editor1.apply(); // el comit() tambe fa el mateix
+            editor2.apply();
+
+            //TODO agafar les shared preferences
+
+
+            SharedPreferences preferences = getSharedPreferences("marcador1",MODE_PRIVATE);
+            // he recuperat
+            String v1 = preferences.getString("Lat","");
+            String v2 = preferences.getString("Long","");
+
+
             Intent mainActivity = new Intent(this,MainActivity.class);
 
             startActivity(mainActivity);
