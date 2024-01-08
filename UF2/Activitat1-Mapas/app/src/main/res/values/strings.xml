@@ -2,4 +2,8 @@
     <string name="app_name">Activitat1_Mapas</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="tornar">Tornar</string>
+    <string name="latitut">Latitud</string>
+    <string name="longitud">Longitud</string>
+    <string name="intrudou_r">Intrudouïr</string>
+    <string name="intrudou_r_marcador">Intrudouïr marcador</string>
 </resources>
