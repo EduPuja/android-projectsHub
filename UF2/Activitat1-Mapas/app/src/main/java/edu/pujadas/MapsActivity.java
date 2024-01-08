@@ -2,7 +2,7 @@ package edu.pujadas;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
-
+import com.google.gson.Gson;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +17,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 import edu.pujadas.databinding.ActivityMapsBinding;
 
@@ -36,6 +40,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
+
+
     }
 
    //Map functionality
@@ -43,10 +51,21 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng palamos = new LatLng(41.846760, 3.128640);
-        mMap.addMarker(new MarkerOptions().position(palamos).title("Palamos"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(palamos));
+
+
+        SharedPreferences prefs = getSharedPreferences("marcador",MODE_PRIVATE);
+        Gson gson = new Gson(); // per poder recoperar el list de marcadors
+
+        //optain the list of markers from SharedPreferences
+        String jsonMarcadors = prefs.getString("list_marcadores","");
+        Type type = new TypeToken<ArrayList<LatLng>>() {}.getType();
+        ArrayList<LatLng> listMarcadors = gson.fromJson(jsonMarcadors,type);
+
+        for (LatLng m : listMarcadors)
+        {
+            mMap.addMarker(new MarkerOptions().position(m));
+        }
+
     }
 
 
