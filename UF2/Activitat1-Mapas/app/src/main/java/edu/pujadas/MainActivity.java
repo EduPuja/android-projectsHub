@@ -60,18 +60,21 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(v.getContext(), "Longitud incorrecte", Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            Toast.makeText(v.getContext(), "Correcte!", Toast.LENGTH_SHORT).show();
-                            // affegint un marcador
-                            LatLng marcador = new LatLng(lat, lon);
-                            ArrayList<LatLng> listMarcadors = new ArrayList<>();
-                            listMarcadors.add(marcador);
 
-                            //afegint la llista de marcadors al shared preferences
-                            SharedPreferences.Editor editor = getSharedPreferences("marcador",MODE_PRIVATE).edit();
-                            Gson gson = new Gson(); // creant un gson de la llibreria gson de google
-                            String jsonListMarcadors = gson.toJson(listMarcadors); // convertin-lo en string
-                            editor.putString("list_marcadores",jsonListMarcadors); //afegint en string
+                            //creating the sared preferences
+                            SharedPreferences.Editor editor = getSharedPreferences("marcador1",MODE_PRIVATE).edit();
+                            SharedPreferences.Editor editor2 = getSharedPreferences("marcador1",MODE_PRIVATE).edit();
+                            editor.putFloat("lat",lat);
+                            editor.putFloat("lon",lon);
 
+                            editor2.putFloat("lat2",lat);
+                            editor2.putFloat("lon2",lon);
+
+
+                            editor.apply();
+                            editor2.apply();
+
+                            Toast.makeText(v.getContext(), "Correcte! \uD83D\uDC4C", Toast.LENGTH_SHORT).show();
 
                         }
                     }

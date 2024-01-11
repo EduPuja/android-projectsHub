@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -52,19 +53,18 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
 
 
-    /*
-        SharedPreferences prefs = getSharedPreferences("marcador",MODE_PRIVATE);
-        Gson gson = new Gson(); // per poder recoperar el list de marcadors
 
-        //optain the list of markers from SharedPreferences
-        String jsonMarcadors = prefs.getString("list_marcadores","");
-        Type type = new TypeToken<ArrayList<LatLng>>() {}.getType();
-        ArrayList<LatLng> listMarcadors = gson.fromJson(jsonMarcadors,type);
+        SharedPreferences prefs = getSharedPreferences("marcador1",MODE_PRIVATE);
+        float lat = prefs.getFloat("lat",0);
+        float lon = prefs.getFloat("lon",0);
 
-        for (LatLng m : listMarcadors)
-        {
-            mMap.addMarker(new MarkerOptions().position(m));
-        }*/
+        SharedPreferences prefs2 = getSharedPreferences("marcador2",MODE_PRIVATE);
+        float lon2 = prefs2.getFloat("lat2",0);
+        float lat2 = prefs2.getFloat("lat2",0);
+        //Toast.makeText(getApplicationContext(), "Lat " + lat+" Lon" +lon, Toast.LENGTH_SHORT).show();
+        LatLng marker1 = new LatLng(lat, lon);
+        LatLng marker2 = new LatLng(lat2, lon2);
+        mMap.addMarker(new MarkerOptions().position(marker1).title("Origen"));
 
     }
 
