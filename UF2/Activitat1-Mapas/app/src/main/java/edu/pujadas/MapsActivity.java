@@ -64,7 +64,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         LatLng marker1 = new LatLng(lat1,lon1);
-        LatLng marker2 = new LatLng(lat2,lat2);
+        LatLng marker2 = new LatLng(lat2,lon2);
         mMap.addMarker(new MarkerOptions().position(marker1).title("Origen"));
         mMap.addMarker(new MarkerOptions().position(marker2).title("Desti"));
 
