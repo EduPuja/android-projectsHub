@@ -52,19 +52,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        SharedPreferences pref = getSharedPreferences("marcadors",MODE_PRIVATE);
 
 
-        SharedPreferences prefs = getSharedPreferences("marcador1",MODE_PRIVATE);
-        float lat = prefs.getFloat("lat",0);
-        float lon = prefs.getFloat("lon",0);
-
-        SharedPreferences prefs2 = getSharedPreferences("marcador2",MODE_PRIVATE);
-        float lon2 = prefs2.getFloat("lat2",0);
-        float lat2 = prefs2.getFloat("lat2",0);
-        //Toast.makeText(getApplicationContext(), "Lat " + lat+" Lon" +lon, Toast.LENGTH_SHORT).show();
-        LatLng marker1 = new LatLng(lat, lon);
-        LatLng marker2 = new LatLng(lat2, lon2);
-        mMap.addMarker(new MarkerOptions().position(marker1).title("Origen"));
+        //mMap.addMarker(new MarkerOptions().position(marker1).title("Origen"));
 
     }
 
