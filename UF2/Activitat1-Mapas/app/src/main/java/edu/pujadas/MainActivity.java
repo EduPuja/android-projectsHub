@@ -27,11 +27,13 @@ public class MainActivity extends AppCompatActivity {
     EditText latitud;
     EditText longitud;
 
+    ArrayList<LatLng> listMarks;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("41531693H");
+
 
 
         addButton = findViewById(R.id.addBtn);
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         latitud = findViewById(R.id.latitud);
         longitud = findViewById(R.id.longitud);
 
+        listMarks= new ArrayList<>();
         setTitle("41531693H");
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -62,17 +65,17 @@ public class MainActivity extends AppCompatActivity {
                         else{
 
                             //creating the sared preferences
-                            SharedPreferences.Editor editor = getSharedPreferences("marcador1",MODE_PRIVATE).edit();
-                            SharedPreferences.Editor editor2 = getSharedPreferences("marcador1",MODE_PRIVATE).edit();
+                            SharedPreferences.Editor editor = getSharedPreferences("marcadores",MODE_PRIVATE).edit();
                             editor.putFloat("lat",lat);
                             editor.putFloat("lon",lon);
 
-                            editor2.putFloat("lat2",lat);
-                            editor2.putFloat("lon2",lon);
+                            LatLng marker = new LatLng(lat,lon);
+                            listMarks.add(marker);
+
 
 
                             editor.apply();
-                            editor2.apply();
+
 
                             Toast.makeText(v.getContext(), "Correcte! \uD83D\uDC4C", Toast.LENGTH_SHORT).show();
 

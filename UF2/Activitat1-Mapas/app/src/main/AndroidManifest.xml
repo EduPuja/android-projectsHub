@@ -28,14 +28,14 @@
         <activity
             android:name=".MapsActivity"
             android:exported="false"
-
             android:label="@string/dni" >
 
 
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/dni">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
