@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">TheRecyclerView</string>
-    <string name="hola">Hello World!</string>
-    <string name="avatar">avatar</string>
-    <string name="nom">Nom</string>
-    <string name="cognom">Cognom</string>
-</resources>
