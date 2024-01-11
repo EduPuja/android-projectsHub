@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         year = findViewById(R.id.year);
         description = findViewById(R.id.descrip);
         video = findViewById(R.id.video);
-
+        video.setVisibility(View.INVISIBLE); // hide the video for better front-end
 
         // adding the blank text
         title.setText("");
@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(view.getContext(), "hola", Toast.LENGTH_LONG).show();
                 setText("Toyota Supra","2000","Clascio de las peliculas");
+                video.setVisibility(View.VISIBLE);
                 video.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.ibai);
                 video.start();
             }
