@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Activitat1_Mapas</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="dni">41531693H</string>
     <string name="tornar">Tornar</string>
     <string name="latitut">Latitud</string>
     <string name="longitud">Longitud</string>

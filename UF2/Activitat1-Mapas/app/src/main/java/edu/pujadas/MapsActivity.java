@@ -52,7 +52,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
 
 
-
+    /*
         SharedPreferences prefs = getSharedPreferences("marcador",MODE_PRIVATE);
         Gson gson = new Gson(); // per poder recoperar el list de marcadors
 
@@ -64,7 +64,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         for (LatLng m : listMarcadors)
         {
             mMap.addMarker(new MarkerOptions().position(m));
-        }
+        }*/
 
     }
 

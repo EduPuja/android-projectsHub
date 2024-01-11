@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         latitud = findViewById(R.id.latitud);
         longitud = findViewById(R.id.longitud);
 
-
+        setTitle("41531693H");
 
         addButton.setOnClickListener(new View.OnClickListener() {
 
