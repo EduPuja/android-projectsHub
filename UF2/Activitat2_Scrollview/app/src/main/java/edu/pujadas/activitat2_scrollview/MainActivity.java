@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     HorizontalScrollView scrollView;
 
     ImageView car_1, car_2, car_3, car_4, car_5, car_6;
+
+    VideoView video;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -27,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
         title = findViewById(R.id.title);
         year = findViewById(R.id.year);
         description = findViewById(R.id.descrip);
+        video = findViewById(R.id.video);
+
+
+        // adding the blank text
         title.setText("");
         year.setText("");
         description.setText("");
@@ -47,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(view.getContext(), "hola", Toast.LENGTH_LONG).show();
                 setText("Volwavgent","1999","Mejor cotche de los años 90");
+
             }
+
         });
 
         car_2.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +64,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(view.getContext(), "hola", Toast.LENGTH_LONG).show();
                 setText("Toyota Supra","2000","Clascio de las peliculas");
+                video.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.ibai);
+                video.start();
             }
+
+
         });
         car_3.setOnClickListener(new View.OnClickListener() {
 
@@ -73,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(view.getContext(), "hola", Toast.LENGTH_LONG).show();
                 setText("Subauwu","1992","El mejor 1r coche de drift del mundo");
             }
+
         });
         car_5.setOnClickListener(new View.OnClickListener() {
 
