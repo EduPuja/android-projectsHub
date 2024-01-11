@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             if (count == 0) {
                                 SharedPreferences.Editor editor = getSharedPreferences("mark1", MODE_PRIVATE).edit();
-                                editor.clear();
+
                                 editor.putFloat("lat",lat);
                                 editor.putFloat("lon",lon);
                                 Toast.makeText(v.getContext(), "Correcte! \uD83D\uDC4C", Toast.LENGTH_SHORT).show();
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                             if (count == 1) {
                                 SharedPreferences.Editor editor = getSharedPreferences("mark2", MODE_PRIVATE).edit();
-                                editor.clear();
+
                                 editor.putFloat("lat",lat);
                                 editor.putFloat("lon",lon);
                                 Toast.makeText(v.getContext(), "Correcte! \uD83D\uDC4C", Toast.LENGTH_SHORT).show();

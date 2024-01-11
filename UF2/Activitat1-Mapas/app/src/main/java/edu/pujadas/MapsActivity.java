@@ -53,12 +53,23 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
 
         SharedPreferences pref = getSharedPreferences("mark1",MODE_PRIVATE);
-        float lat1 = pref.getFloat("lat1",0);
-        float lon1 = pref.getFloat("lon1",0);
+        SharedPreferences pref2 = getSharedPreferences("mark2",MODE_PRIVATE);
+
+        float lat1 = pref.getFloat("lat",0);
+        float lon1 = pref.getFloat("lon",0);
+
+        //preferecies 2
+        float lat2 = pref2.getFloat("lat",0);
+        float lon2 = pref2.getFloat("lon",0);
+
 
         LatLng marker1 = new LatLng(lat1,lon1);
+        LatLng marker2 = new LatLng(lat2,lat2);
         mMap.addMarker(new MarkerOptions().position(marker1).title("Origen"));
+        mMap.addMarker(new MarkerOptions().position(marker2).title("Desti"));
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(marker1));
+
 
     }
 
