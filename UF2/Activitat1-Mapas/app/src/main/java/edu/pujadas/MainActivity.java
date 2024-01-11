@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText latitud;
     EditText longitud;
-    private int count;
+    private int count =0;
 
 
     @Override
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         mapButton = findViewById(R.id.mapBtn);
         latitud = findViewById(R.id.latitud);
         longitud = findViewById(R.id.longitud);
-        count =0;
+
         setTitle("41531693H");
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -55,17 +55,28 @@ public class MainActivity extends AppCompatActivity {
                         } else if (lon < -180 || lon > 180) {
                             Toast.makeText(v.getContext(), "Longitud incorrecta", Toast.LENGTH_SHORT).show();
                         } else {
-                            if (count == 2) {
-                                // Deshabilitar el botón cuando se ingresen dos marcadores
-                                addButton.setEnabled(false);
-                                Toast.makeText(v.getContext(), "Has ingresado 2 marcadores", Toast.LENGTH_SHORT).show();
-                            } else {
+                            if (count == 0) {
                                 SharedPreferences.Editor editor = getSharedPreferences("mark1", MODE_PRIVATE).edit();
-                                editor.putFloat("lat1", lat);
-                                editor.putFloat("lat1", lon);
+                                editor.clear();
+                                editor.putFloat("lat",lat);
+                                editor.putFloat("lon",lon);
+                                Toast.makeText(v.getContext(), "Correcte! \uD83D\uDC4C", Toast.LENGTH_SHORT).show();
+
+                            }
+                            if (count == 1) {
+                                SharedPreferences.Editor editor = getSharedPreferences("mark2", MODE_PRIVATE).edit();
+                                editor.clear();
+                                editor.putFloat("lat",lat);
+                                editor.putFloat("lon",lon);
                                 Toast.makeText(v.getContext(), "Correcte! \uD83D\uDC4C", Toast.LENGTH_SHORT).show();
                                 count++;
                             }
+                            if (count ==2){
+                                addButton.setEnabled(false);
+                                Toast.makeText(v.getContext(), "Has entrat 2 marcadaors", Toast.LENGTH_SHORT).show();
+                            }
+
+                            count++;
                         }
                     } catch (Exception e) {
                         Toast.makeText(v.getContext(), "Error!", Toast.LENGTH_SHORT).show();
