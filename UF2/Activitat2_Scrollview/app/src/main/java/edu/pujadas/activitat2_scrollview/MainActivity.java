@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(view.getContext(), "hola", Toast.LENGTH_LONG).show();
                 setText("Volwavgent","1999","Mejor cotche de los años 90");
+                video.setVisibility(View.VISIBLE);
+                video.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.ibai);
+                video.start();
 
             }
 
@@ -77,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(view.getContext(), "hola", Toast.LENGTH_LONG).show();
                 setText("Tesla","2020","Una lavadora, no sirve de mucho ");
+                video.setVisibility(View.VISIBLE);
+                video.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.ibai);
+                video.start();
             }
         });
         car_4.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(view.getContext(), "hola", Toast.LENGTH_LONG).show();
                 setText("Subauwu","1992","El mejor 1r coche de drift del mundo");
+                video.setVisibility(View.VISIBLE);
+                video.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.ibai);
+                video.start();
             }
 
         });
@@ -93,6 +102,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 setText("Mitshubishi Evo","2000","El segundo mejor coche de drift del la historia");
+                video.setVisibility(View.VISIBLE);
+                video.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.ibai);
+                video.start();
             }
         });
         car_6.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(view.getContext(), "hola", Toast.LENGTH_LONG).show();
                 setText("Range Rover","2008", "Coche de ricos ");
+                video.setVisibility(View.VISIBLE);
+                video.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.ibai);
+                video.start();
             }
         });
 
