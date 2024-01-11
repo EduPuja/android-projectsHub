@@ -58,25 +58,26 @@ public class MainActivity extends AppCompatActivity {
                             if (count == 0) {
                                 SharedPreferences.Editor editor = getSharedPreferences("mark1", MODE_PRIVATE).edit();
 
-                                editor.putFloat("lat",lat);
-                                editor.putFloat("lon",lon);
-                                Toast.makeText(v.getContext(), "Correcte! \uD83D\uDC4C", Toast.LENGTH_SHORT).show();
-
-                            }
-                            if (count == 1) {
-                                SharedPreferences.Editor editor = getSharedPreferences("mark2", MODE_PRIVATE).edit();
-
-                                editor.putFloat("lat",lat);
-                                editor.putFloat("lon",lon);
+                                editor.putFloat("lat1",lat);
+                                editor.putFloat("lon1",lon);
+                                editor.apply();
                                 Toast.makeText(v.getContext(), "Correcte! \uD83D\uDC4C", Toast.LENGTH_SHORT).show();
                                 count++;
                             }
-                            if (count ==2){
+                            else if (count == 1) {
+                                SharedPreferences.Editor editor2 = getSharedPreferences("mark2", MODE_PRIVATE).edit();
+
+                                editor2.putFloat("lat2",lat);
+                                editor2.putFloat("lon2",lon);
+                                Toast.makeText(v.getContext(), "Correcte! \uD83D\uDC4C", Toast.LENGTH_SHORT).show();
+                                editor2.apply();
+                                count++;
                                 addButton.setEnabled(false);
                                 Toast.makeText(v.getContext(), "Has entrat 2 marcadaors", Toast.LENGTH_SHORT).show();
                             }
 
-                            count++;
+
+
                         }
                     } catch (Exception e) {
                         Toast.makeText(v.getContext(), "Error!", Toast.LENGTH_SHORT).show();
