@@ -1,21 +1,21 @@
 package edu.pujadas.Models;
 
 
+import com.google.android.gms.maps.model.LatLng;
 
 public class Tienda {
 
     int id;
     String name;
     Tipus type;
-    float latitude;
-    float longitude;
 
-    public Tienda(int id, String name, Tipus type, float latitude, float longitude) {
+    LatLng position;
+
+    public Tienda(int id, String name, Tipus type,LatLng position) {
         this.id = id;
         this.name = name;
         this.type = type;
-        this.latitude = latitude;
-        this.longitude = longitude;
+
     }
 
     public int getId() {
@@ -42,19 +42,12 @@ public class Tienda {
         this.type = type;
     }
 
-    public float getLatitude() {
-        return latitude;
+
+    public LatLng getPosition() {
+        return position;
     }
 
-    public void setLatitude(float latitude) {
-        this.latitude = latitude;
-    }
-
-    public float getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(float longitude) {
-        this.longitude = longitude;
+    public void setPosition(LatLng position) {
+        this.position = position;
     }
 }
