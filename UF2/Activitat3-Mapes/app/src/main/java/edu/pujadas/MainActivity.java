@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
                 for (Tienda t : listTiendas){
                     LatLng posi = t.getPosition();
-                    Toast.makeText(MainActivity.this, "La posi :"  +posi.latitude, Toast.LENGTH_SHORT).show();
+                    googleMap.addMarker(new MarkerOptions().position(posi).title("hola"));
 
 
                 }
