@@ -13,6 +13,12 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.LatLng;
+
+import java.util.ArrayList;
+
+import edu.pujadas.Models.Tienda;
+import edu.pujadas.Models.Tipus;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -39,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap googleMap) {
+
+                ArrayList<Tienda> listTiendas = new ArrayList<Tienda>();
+                Tienda tienda = new Tienda(1,"Can Valdiri", Tipus.RESTAURANT,41,2);
+
+
+
                 LatLng marker = new LatLng(41,3);
                 googleMap.addMarker(new MarkerOptions().position(marker).title("mark"));
             }
