@@ -7,9 +7,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     
-    <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyBB0KizOiZqjB90xyrIC2tiJTsvjYQIVx4" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Activitat3Mapes"
         tools:targetApi="34">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBB0KizOiZqjB90xyrIC2tiJTsvjYQIVx4" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
