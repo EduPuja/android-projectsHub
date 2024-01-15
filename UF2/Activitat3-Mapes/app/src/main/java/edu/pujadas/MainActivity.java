@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap googleMap) {
-
+                LatLng marker = new LatLng(41,3);
+                googleMap.addMarker(new MarkerOptions().position(marker).title("mark"));
             }
 
 
