@@ -15,6 +15,7 @@ public class Tienda {
         this.id = id;
         this.name = name;
         this.type = type;
+        this.position = position;
 
     }
 
