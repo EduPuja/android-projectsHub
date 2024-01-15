@@ -7,7 +7,6 @@ public class Tienda {
     int id;
     String name;
     Tipus type;
-
     float latitude;
     float longitude;
 
