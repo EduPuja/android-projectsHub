@@ -2,8 +2,11 @@ package edu.pujadas;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -31,10 +34,11 @@ import edu.pujadas.Models.Tipus;
 public class MainActivity extends AppCompatActivity {
 
 
-    MapView mapView ;
-    Button restaurantBtn, peluqueriaBtn,mecanicBtn;
+    MapView mapView;
+    Button restaurantBtn, peluqueriaBtn, mecanicBtn;
     ArrayList<Tienda> listTiendas;
-    HashMap<String, Marker> markerHashMap ;
+    HashMap<String, Marker> markerHashMap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
 
         //t!iendas
         //Tienda tienda = new Tienda(0,"Can Valdiri", Tipus.RESTAURANT, new LatLng(41.303169,2.003210f));
-        Tienda tienda2 = new Tienda(1,"Motos Ferrer", Tipus.MECANIC,new LatLng(41.385063, 2.173404f));
-        Tienda tienda3 = new Tienda(2,"Shusi He", Tipus.RESTAURANT,new LatLng(39.569450,2.649950f));
-        Tienda tienda4 = new Tienda(3,"Lola Peluqueria", Tipus.PELUQUERIA,new LatLng(40.416775,-3.703790f));
+        Tienda tienda2 = new Tienda(1, "Motos Ferrer", Tipus.MECANIC, new LatLng(41.385063, 2.173404f));
+        Tienda tienda3 = new Tienda(2, "Shusi He", Tipus.RESTAURANT, new LatLng(39.569450, 2.649950f));
+        Tienda tienda4 = new Tienda(3, "Lola Peluqueria", Tipus.PELUQUERIA, new LatLng(40.416775, -3.703790f));
 
         listTiendas = new ArrayList<Tienda>();
         //!adding the tiendas
@@ -68,8 +72,15 @@ public class MainActivity extends AppCompatActivity {
         listTiendas.add(tienda4);
 
         mapView.getMapAsync(new OnMapReadyCallback() {
+
+
+            @SuppressLint("MissingPermission")
             @Override
             public void onMapReady(GoogleMap googleMap) {
+                googleMap.setMyLocationEnabled(true);
+
+
+
 
                 for (Tienda t : listTiendas){
                     LatLng posi = t.getPosition();
@@ -219,6 +230,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+
 
 
 
