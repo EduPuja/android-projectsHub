@@ -65,21 +65,39 @@ public class MainActivity extends AppCompatActivity {
                 for (Tienda t : listTiendas){
                     LatLng posi = t.getPosition();
 
+
+                    // variable per posar un tamany a la imatge
+                    int alutra = 80;
+                    int ancho = 80;
+
                     if (t.getType() == Tipus.RESTAURANT)
                     {
+                        // resutanrat amb el tamany que te la foto
                         Bitmap restaurantIcon = BitmapFactory.decodeResource(getResources(), R.drawable.restaurnat);
-                        googleMap.addMarker(new MarkerOptions().position(posi).title("Restaurant").icon(BitmapDescriptorFactory.fromBitmap(restaurantIcon)));
+                        //restuarnat petit
+                        Bitmap tinnyRestaurant = Bitmap.createScaledBitmap(restaurantIcon,alutra,ancho,true);
+
+                        googleMap.addMarker(new MarkerOptions().position(posi).title("Restaurant").icon(BitmapDescriptorFactory.fromBitmap(tinnyRestaurant)));
 
 
                     }
                     else if (t.getType() == Tipus.MECANIC)
                     {
                         Bitmap mecanic = BitmapFactory.decodeResource(getResources(), R.drawable.mecanico);
-                        googleMap.addMarker(new MarkerOptions().position(posi).title("Mecanic").icon(BitmapDescriptorFactory.fromBitmap(mecanic)));
+
+                        // faig aquest cambi a pettit perque el bitmap de adalt es inmuttable
+                        Bitmap tinnyMecanic = Bitmap.createScaledBitmap(mecanic,alutra,ancho,true);
+
+                        googleMap.addMarker(new MarkerOptions().position(posi).title("Mecanic").icon(BitmapDescriptorFactory.fromBitmap(tinnyMecanic)));
+
                     }
                     else if (t.getType() == Tipus.PELUQUERIA){
                         Bitmap pelu = BitmapFactory.decodeResource(getResources(), R.drawable.pelu);
-                        googleMap.addMarker(new MarkerOptions().position(posi).title("Peluqueria").icon(BitmapDescriptorFactory.fromBitmap(pelu)));
+
+                        //mini pelu
+                        Bitmap peluTinny = Bitmap.createScaledBitmap(pelu,alutra,ancho,true);
+
+                        googleMap.addMarker(new MarkerOptions().position(posi).title("Peluqueria").icon(BitmapDescriptorFactory.fromBitmap(peluTinny)));
                     }
 
 
