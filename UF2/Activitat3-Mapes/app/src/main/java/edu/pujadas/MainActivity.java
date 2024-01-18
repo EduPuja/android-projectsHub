@@ -55,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         //t!iendas
-        Tienda tienda = new Tienda(1,"Can Valdiri", Tipus.RESTAURANT, new LatLng(41.303169,2.003210f));
-        Tienda tienda2 = new Tienda(2,"Motos Ferrer", Tipus.MECANIC,new LatLng(41.385063, 2.173404f));
-        Tienda tienda3 = new Tienda(3,"Barcelona", Tipus.RESTAURANT,new LatLng(39.569450,2.649950f));
-        Tienda tienda4 = new Tienda(4,"Madrid", Tipus.PELUQUERIA,new LatLng(40.416775,-3.703790f));
+        Tienda tienda = new Tienda(0,"Can Valdiri", Tipus.RESTAURANT, new LatLng(41.303169,2.003210f));
+        Tienda tienda2 = new Tienda(1,"Motos Ferrer", Tipus.MECANIC,new LatLng(41.385063, 2.173404f));
+        Tienda tienda3 = new Tienda(2,"Barcelona", Tipus.RESTAURANT,new LatLng(39.569450,2.649950f));
+        Tienda tienda4 = new Tienda(3,"Madrid", Tipus.PELUQUERIA,new LatLng(40.416775,-3.703790f));
 
         listTiendas = new ArrayList<Tienda>();
         //!adding the tiendas
@@ -150,36 +150,71 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void showRestaurants(View v){
+
+        Marker pelu = markerHashMap.get("peluqueria_marker");
+        Marker mecanic = markerHashMap.get("mecanic_marker");
+        Marker restaurant = markerHashMap.get("restaurant_marker");
+
+
         for( Tienda t : listTiendas)
         {
 
-            if (t.getType() != Tipus.RESTAURANT){
-                Marker pelu = markerHashMap.get("peluqueria_marker");
-                Marker mecanic = markerHashMap.get("mecanic_marker");
-
-                if (pelu != null && mecanic != null)
-                {
-                    pelu.setVisible(false);
-                    mecanic.setVisible(false);
-                }
+            if (t.getType() == Tipus.RESTAURANT){
+                restaurant.setVisible(true);
             }
             else {
-                Marker rest = markerHashMap.get("restaurant_marker");
-                rest.setVisible(true);
+                pelu.setVisible(false);
+                mecanic.setVisible(false);
             }
+
 
 
         }
     }
 
     public void showMecanic(View v){
+        Marker pelu = markerHashMap.get("peluqueria_marker");
+        Marker mecanic = markerHashMap.get("mecanic_marker");
+        Marker restaurant = markerHashMap.get("restaurant_marker");
 
+
+        for( Tienda t : listTiendas)
+        {
+
+            if (t.getType() == Tipus.MECANIC){
+                mecanic.setVisible(true);
+            }
+            else {
+                pelu.setVisible(false);
+                restaurant.setVisible(false);
+            }
+
+
+
+        }
     }
 
     public void showPelus(View v){
 
+        Marker pelu = markerHashMap.get("peluqueria_marker");
+        Marker mecanic = markerHashMap.get("mecanic_marker");
+        Marker restaurant = markerHashMap.get("restaurant_marker");
 
 
+        for( Tienda t : listTiendas)
+        {
+
+            if (t.getType() == Tipus.PELUQUERIA){
+                pelu.setVisible(true);
+            }
+            else {
+                mecanic.setVisible(false);
+                restaurant.setVisible(false);
+            }
+
+
+
+        }
 
     }
 
