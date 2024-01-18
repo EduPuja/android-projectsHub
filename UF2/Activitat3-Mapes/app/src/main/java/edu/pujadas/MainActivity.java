@@ -28,35 +28,35 @@ public class MainActivity extends AppCompatActivity {
 
     MapView mapView ;
     Button restaurantBtn, peluqueriaBtn,mecanicBtn;
-
+    ArrayList<Tienda> listTiendas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        //find by id
-
-
+        //!find by id
         restaurantBtn = findViewById(R.id.restaurantBtn);
         peluqueriaBtn = findViewById(R.id.peluqueriaBtn);
         mecanicBtn = findViewById(R.id.mecanicBtn);
-
-
         mapView = findViewById(R.id.mapView);
+
+
         mapView.onCreate(savedInstanceState);
 
 
-        //tiendas
-        Tienda tienda = new Tienda(1,"Can Valdiri", Tipus.RESTAURANT, new LatLng(41,2.9f));
-        Tienda tienda2 = new Tienda(2,"Motos Ferrer", Tipus.MECANIC,new LatLng(41, 2.21f));
-        Tienda tienda3 = new Tienda(3,"CCCC", Tipus.RESTAURANT,new LatLng(41,3));
+        //t!iendas
+        Tienda tienda = new Tienda(1,"Can Valdiri", Tipus.RESTAURANT, new LatLng(41.303169,2.003210f));
+        Tienda tienda2 = new Tienda(2,"Motos Ferrer", Tipus.MECANIC,new LatLng(41.385063, 2.173404f));
+        Tienda tienda3 = new Tienda(3,"CCCC", Tipus.RESTAURANT,new LatLng(39.569450,2.649950f));
+        Tienda tienda4 = new Tienda(4,"CCCC", Tipus.PELUQUERIA,new LatLng(40.416775,3.703790f));
 
-        ArrayList<Tienda> listTiendas = new ArrayList<Tienda>();
+        listTiendas = new ArrayList<Tienda>();
+        //!adding the tiendas
         listTiendas.add(tienda);
         listTiendas.add(tienda2);
         listTiendas.add(tienda3);
-
+        listTiendas.add(tienda4);
 
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     LatLng posi = t.getPosition();
 
 
-                    // variable per posar un tamany a la imatge
+                    //! variable per posar un tamany a la imatge
                     int alutra = 80;
                     int ancho = 80;
 
