@@ -23,6 +23,7 @@ import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import edu.pujadas.Models.Tienda;
 import edu.pujadas.Models.Tipus;
@@ -135,14 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-       //!buttons
-        restaurantBtn.setOnClickListener(new View.OnClickListener(){
 
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
 
     }
@@ -152,6 +146,41 @@ public class MainActivity extends AppCompatActivity {
     public void onResume() {
         mapView.onResume();
         super.onResume();
+    }
+
+
+    public void showRestaurants(View v){
+        for( Tienda t : listTiendas)
+        {
+
+            if (t.getType() != Tipus.RESTAURANT){
+                Marker pelu = markerHashMap.get("peluqueria_marker");
+                Marker mecanic = markerHashMap.get("mecanic_marker");
+
+                if (pelu != null && mecanic != null)
+                {
+                    pelu.setVisible(false);
+                    mecanic.setVisible(false);
+                }
+            }
+            else {
+                Marker rest = markerHashMap.get("restaurant_marker");
+                rest.setVisible(true);
+            }
+
+
+        }
+    }
+
+    public void showMecanic(View v){
+
+    }
+
+    public void showPelus(View v){
+
+
+
+        
     }
 
 
