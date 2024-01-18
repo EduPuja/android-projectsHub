@@ -149,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    //! show restauants 
     public void showRestaurants(View v){
 
         Marker pelu = markerHashMap.get("peluqueria_marker");
@@ -172,6 +173,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //! metode de mecanic
+
     public void showMecanic(View v){
         Marker pelu = markerHashMap.get("peluqueria_marker");
         Marker mecanic = markerHashMap.get("mecanic_marker");
@@ -194,6 +197,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    //!metode de peluqueria
     public void showPelus(View v){
 
         Marker pelu = markerHashMap.get("peluqueria_marker");
