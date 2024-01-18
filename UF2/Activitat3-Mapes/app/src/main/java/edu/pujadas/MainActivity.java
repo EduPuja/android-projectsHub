@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -64,14 +67,19 @@ public class MainActivity extends AppCompatActivity {
 
                     if (t.getType() == Tipus.RESTAURANT)
                     {
-                        googleMap.addMarker(new MarkerOptions().position(posi).title("Restaurant"));
+                        Bitmap restaurantIcon = BitmapFactory.decodeResource(getResources(), R.drawable.restaurnat);
+                        googleMap.addMarker(new MarkerOptions().position(posi).title("Restaurant").icon(BitmapDescriptorFactory.fromBitmap(restaurantIcon)));
+
+
                     }
                     else if (t.getType() == Tipus.MECANIC)
                     {
-                        googleMap.addMarker(new MarkerOptions().position(posi).title("Mecanic"));
+                        Bitmap mecanic = BitmapFactory.decodeResource(getResources(), R.drawable.mecanico);
+                        googleMap.addMarker(new MarkerOptions().position(posi).title("Mecanic").icon(BitmapDescriptorFactory.fromBitmap(mecanic)));
                     }
                     else if (t.getType() == Tipus.PELUQUERIA){
-                        googleMap.addMarker(new MarkerOptions().position(posi).title("Peluqueria"));
+                        Bitmap pelu = BitmapFactory.decodeResource(getResources(), R.drawable.pelu);
+                        googleMap.addMarker(new MarkerOptions().position(posi).title("Peluqueria").icon(BitmapDescriptorFactory.fromBitmap(pelu)));
                     }
 
 
