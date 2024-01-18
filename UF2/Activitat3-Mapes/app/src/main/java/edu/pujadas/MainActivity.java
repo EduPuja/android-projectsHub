@@ -145,11 +145,76 @@ public class MainActivity extends AppCompatActivity {
                 {
                     if (t.getType() != Tipus.RESTAURANT)
                     {
+                        Marker restaurant_marker = markerHashMap.get("restaurant_mark");
+                        Marker peluqueriaMarker = markerHashMap.get("peluqueria_marker");
+                        Marker mecanic_marker = markerHashMap.get("mecanic_marker");
 
+
+                        if (peluqueriaMarker !=null && mecanic_marker !=null && restaurant_marker !=null)
+                        {
+                            restaurant_marker.setVisible(true); //!es el marcador del restaurant ha de esta visible
+                            peluqueriaMarker.setVisible(false);
+                            mecanic_marker.setVisible(false);
+                        }
                     }
+
                 }
             }
         });
+
+
+        //? amaga tots els marcadors menys
+        mecanicBtn.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                for (Tienda t : listTiendas)
+                {
+                    if (t.getType() != Tipus.MECANIC)
+                    {
+
+                        Marker peluqueriaMarker = markerHashMap.get("peluqueria_marker");
+                        Marker restaurant_marker = markerHashMap.get("restaurant_marker");
+                        Marker mecanic_marker = markerHashMap.get("mecanic_marker");
+
+                        if (peluqueriaMarker !=null && restaurant_marker !=null && mecanic_marker !=null)
+                        {
+                            mecanic_marker.setVisible(true);
+                            peluqueriaMarker.setVisible(false);
+                            restaurant_marker.setVisible(false);
+                        }
+                    }
+
+                }
+            }
+        });
+
+        peluqueriaBtn.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                for (Tienda t : listTiendas)
+                {
+                    if (t.getType() != Tipus.PELUQUERIA)
+                    {
+
+                        Marker peluqueriaMarker = markerHashMap.get("peluqueria_marker");
+                        Marker restaurant_marker = markerHashMap.get("restaurant_marker");
+                        Marker mecanic_marker = markerHashMap.get("mecanic_marker");
+
+                        if (peluqueriaMarker !=null && restaurant_marker !=null && mecanic_marker !=null)
+                        {
+                            mecanic_marker.setVisible(false);
+                            peluqueriaMarker.setVisible(true);
+                            restaurant_marker.setVisible(false);
+                        }
+                    }
+
+                }
+            }
+            
+        });
+
 
 
     }
