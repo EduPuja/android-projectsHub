@@ -61,7 +61,18 @@ public class MainActivity extends AppCompatActivity {
 
                 for (Tienda t : listTiendas){
                     LatLng posi = t.getPosition();
-                    googleMap.addMarker(new MarkerOptions().position(posi).title("hola"));
+
+                    if (t.getType() == Tipus.RESTAURANT)
+                    {
+                        googleMap.addMarker(new MarkerOptions().position(posi).title("Restaurant"));
+                    }
+                    else if (t.getType() == Tipus.MECANIC)
+                    {
+                        googleMap.addMarker(new MarkerOptions().position(posi).title("Mecanic"));
+                    }
+                    else if (t.getType() == Tipus.PELUQUERIA){
+                        googleMap.addMarker(new MarkerOptions().position(posi).title("Peluqueria"));
+                    }
 
 
                 }
