@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         //t!iendas
         Tienda tienda = new Tienda(1,"Can Valdiri", Tipus.RESTAURANT, new LatLng(41.303169,2.003210f));
         Tienda tienda2 = new Tienda(2,"Motos Ferrer", Tipus.MECANIC,new LatLng(41.385063, 2.173404f));
-        Tienda tienda3 = new Tienda(3,"CCCC", Tipus.RESTAURANT,new LatLng(39.569450,2.649950f));
-        Tienda tienda4 = new Tienda(4,"CCCC", Tipus.PELUQUERIA,new LatLng(40.416775,-3.703790f));
+        Tienda tienda3 = new Tienda(3,"Barcelona", Tipus.RESTAURANT,new LatLng(39.569450,2.649950f));
+        Tienda tienda4 = new Tienda(4,"Madrid", Tipus.PELUQUERIA,new LatLng(40.416775,-3.703790f));
 
         listTiendas = new ArrayList<Tienda>();
         //!adding the tiendas
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Marker marker = googleMap.addMarker(new MarkerOptions()
                                 .position(posi)
-                                .title("Restaurant")
+                                .title(t.getName())
                                 .icon(BitmapDescriptorFactory.fromBitmap(tinnyRestaurant)));
                         googleMap.moveCamera(CameraUpdateFactory.newLatLng(posi));
 
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Marker marker =googleMap.addMarker(new MarkerOptions()
                                 .position(posi)
-                                .title("Mecanic")
+                                .title(t.getName())
                                 .icon(BitmapDescriptorFactory.fromBitmap(tinnyMecanic)));
 
 
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                         //mini pelu
                         Bitmap peluTinny = Bitmap.createScaledBitmap(pelu,alutra,ancho,false);
 
-                        Marker marker = googleMap.addMarker(new MarkerOptions().position(posi).title("Peluqueria").icon(BitmapDescriptorFactory.fromBitmap(peluTinny)));
+                        Marker marker = googleMap.addMarker(new MarkerOptions().position(posi).title(t.getName()).icon(BitmapDescriptorFactory.fromBitmap(peluTinny)));
 
                         //add to the hashmap
                         markerHashMap.put("peluqueria_marker",marker);
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        
+
     }
 
 
