@@ -50,19 +50,19 @@ public class MainActivity extends AppCompatActivity {
         mecanicBtn = findViewById(R.id.mecanicBtn);
         mapView = findViewById(R.id.mapView);
 
-
+        // afegir la
         mapView.onCreate(savedInstanceState);
 
 
         //t!iendas
-        Tienda tienda = new Tienda(0,"Can Valdiri", Tipus.RESTAURANT, new LatLng(41.303169,2.003210f));
+        //Tienda tienda = new Tienda(0,"Can Valdiri", Tipus.RESTAURANT, new LatLng(41.303169,2.003210f));
         Tienda tienda2 = new Tienda(1,"Motos Ferrer", Tipus.MECANIC,new LatLng(41.385063, 2.173404f));
-        Tienda tienda3 = new Tienda(2,"Barcelona", Tipus.RESTAURANT,new LatLng(39.569450,2.649950f));
-        Tienda tienda4 = new Tienda(3,"Madrid", Tipus.PELUQUERIA,new LatLng(40.416775,-3.703790f));
+        Tienda tienda3 = new Tienda(2,"Shusi He", Tipus.RESTAURANT,new LatLng(39.569450,2.649950f));
+        Tienda tienda4 = new Tienda(3,"Lola Peluqueria", Tipus.PELUQUERIA,new LatLng(40.416775,-3.703790f));
 
         listTiendas = new ArrayList<Tienda>();
         //!adding the tiendas
-        listTiendas.add(tienda);
+        //listTiendas.add(tienda);
         listTiendas.add(tienda2);
         listTiendas.add(tienda3);
         listTiendas.add(tienda4);
@@ -120,7 +120,10 @@ public class MainActivity extends AppCompatActivity {
                         //mini pelu
                         Bitmap peluTinny = Bitmap.createScaledBitmap(pelu,alutra,ancho,false);
 
-                        Marker marker = googleMap.addMarker(new MarkerOptions().position(posi).title(t.getName()).icon(BitmapDescriptorFactory.fromBitmap(peluTinny)));
+                        Marker marker = googleMap.addMarker(new MarkerOptions()
+                                .position(posi)
+                                .title(t.getName())
+                                .icon(BitmapDescriptorFactory.fromBitmap(peluTinny)));
 
                         //add to the hashmap
                         markerHashMap.put("peluqueria_marker",marker);
@@ -134,12 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-
-
-
-
-
-    }
+    }// end on create
 
 
     @Override
@@ -149,28 +147,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //! show restauants 
+    //! show restauants
     public void showRestaurants(View v){
 
         Marker pelu = markerHashMap.get("peluqueria_marker");
         Marker mecanic = markerHashMap.get("mecanic_marker");
         Marker restaurant = markerHashMap.get("restaurant_marker");
+        if (pelu != null && mecanic != null && restaurant != null){
+            for( Tienda t : listTiendas)
+            {
 
-
-        for( Tienda t : listTiendas)
-        {
-
-            if (t.getType() == Tipus.RESTAURANT){
-                restaurant.setVisible(true);
+                if (t.getType() == Tipus.RESTAURANT){
+                    restaurant.setVisible(true);
+                }
+                else {
+                    pelu.setVisible(false);
+                    mecanic.setVisible(false);
+                }
             }
-            else {
-                pelu.setVisible(false);
-                mecanic.setVisible(false);
-            }
-
-
-
         }
+
+
     }
 
     //! metode de mecanic
@@ -179,22 +176,22 @@ public class MainActivity extends AppCompatActivity {
         Marker pelu = markerHashMap.get("peluqueria_marker");
         Marker mecanic = markerHashMap.get("mecanic_marker");
         Marker restaurant = markerHashMap.get("restaurant_marker");
-
-
-        for( Tienda t : listTiendas)
+        if (pelu != null && mecanic != null && restaurant != null)
         {
+            for( Tienda t : listTiendas)
+            {
 
-            if (t.getType() == Tipus.MECANIC){
-                mecanic.setVisible(true);
+                if (t.getType() == Tipus.MECANIC){
+                    mecanic.setVisible(true);
+                }
+                else {
+                    pelu.setVisible(false);
+                    restaurant.setVisible(false);
+                }
             }
-            else {
-                pelu.setVisible(false);
-                restaurant.setVisible(false);
-            }
-
-
-
         }
+
+
     }
 
 
@@ -205,21 +202,21 @@ public class MainActivity extends AppCompatActivity {
         Marker mecanic = markerHashMap.get("mecanic_marker");
         Marker restaurant = markerHashMap.get("restaurant_marker");
 
-
-        for( Tienda t : listTiendas)
+        if (pelu != null && mecanic != null && restaurant != null)
         {
+            for( Tienda t : listTiendas)
+            {
+                if (t.getType() == Tipus.PELUQUERIA){
+                    pelu.setVisible(true);
+                }
+                else {
+                    mecanic.setVisible(false);
+                    restaurant.setVisible(false);
+                }
 
-            if (t.getType() == Tipus.PELUQUERIA){
-                pelu.setVisible(true);
             }
-            else {
-                mecanic.setVisible(false);
-                restaurant.setVisible(false);
-            }
-
-
-
         }
+
 
     }
 
