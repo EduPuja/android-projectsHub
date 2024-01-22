@@ -1,8 +1,10 @@
 package edu.uoc.android.restservice.rest.model;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.gson.annotations.SerializedName;
 
-public class Follower {
+public class Follower extends RecyclerView.ViewHolder {
 
     @SerializedName("login")
     private String login;
