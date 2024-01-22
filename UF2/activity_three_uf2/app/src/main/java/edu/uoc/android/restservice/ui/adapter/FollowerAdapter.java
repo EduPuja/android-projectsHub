@@ -22,6 +22,9 @@ public class FollowerAdapter extends RecyclerView.Adapter<Follower>{
     @Override
     public Follower onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //todo do de adapter
+
+
+
     }
 
     @Override
