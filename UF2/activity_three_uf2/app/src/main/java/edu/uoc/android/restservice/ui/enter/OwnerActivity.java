@@ -52,7 +52,7 @@ public class OwnerActivity extends AppCompatActivity {
 
         }
 
-        
+
     }
 
 }
