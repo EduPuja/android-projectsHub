@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import edu.uoc.android.restservice.R;
 
@@ -24,6 +25,12 @@ public class OwnerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner);
+
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("username");
+
+
+
 
 
         //!Find by id
