@@ -58,43 +58,24 @@ public class MainActivity extends AppCompatActivity {
         mapView.onCreate(savedInstanceState);
 
 
-        //t!iendas
-        //Tienda tienda = new Tienda(0,"Can Valdiri", Tipus.RESTAURANT, new LatLng(41.303169,2.003210f));
-        Tienda tienda2 = new Tienda(1, "Motos Ferrer", Tipus.MECANIC, new LatLng(41.385063, 2.173404f));
-        Tienda tienda3 = new Tienda(2, "Shusi He", Tipus.RESTAURANT, new LatLng(39.569450, 2.649950f));
-        Tienda tienda4 = new Tienda(3, "Lola Peluqueria", Tipus.PELUQUERIA, new LatLng(40.416775, -3.703790f));
 
         listTiendas = new ArrayList<Tienda>();
         //!adding the tiendas
-        //listTiendas.add(tienda);
-        listTiendas.add(tienda2);
-        listTiendas.add(tienda3);
-        listTiendas.add(tienda4);
+
+        listTiendas.add( new Tienda(1, "Motos Ferrer", Tipus.MECANIC, new LatLng(41.385063, 2.173404f)));
+        listTiendas.add(new Tienda(2, "Shusi He", Tipus.RESTAURANT, new LatLng(39.569450, 2.649950f)));
+        listTiendas.add(new Tienda(3, "Lola Peluqueria", Tipus.PELUQUERIA, new LatLng(40.416775, -3.703790f)));
+        listTiendas.add(new Tienda(4, "Can Roca", Tipus.RESTAURANT, new LatLng(45.971210,4.142880)));
+        listTiendas.add(new Tienda(5, "Cotxes Peugot ", Tipus.MECANIC, new LatLng(44.210,4.143880)));
+        listTiendas.add(new Tienda(6, "Mecanic Paco", Tipus.MECANIC, new LatLng(42.9210,3.148480)));
+        listTiendas.add(new Tienda(7, "Higuma", Tipus.RESTAURANT, new LatLng(45.410,4.1420)));
+
 
         mapView.getMapAsync(new OnMapReadyCallback() {
-
-
             @Override
             public void onMapReady(GoogleMap googleMap) {
-               /* if (ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    return;
-                }
-                googleMap.setMyLocationEnabled(true);*/
-
-
-
-
                 for (Tienda t : listTiendas){
                     LatLng posi = t.getPosition();
-
-
                     //! variable per posar un tamany a la imatge
                     int alutra = 80;
                     int ancho = 80;
@@ -106,14 +87,14 @@ public class MainActivity extends AppCompatActivity {
                         //restuarnat petit
                         Bitmap tinnyRestaurant = Bitmap.createScaledBitmap(restaurantIcon,alutra,ancho,false);
 
-                        Marker marker = googleMap.addMarker(new MarkerOptions()
+                        Marker markerRestaurant = googleMap.addMarker(new MarkerOptions()
                                 .position(posi)
                                 .title(t.getName())
                                 .icon(BitmapDescriptorFactory.fromBitmap(tinnyRestaurant)));
-                        googleMap.moveCamera(CameraUpdateFactory.newLatLng(posi));
+
 
                         //! add the marker to hasmap
-                        markerHashMap.put("restaurant_marker",marker);
+                        markerHashMap.put("restaurant_marker",markerRestaurant);
 
                     }
                     else if (t.getType() == Tipus.MECANIC)
@@ -123,14 +104,14 @@ public class MainActivity extends AppCompatActivity {
                         // faig aquest cambi a pettit perque el bitmap de adalt es inmuttable
                         Bitmap tinnyMecanic = Bitmap.createScaledBitmap(mecanic,alutra,ancho,false);
 
-                        Marker marker =googleMap.addMarker(new MarkerOptions()
+                        Marker markerMecanic =googleMap.addMarker(new MarkerOptions()
                                 .position(posi)
                                 .title(t.getName())
                                 .icon(BitmapDescriptorFactory.fromBitmap(tinnyMecanic)));
 
 
                         //add the marker to hasmap
-                        markerHashMap.put("mecanic_marker",marker);
+                        markerHashMap.put("mecanic_marker",markerMecanic);
 
 
                     }
@@ -140,13 +121,13 @@ public class MainActivity extends AppCompatActivity {
                         //mini pelu
                         Bitmap peluTinny = Bitmap.createScaledBitmap(pelu,alutra,ancho,false);
 
-                        Marker marker = googleMap.addMarker(new MarkerOptions()
+                        Marker markerPelu = googleMap.addMarker(new MarkerOptions()
                                 .position(posi)
                                 .title(t.getName())
                                 .icon(BitmapDescriptorFactory.fromBitmap(peluTinny)));
 
                         //add to the hashmap
-                        markerHashMap.put("peluqueria_marker",marker);
+                        markerHashMap.put("peluqueria_marker",markerPelu);
                     }
 
 
@@ -156,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+
 
     }// end on create
 
