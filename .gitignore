@@ -1,0 +1,30 @@
+# Archivos de construcción de Android
+/build/
+/app/build/
+
+# Archivos de configuración local (generados por Android Studio para configuraciones específicas del IDE)
+.idea/
+
+# Archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Directorio de dependencias de Gradle
+.gradle/
+
+# Archivos de configuración de Gradle
+*.iml
+.gradle
+/local.properties
+
+# Archivos de salida de ProGuard
+proguard/
+
+# Android Studio Navigation editor/preview pane
+/navigation/
+
+# Anotaciones de data binding
+/data_binding/
+
+# Archivos de compilación
+/captures/
