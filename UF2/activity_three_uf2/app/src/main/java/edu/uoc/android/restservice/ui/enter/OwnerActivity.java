@@ -1,6 +1,7 @@
 package edu.uoc.android.restservice.ui.enter;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +18,8 @@ public class OwnerActivity extends AppCompatActivity {
     ImageView avatar;
     TextView repos,followers;
 
+    RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,8 @@ public class OwnerActivity extends AppCompatActivity {
         avatar = findViewById(R.id.avatar);
         repos= findViewById(R.id.repos);
         followers  = findViewById(R.id.followers);
+
+        recyclerView  = findViewById(R.id.recyclerView);
 
     }
 

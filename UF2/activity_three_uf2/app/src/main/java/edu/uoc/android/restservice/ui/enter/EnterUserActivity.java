@@ -33,8 +33,17 @@ public class EnterUserActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         if (v == btnFollowers) {
-            Intent intent = new Intent(v.getContext(), OwnerActivity.class);
-            startActivity(intent);
+            String username = etUser.getText().toString();
+            if (username.isEmpty())
+            {
+                etUser.setError("Please enter a username");
+            }else
+            {
+                Intent intent = new Intent(v.getContext(), OwnerActivity.class);
+                intent.putExtra("username",username);
+                startActivity(intent);
+            }
+
 
         }
     }
