@@ -1,5 +1,6 @@
 package edu.uoc.android.restservice.ui.enter;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import edu.uoc.android.restservice.R;
+import edu.uoc.android.restservice.rest.model.Owner;
 
 public class EnterUserActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -31,7 +33,9 @@ public class EnterUserActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         if (v == btnFollowers) {
-            // TODO: Go to nex activity
+            Intent intent = new Intent(v.getContext(), OwnerActivity.class);
+            startActivity(intent);
+
         }
     }
 }
