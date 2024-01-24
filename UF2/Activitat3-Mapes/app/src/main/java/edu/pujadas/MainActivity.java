@@ -39,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Tienda> listTiendas;
     ArrayList<Marker> listMarkers;
 
+    String restaurant = "restaurant";
+    String peluqueria = "peluqueria";
+    String mecanic = "mecanic";
+
     int altura =80;
     int ancho = 80;
 
@@ -65,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
         listTiendas = new ArrayList<Tienda>();
         //!adding the tiendas
 
-        listTiendas.add( new Tienda(1, "Motos Ferrer", "mecanic", new LatLng(41.385063, 2.173404f)));
-        listTiendas.add(new Tienda(2, "Shusi He", "restaruant", new LatLng(39.569450, 2.649950f)));
-        listTiendas.add(new Tienda(3, "Lola Peluqueria", "peluqueria", new LatLng(40.416775, -3.703790f)));
-        listTiendas.add(new Tienda(4, "Can Roca", "restaruant", new LatLng(45.971210,4.142880)));
-        listTiendas.add(new Tienda(5, "Cotxes Peugot ", "mecanic", new LatLng(44.210,4.143880)));
-        listTiendas.add(new Tienda(6, "Mecanic Paco", "mecanic", new LatLng(42.9210,3.148480)));
-        listTiendas.add(new Tienda(7, "Higuma", "restaurant", new LatLng(45.410,4.1420)));
+        listTiendas.add( new Tienda(1, "Motos Ferrer",mecanic, new LatLng(41.385063, 2.173404f)));
+        listTiendas.add(new Tienda(2, "Shusi He", restaurant, new LatLng(39.569450, 2.649950f)));
+        listTiendas.add(new Tienda(3, "Lola Peluqueria", peluqueria, new LatLng(40.416775, -3.703790f)));
+        listTiendas.add(new Tienda(4, "Can Roca", restaurant, new LatLng(45.971210,4.142880)));
+        listTiendas.add(new Tienda(5, "Cotxes Peugot ", mecanic, new LatLng(44.210,4.143880)));
+        listTiendas.add(new Tienda(6, "Mecanic Paco", mecanic, new LatLng(42.9210,3.148480)));
+        listTiendas.add(new Tienda(7, "Higuma", restaurant, new LatLng(45.410,4.1420)));
 
 
         mapView.getMapAsync(new OnMapReadyCallback() {
@@ -79,72 +83,20 @@ public class MainActivity extends AppCompatActivity {
             public void onMapReady(GoogleMap googleMap) {
 
 
-                //restaurant
+                //!restaurant
                 restaurantBtn.setOnClickListener(new View.OnClickListener() {
 
                     @Override
                     public void onClick(View v) {
+                        // quant el usuari fagui click al restaurant
+                        Bitmap restaurantIcon = BitmapFactory.decodeResource(getResources(), R.drawable.restaurnat);
+                        filtrarTienda("restaurant",restaurantIcon,googleMap);
+
+
 
                     }
                 });
-               /* for (Tienda t : listTiendas){
-                    LatLng posi = t.getPosition();
-                    //! variable per posar un tamany a la imatge
-                    int alutra = 80;
-                    int ancho = 80;
 
-                    if (t.getType().equalsIgnoreCase("restaurant"))
-                    {
-                        // resutanrat amb el tamany que te la foto
-                        Bitmap restaurantIcon = BitmapFactory.decodeResource(getResources(), R.drawable.restaurnat);
-                        //restuarnat petit
-                        Bitmap tinnyRestaurant = Bitmap.createScaledBitmap(restaurantIcon,alutra,ancho,false);
-
-                        Marker markerRestaurant = googleMap.addMarker(new MarkerOptions()
-                                .position(posi)
-                                .title(t.getName())
-                                .icon(BitmapDescriptorFactory.fromBitmap(tinnyRestaurant)));
-
-
-                        //! add the marker to arraylist
-                        listMarkers.add(markerRestaurant);
-
-                    }
-                    else if (t.getType().equalsIgnoreCase("mecanic") )
-                    {
-                        Bitmap mecanic = BitmapFactory.decodeResource(getResources(), R.drawable.mecanico);
-
-                        // faig aquest cambi a pettit perque el bitmap de adalt es inmuttable
-                        Bitmap tinnyMecanic = Bitmap.createScaledBitmap(mecanic,alutra,ancho,false);
-
-                        Marker markerMecanic =googleMap.addMarker(new MarkerOptions()
-                                .position(posi)
-                                .title(t.getName())
-                                .icon(BitmapDescriptorFactory.fromBitmap(tinnyMecanic)));
-
-
-                        //add the marker to hasmap
-                        listMarkers.add(markerMecanic);
-
-
-                    }
-                    else if (t.getType().equalsIgnoreCase("peluqueria")){
-                        Bitmap pelu = BitmapFactory.decodeResource(getResources(), R.drawable.pelu);
-
-                        //mini pelu
-                        Bitmap peluTinny = Bitmap.createScaledBitmap(pelu,alutra,ancho,false);
-
-                        Marker markerPelu = googleMap.addMarker(new MarkerOptions()
-                                .position(posi)
-                                .title(t.getName())
-                                .icon(BitmapDescriptorFactory.fromBitmap(peluTinny)));
-
-                        //add to the hashmap
-                        listMarkers.add(markerPelu);
-                    }
-
-
-                }*/
 
             }
 
@@ -161,6 +113,35 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
+
+    /**
+     * Metode que el que fa es flitrar les tendes segons el tipus
+     * @param tipus String
+     * @param icon Imatge
+     * @param googleMap googleMap api
+     */
+    private void filtrarTienda(String tipus,Bitmap icon,GoogleMap googleMap){
+        for (Tienda t : listTiendas){
+            if (t.getType().equalsIgnoreCase(tipus))
+            {
+
+                // get the position
+                LatLng posi = t.getPosition();
+
+                // do the icon more tinny
+                Bitmap iconTinny = Bitmap.createScaledBitmap(icon,altura,ancho,false);
+                // optain the marker
+                Marker marker =googleMap.addMarker(new MarkerOptions()
+                        .position(posi)
+                        .title(t.getName())
+                        .icon(BitmapDescriptorFactory.fromBitmap(iconTinny)));
+
+                // add the marker to the list of markers
+                listMarkers.add(marker);
+
+            }
+        }
+    }
 
 
 
