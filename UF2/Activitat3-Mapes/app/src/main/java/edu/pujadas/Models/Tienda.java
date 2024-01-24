@@ -7,11 +7,11 @@ public class Tienda {
 
     int id;
     String name;
-    Tipus type;
+    String type;
 
     LatLng position;
 
-    public Tienda(int id, String name, Tipus type,LatLng position) {
+    public Tienda(int id, String name, String type,LatLng position) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -35,11 +35,11 @@ public class Tienda {
         this.name = name;
     }
 
-    public Tipus getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Tipus type) {
+    public void setType(String type) {
         this.type = type;
     }
 
