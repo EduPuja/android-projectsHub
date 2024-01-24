@@ -76,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
         listTiendas.add(new Tienda(5, "Cotxes Peugot ", mecanic, new LatLng(44.210,4.143880)));
         listTiendas.add(new Tienda(6, "Mecanic Paco", mecanic, new LatLng(42.9210,3.148480)));
         listTiendas.add(new Tienda(7, "Higuma", restaurant, new LatLng(45.410,4.1420)));
+        listTiendas.add(new Tienda(8, "Joaquim Pelus", peluqueria, new LatLng(45.410,4.1420)));
+        listTiendas.add(new Tienda(9, "Barberia La Class", peluqueria, new LatLng(36.539000,-4.624350)));
+        listTiendas.add(new Tienda(10, "Norauto", mecanic, new LatLng(-32.711100,-4.349861)));
+        listTiendas.add(new Tienda(11, "La Gallega", restaurant, new LatLng(32.410,4.10)));
 
 
         mapView.getMapAsync(new OnMapReadyCallback() {
@@ -90,10 +94,33 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         // quant el usuari fagui click al restaurant
                         Bitmap restaurantIcon = BitmapFactory.decodeResource(getResources(), R.drawable.restaurnat);
-                        filtrarTienda("restaurant",restaurantIcon,googleMap);
+                        filtrarTienda(restaurant,restaurantIcon,googleMap);
 
 
 
+                    }
+                });
+
+                //!peluqueria
+
+                peluqueriaBtn.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+                        Bitmap pelu = BitmapFactory.decodeResource(getResources(), R.drawable.pelu);
+                        filtrarTienda(peluqueria,pelu,googleMap);
+                    }
+                });
+
+                //!mecanic
+
+                mecanicBtn.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+
+                        Bitmap mecanicIcon = BitmapFactory.decodeResource(getResources(), R.drawable.mecanico);
+                        filtrarTienda(mecanic,mecanicIcon,googleMap);
                     }
                 });
 
@@ -121,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
      * @param googleMap googleMap api
      */
     private void filtrarTienda(String tipus,Bitmap icon,GoogleMap googleMap){
+        ocultarMarcadores(); // eliminar tots els marcadors
         for (Tienda t : listTiendas){
             if (t.getType().equalsIgnoreCase(tipus))
             {
@@ -141,6 +169,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
+
+
+    }
+
+    /**
+     * Funcio per ocultar els marcadors
+     */
+    private void ocultarMarcadores() {
+        for (Marker marker : listMarkers) {
+            marker.remove();
+        }
+        listMarkers.clear();
     }
 
 
