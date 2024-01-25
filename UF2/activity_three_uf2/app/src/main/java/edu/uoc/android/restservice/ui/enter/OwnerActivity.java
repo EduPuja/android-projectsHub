@@ -15,6 +15,9 @@ import android.widget.Toast;
 import edu.uoc.android.restservice.R;
 import edu.uoc.android.restservice.rest.adapter.GitHubAdapter;
 import edu.uoc.android.restservice.rest.model.Owner;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class OwnerActivity extends AppCompatActivity {
 
@@ -33,7 +36,36 @@ public class OwnerActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String username = intent.getStringExtra("username");
-        github.getOwner(username);
+
+
+        //!fas la crida
+        Call<Owner> call = github.getOwner(username);
+
+        call.enqueue(new Callback<Owner>() {
+            @Override
+            public void onResponse(Call<Owner> call, Response<Owner> response) {
+                if (response.isSuccessful()){
+                    Owner owner = response.body();
+
+                    String avatarLink = owner.getAvatarUrl();
+                    String name = owner.getName();
+                    int num_repos =owner.getPublicRepos();
+
+                    //? diu que es un intenger no int
+                    int follower = owner.getFollowers();
+
+
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Owner> call, Throwable t) {
+                System.out.println("Error en la llamada: " + t.getMessage());
+
+            }
+        });
+
 
 
 
