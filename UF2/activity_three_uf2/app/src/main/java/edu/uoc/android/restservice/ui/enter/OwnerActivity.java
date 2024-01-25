@@ -1,6 +1,7 @@
 package edu.uoc.android.restservice.ui.enter;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -17,6 +18,7 @@ import com.squareup.picasso.Picasso;
 import edu.uoc.android.restservice.R;
 import edu.uoc.android.restservice.rest.adapter.GitHubAdapter;
 import edu.uoc.android.restservice.rest.model.Owner;
+import edu.uoc.android.restservice.ui.adapter.FollowerAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,6 +30,8 @@ public class OwnerActivity extends AppCompatActivity {
 
     GitHubAdapter github;
     RecyclerView recyclerView;
+
+    FollowerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +45,8 @@ public class OwnerActivity extends AppCompatActivity {
         followers  = findViewById(R.id.followers);
         recyclerView  = findViewById(R.id.recyclerView);
         //todo linerarlayout and adpter
-
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         github = new GitHubAdapter();
 
         Intent intent = getIntent();
