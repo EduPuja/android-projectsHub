@@ -39,18 +39,16 @@ public class MainActivity extends AppCompatActivity {
     public void initData()
     {
 
-        //creant un objecte casa
-        Home homePals= new Home("Pals", BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casaa));
-        Home homePalamos= new Home("Palamos",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casab));
-        Home homeCasaC= new Home("Vallobrega",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casac));
-        Home homeCasaD= new Home("Mataró",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casad));
 
+        listHomes.add(new Home("Pals", BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casaa)));
+        listHomes.add(new Home("Palamos",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casab)));
+        listHomes.add(new Home("Vallobrega",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casac)));
+        listHomes.add(new Home("Mataró",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casad)));
+        listHomes.add(new Home("AAA",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casad)));
+        listHomes.add(new Home("BBB",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casab)));
+        listHomes.add(new Home("CCC",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casad)));
+        listHomes.add(new Home("DDD",BitmapFactory.decodeResource(getBaseContext().getResources(),R.drawable.casad)));
 
-
-        listHomes.add(homePals);
-        listHomes.add(homePalamos);
-        listHomes.add(homeCasaC);
-        listHomes.add(homeCasaD);
     }
 
     private void initRecylcerView()
