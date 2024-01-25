@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         listTiendas.add(new Tienda(7, "Higuma", restaurant, new LatLng(45.410,4.1420)));
         listTiendas.add(new Tienda(8, "Joaquim Pelus", peluqueria, new LatLng(45.410,4.1420)));
         listTiendas.add(new Tienda(9, "Barberia La Class", peluqueria, new LatLng(36.539000,-4.624350)));
-        listTiendas.add(new Tienda(10, "Norauto", mecanic, new LatLng(-32.711100,-4.349861)));
+        listTiendas.add(new Tienda(10, "Norauto", mecanic, new LatLng(32.711100,-4.349861)));
         listTiendas.add(new Tienda(11, "La Gallega", restaurant, new LatLng(32.410,4.10)));
 
 
