@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import edu.uoc.android.restservice.R;
 import edu.uoc.android.restservice.rest.adapter.GitHubAdapter;
 import edu.uoc.android.restservice.rest.model.Owner;
@@ -32,6 +34,14 @@ public class OwnerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner);
 
+
+        //!Find by id
+        avatar = findViewById(R.id.avatar);
+        repos= findViewById(R.id.repos);
+        followers  = findViewById(R.id.followers);
+        recyclerView  = findViewById(R.id.recyclerView);
+        //todo linerarlayout and adpter
+
         github = new GitHubAdapter();
 
         Intent intent = getIntent();
@@ -48,12 +58,13 @@ public class OwnerActivity extends AppCompatActivity {
                     Owner owner = response.body();
 
                     String avatarLink = owner.getAvatarUrl();
-                    String name = owner.getName();
-                    int num_repos =owner.getPublicRepos();
+                    //String name = owner.getName();
+                    int numRepos = owner.getPublicRepos();
+                    int follows = owner.getFollowers();
 
-                    //? diu que es un intenger no int
-                    int follower = owner.getFollowers();
-
+                    Picasso.get().load(avatarLink).into(avatar);
+                    followers.setText("Followers: " +follows);
+                    repos.setText("Repositoris: "+numRepos);
 
 
                 }
@@ -61,21 +72,12 @@ public class OwnerActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Owner> call, Throwable t) {
-                System.out.println("Error en la llamada: " + t.getMessage());
+                Toast.makeText(OwnerActivity.this, "Error en la llamada: " + t.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
         });
 
 
-
-
-
-        //!Find by id
-        avatar = findViewById(R.id.avatar);
-        repos= findViewById(R.id.repos);
-        followers  = findViewById(R.id.followers);
-
-        recyclerView  = findViewById(R.id.recyclerView);
 
     }
 
@@ -97,8 +99,6 @@ public class OwnerActivity extends AppCompatActivity {
 
                 default:
                     return super.onOptionsItemSelected(item);
-
-
         }
 
 
