@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Follower extends RecyclerView.ViewHolder {
+public class Follower  {
 
     @SerializedName("login")
     private String login;
