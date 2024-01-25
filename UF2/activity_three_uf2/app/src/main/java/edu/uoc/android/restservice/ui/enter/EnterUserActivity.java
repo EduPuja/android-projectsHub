@@ -9,10 +9,11 @@ import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import edu.uoc.android.restservice.R;
-import edu.uoc.android.restservice.rest.model.Owner;
 
-public class EnterUserActivity extends AppCompatActivity implements View.OnClickListener {
+import edu.uoc.android.restservice.R;
+
+
+public class EnterUserActivity extends AppCompatActivity {
 
     private EditText etUser;
     private Button btnFollowers;
@@ -27,24 +28,25 @@ public class EnterUserActivity extends AppCompatActivity implements View.OnClick
     private void initViews() {
         etUser = findViewById(R.id.enter_user_edit_text);
         btnFollowers = findViewById(R.id.enter_user_button);
-        btnFollowers.setOnClickListener(this);
-    }
 
-    @Override
-    public void onClick(View v) {
-        if (v == btnFollowers) {
-            String username = etUser.getText().toString();
-            if (username.isEmpty())
-            {
-                etUser.setError("Please enter a username");
-            }else
-            {
-                Intent intent = new Intent(v.getContext(), OwnerActivity.class);
-                intent.putExtra("username",username);
-                startActivity(intent);
+        btnFollowers.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (v == btnFollowers) {
+                    String username = etUser.getText().toString();
+                    if (username.isEmpty()) {
+                        etUser.setError("Please enter a username");
+                    }
+                    else
+                    {
+                        Intent intent = new Intent(v.getContext(), OwnerActivity.class);
+                        intent.putExtra("username",username);
+                        startActivity(intent);
+                    }
+                }
             }
+        });
 
-
-        }
     }
 }
