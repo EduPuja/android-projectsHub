@@ -56,6 +56,8 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
             super(itemView);
             name = itemView.findViewById(R.id.followerName);
             avatar = itemView.findViewById(R.id.avatar);
+
+            avatarLink = itemView.findViewById(R.id.infoAvatar);
         }
 
         public void setData(String name, String avatarUrl){
