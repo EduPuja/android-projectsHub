@@ -29,7 +29,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
     @Override
     public HomeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {  // Create a new view, which defines the UI of the list item
-        View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_item,parent,false);
+        View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home,parent,false);
 
 
         return new ViewHolder(vista) ;
@@ -62,8 +62,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
         public ViewHolder(@NonNull View itemView)
         {
             super(itemView);
-            homeImg = itemView.findViewById(R.id.homeImg);
-            textHome = itemView.findViewById(R.id.textHome);
+            homeImg = itemView.findViewById(R.id.logoHome);
+            textHome = itemView.findViewById(R.id.city);
         }
 
         /**
