@@ -13,12 +13,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import edu.uoc.android.restservice.R;
+import edu.uoc.android.restservice.rest.adapter.GitHubAdapter;
+import edu.uoc.android.restservice.rest.model.Owner;
 
 public class OwnerActivity extends AppCompatActivity {
 
     ImageView avatar;
     TextView repos,followers;
 
+    GitHubAdapter github;
     RecyclerView recyclerView;
 
     @Override
@@ -26,9 +29,11 @@ public class OwnerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner);
 
+        github = new GitHubAdapter();
+
         Intent intent = getIntent();
         String username = intent.getStringExtra("username");
-
+        github.getOwner(username);
 
 
 
