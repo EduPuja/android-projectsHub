@@ -1,4 +1,5 @@
 package edu.uoc.android.restservice.ui.adapter;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -23,8 +24,11 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
         return 0;
     }
 
-    public static class ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
 
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
     }
 }
