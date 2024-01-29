@@ -9,6 +9,8 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
 
+
+    //todo fer la splash activity
     Button okButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
