@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.core.widget.TintableCheckedTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +35,7 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull FollowerAdapter.ViewHolder holder, int position) {
-        String name = listFollowrs.get(position).getName();
+        String name = listFollowrs.get(position).getLogin();
         String avatarLink = listFollowrs.get(position).getAvatarUrl();
 
         holder.setData(name, avatarLink);
@@ -42,14 +44,13 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listFollowrs.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView name;
         ImageView avatar;
 
-        TextView avatarLink;
 
         public ViewHolder(@NonNull View itemView) {
 
@@ -57,12 +58,12 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
             name = itemView.findViewById(R.id.followerName);
             avatar = itemView.findViewById(R.id.followerAvatar);
 
-            avatarLink = itemView.findViewById(R.id.infoAvatar);
+
         }
 
         public void setData(String name, String avatarUrl){
             this.name.setText(name);
-            this.avatarLink.setText(avatarUrl);
+            Picasso.get().load(avatarUrl).into(avatar);
         }
 
 

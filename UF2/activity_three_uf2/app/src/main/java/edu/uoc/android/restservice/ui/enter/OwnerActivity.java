@@ -37,22 +37,22 @@ public class OwnerActivity extends AppCompatActivity {
 
     FollowerAdapter adapter;
 
-    ArrayList<Follower> lsitFollowers;
+    ArrayList<Follower> listFollowers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner);
 
-        lsitFollowers = new ArrayList<>();
+        listFollowers = new ArrayList<>();
 
         //!Find by id
         avatar = findViewById(R.id.avatar);
         repos= findViewById(R.id.repos);
         followers  = findViewById(R.id.followers);
 
-        //todo linerarlayout and adpter
-        initRecylcerView();
+
+
 
 
         github = new GitHubAdapter();
@@ -74,7 +74,7 @@ public class OwnerActivity extends AppCompatActivity {
                     String avatarLink = owner.getAvatarUrl();
                     //String name = owner.getName();
                     int numRepos = owner.getPublicRepos();
-                    int follows = owner.getFollowers();
+                    int follows = owner.getFollowing();
 
                     Picasso.get().load(avatarLink).into(avatar);
                     followers.setText("Followers: " +follows);
@@ -104,8 +104,8 @@ public class OwnerActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     List<Follower>  listAux = response.body();
                     for (Follower follower : listAux) {
-                        lsitFollowers.add(follower);
-
+                        listFollowers.add(follower);
+                        initRecylcerView(); // initialize recicler
                     }
                 }
 
@@ -116,6 +116,8 @@ public class OwnerActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Error al pillar un follower :/", Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
 
     };
@@ -150,7 +152,7 @@ public class OwnerActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new FollowerAdapter(lsitFollowers);
+        adapter = new FollowerAdapter(listFollowers);
         recyclerView.setAdapter(adapter);
     }
 
