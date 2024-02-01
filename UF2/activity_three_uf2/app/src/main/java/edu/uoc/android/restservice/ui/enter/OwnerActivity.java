@@ -6,10 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +33,7 @@ import retrofit2.Response;
 public class OwnerActivity extends AppCompatActivity {
 
     ImageView avatar;
-    TextView repos,followers;
+    TextView repos,followers,titol;
 
     GitHubAdapter github;
     RecyclerView recyclerView;
@@ -39,10 +42,16 @@ public class OwnerActivity extends AppCompatActivity {
 
     ArrayList<Follower> listFollowers;
 
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner);
+
+        titol = findViewById(R.id.titol);
+        progressBar = findViewById(R.id.progressBar);
+        progressBar.setProgress(2000);
+        Handler handler = new Handler();
 
         listFollowers = new ArrayList<>();
 
@@ -116,6 +125,26 @@ public class OwnerActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Error al pillar un follower :/", Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
+        handler.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                avatar.setVisibility(View.VISIBLE);
+                repos.setVisibility(View.VISIBLE);
+                followers.setVisibility(View.VISIBLE);
+                titol.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.VISIBLE);
+                // amagar el pogres bar
+                progressBar.setVisibility(View.INVISIBLE);
+
+
+
+            }
+        },2000);
+
 
 
 
