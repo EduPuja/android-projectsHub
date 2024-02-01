@@ -54,6 +54,10 @@ public class LoginActivity extends AppCompatActivity {
 
                         editor.apply();// save changes
 
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+
+
                     }
                 }
             });
