@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SplashActivity"
         tools:targetApi="34">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -23,9 +26,7 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:exported="false"/>
-
-
+            android:exported="false" />
     </application>
 
 </manifest>
