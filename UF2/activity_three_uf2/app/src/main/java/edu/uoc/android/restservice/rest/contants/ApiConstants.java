@@ -7,4 +7,5 @@ public class ApiConstants {
 
     // ENDPOINTS
     public static final String GITHUB_USER_ENDPOINT = "users/{owner}";
+    public static final String GIT_FOLLOWERS = "users/{owner}/followers";
 }

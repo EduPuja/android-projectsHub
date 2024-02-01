@@ -15,8 +15,12 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.uoc.android.restservice.R;
 import edu.uoc.android.restservice.rest.adapter.GitHubAdapter;
+import edu.uoc.android.restservice.rest.model.Follower;
 import edu.uoc.android.restservice.rest.model.Owner;
 import edu.uoc.android.restservice.ui.adapter.FollowerAdapter;
 import retrofit2.Call;
@@ -33,20 +37,24 @@ public class OwnerActivity extends AppCompatActivity {
 
     FollowerAdapter adapter;
 
+    ArrayList<Follower> lsitFollowers;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner);
 
+        lsitFollowers = new ArrayList<>();
 
         //!Find by id
         avatar = findViewById(R.id.avatar);
         repos= findViewById(R.id.repos);
         followers  = findViewById(R.id.followers);
-        recyclerView  = findViewById(R.id.recyclerView);
+
         //todo linerarlayout and adpter
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        initRecylcerView();
+
+
         github = new GitHubAdapter();
 
         Intent intent = getIntent();
@@ -62,6 +70,7 @@ public class OwnerActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     Owner owner = response.body();
 
+
                     String avatarLink = owner.getAvatarUrl();
                     //String name = owner.getName();
                     int numRepos = owner.getPublicRepos();
@@ -70,6 +79,8 @@ public class OwnerActivity extends AppCompatActivity {
                     Picasso.get().load(avatarLink).into(avatar);
                     followers.setText("Followers: " +follows);
                     repos.setText("Repositoris: "+numRepos);
+
+
 
 
                 }
@@ -82,9 +93,32 @@ public class OwnerActivity extends AppCompatActivity {
             }
         });
 
+        //!Afegint un follower
+        Call<List<Follower>> callFollower = github.getFollwers(username);
+
+        callFollower.enqueue(new Callback<List<Follower>>() {
+
+            @Override
+            public void onResponse(Call<List<Follower>> call, Response<List<Follower>> response) {
+
+                if (response.isSuccessful()) {
+                    List<Follower>  listAux = response.body();
+                    for (Follower follower : listAux) {
+                        lsitFollowers.add(follower);
+
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Follower>> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Error al pillar un follower :/", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
-    }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -109,4 +143,16 @@ public class OwnerActivity extends AppCompatActivity {
 
     }
 
+
+    // metode per inicialitzar el recycler view
+    private void initRecylcerView()
+    {
+
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new FollowerAdapter(lsitFollowers);
+        recyclerView.setAdapter(adapter);
+    }
+
 }
+
