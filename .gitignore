@@ -28,3 +28,5 @@ proguard/
 
 # Archivos de compilación
 /captures/
+#desktop icon
+desktop.ini
