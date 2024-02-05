@@ -94,7 +94,32 @@ Todo el contendio impartido en la unidad formativa 2 de Android Studio
 
 
 ## RecyclerView Adapter and Frontend
-- Ejemplo de como hacer un adaptador y como poner el item.xml de RecyclerView. ¡Importante! Cambiar la clase y poner otra a medida
+- Ejemplo de como hacer un adaptador y como poner el item.xml de RecyclerView. ¡Importante! Cambiar la clase y poner otra a medida. Tambien como inicializar el recicycler view .Tambien initRecycler
+```
+	//en el metodo on create()
+
+        listHomes = new ArrayList<>();
+        if(listHomes.isEmpty())
+        {
+            initData();
+        }
+        initRecylcerView();
+
+ private void initRecylcerView()
+    {
+        //recicleview
+        recyclerView = findViewById(R.id.recyclerView);
+        layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        homeAdapter = new HomeAdapter(listHomes);
+        recyclerView.setAdapter(homeAdapter);
+        //homeAdapter.notifyDataSetChanged();
+    }
+```
+
+
+
 ```
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
