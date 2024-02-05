@@ -90,8 +90,50 @@ Todo el contendio impartido en la unidad formativa 2 de Android Studio
 ```
 
 
-## RecyclerView Adapter
-- Ejemplo de como hacer un adaptador de RecyclerView. ¡Importante! Cambiar la clase y poner otra a medida 
+## RecyclerView Adapter and Frontend
+- Ejemplo de como hacer un adaptador y como poner el item.xml de RecyclerView. ¡Importante! Cambiar la clase y poner otra a medida
+```
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="UseCompoundDrawables">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="0dp">
+
+        <ImageView
+            android:id="@+id/logoHome"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/todo"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/textview"
+            android:textAlignment="center" />
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+```
 ```
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>
 {
