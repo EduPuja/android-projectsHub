@@ -13,8 +13,11 @@ Todo el contendio impartido en la unidad formativa 2 de Android Studio
 
 ## Google Maps & Permisos & MapView
 
-- Permisos & Google Maps & MapView
+- Permisos & Google Maps & MapView y dependecias
     ```
+        // poner esto en el gradle de dependecias
+        implementation("com.google.android.gms:play-services-maps:18.2.0")
+        
        <!--Permisos-->
           <uses-permission android:name="android.permission.INTERNET"/>
           <uses-permission
