@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="UseCompoundDrawables">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="0dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/program"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/titolMarker"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+
+            android:textAlignment="center" />
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
